@@ -1,0 +1,17 @@
+D:\Thuc Tap CSDL\bin\Debug\Thuc Tap CSDL.exe.config
+D:\Thuc Tap CSDL\bin\Debug\Thuc Tap CSDL.exe
+D:\Thuc Tap CSDL\bin\Debug\Thuc Tap CSDL.pdb
+D:\Thuc Tap CSDL\obj\Debug\Thuc Tap CSDL.csprojAssemblyReference.cache
+D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.Form1.resources
+D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.Properties.Resources.resources
+D:\Thuc Tap CSDL\obj\Debug\Thuc Tap CSDL.csproj.GenerateResource.cache
+D:\Thuc Tap CSDL\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
+D:\Thuc Tap CSDL\obj\Debug\Thuc Tap CSDL.exe
+D:\Thuc Tap CSDL\obj\Debug\Thuc Tap CSDL.pdb
+D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fMain.resources
+D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fClass.resources
+D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fFee.resources
+D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fSalary.resources
+D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fStudent.resources
+D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fTeacher.resources
+D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fStatistic.resources
