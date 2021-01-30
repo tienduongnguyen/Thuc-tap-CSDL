@@ -16,5 +16,22 @@ namespace Thuc_Tap_CSDL
         {
             InitializeComponent();
         }
+
+        private void btnFee_bill_Click(object sender, EventArgs e)
+        {
+            txtFeeBill_id.Enabled = true;
+            txtFeeBill_studentID.Enabled = true;
+            txtFeeBill_classID.Enabled = true;
+            txtFeeBill_sumDay.Enabled = true;
+            txtFeeBill_feePerDay.Enabled = true;
+            txtFeeBill_sumFee.Enabled = true;
+            txtFeeBill_dateTake.Enabled = true;
+            txtFeeBill_takeForDate.Enabled = true;
+            ckbTaked.Enabled = true;
+            btnFeeBill_add.Enabled = true;
+            btnFeeBill_fix.Enabled = true;
+            btnFeeBill_delete.Enabled = true;
+            btnFeeBill_clear.Enabled = true;
+        }
     }
 }

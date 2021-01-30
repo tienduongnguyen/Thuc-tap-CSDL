@@ -131,6 +131,7 @@
             // cmbTeacher
             // 
             this.cmbTeacher.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cmbTeacher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.cmbTeacher.FormattingEnabled = true;
             this.cmbTeacher.Items.AddRange(new object[] {
             "Mã giáo viên",
@@ -140,27 +141,29 @@
             "Số điện thoại",
             "Mã môn học",
             "Mã mức TT"});
-            this.cmbTeacher.Location = new System.Drawing.Point(542, 231);
+            this.cmbTeacher.Location = new System.Drawing.Point(519, 231);
             this.cmbTeacher.Name = "cmbTeacher";
-            this.cmbTeacher.Size = new System.Drawing.Size(96, 25);
+            this.cmbTeacher.Size = new System.Drawing.Size(119, 25);
             this.cmbTeacher.TabIndex = 91;
             // 
             // radGender_female
             // 
             this.radGender_female.AutoSize = true;
             this.radGender_female.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.radGender_female.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.radGender_female.Location = new System.Drawing.Point(231, 165);
             this.radGender_female.Name = "radGender_female";
             this.radGender_female.Size = new System.Drawing.Size(47, 23);
             this.radGender_female.TabIndex = 89;
-            this.radGender_female.TabStop = true;
             this.radGender_female.Text = "Nữ";
             this.radGender_female.UseVisualStyleBackColor = true;
             // 
             // radGender_male
             // 
             this.radGender_male.AutoSize = true;
+            this.radGender_male.Checked = true;
             this.radGender_male.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.radGender_male.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.radGender_male.Location = new System.Drawing.Point(168, 165);
             this.radGender_male.Name = "radGender_male";
             this.radGender_male.Size = new System.Drawing.Size(57, 23);
@@ -171,7 +174,7 @@
             // 
             // panel14
             // 
-            this.panel14.BackColor = System.Drawing.Color.Black;
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel14.Location = new System.Drawing.Point(565, 617);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(365, 1);
@@ -179,7 +182,7 @@
             // 
             // panel13
             // 
-            this.panel13.BackColor = System.Drawing.Color.Black;
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel13.Location = new System.Drawing.Point(13, 617);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(552, 1);
@@ -190,6 +193,7 @@
             this.colorBorderGroupBox1.BorderColor = System.Drawing.Color.Transparent;
             this.colorBorderGroupBox1.Controls.Add(this.dgvTeacher);
             this.colorBorderGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.colorBorderGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.colorBorderGroupBox1.Location = new System.Drawing.Point(15, 261);
             this.colorBorderGroupBox1.Name = "colorBorderGroupBox1";
             this.colorBorderGroupBox1.Size = new System.Drawing.Size(913, 354);
@@ -199,7 +203,10 @@
             // 
             // dgvTeacher
             // 
+            this.dgvTeacher.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTeacher.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTeacher.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvTeacher.Location = new System.Drawing.Point(6, 24);
             this.dgvTeacher.Name = "dgvTeacher";
             this.dgvTeacher.Size = new System.Drawing.Size(901, 324);
@@ -207,7 +214,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel1.Location = new System.Drawing.Point(531, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 1);
@@ -215,7 +222,7 @@
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.Color.Black;
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel11.Location = new System.Drawing.Point(12, 25);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(400, 1);
@@ -223,7 +230,7 @@
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.Black;
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel10.Location = new System.Drawing.Point(930, 26);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1, 592);
@@ -231,8 +238,9 @@
             // 
             // btnTeacher_search
             // 
-            this.btnTeacher_search.BorderColor = System.Drawing.Color.Black;
-            this.btnTeacher_search.ButtonColor = System.Drawing.Color.White;
+            this.btnTeacher_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_search.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTeacher_search.FlatAppearance.BorderSize = 0;
             this.btnTeacher_search.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnTeacher_search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -247,12 +255,12 @@
             this.btnTeacher_search.Size = new System.Drawing.Size(61, 29);
             this.btnTeacher_search.TabIndex = 75;
             this.btnTeacher_search.Text = "TÌM";
-            this.btnTeacher_search.TextColor = System.Drawing.Color.Black;
+            this.btnTeacher_search.TextColor = System.Drawing.Color.White;
             this.btnTeacher_search.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel7.Location = new System.Drawing.Point(12, 26);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1, 592);
@@ -260,8 +268,9 @@
             // 
             // btnTeacher_all
             // 
-            this.btnTeacher_all.BorderColor = System.Drawing.Color.Black;
-            this.btnTeacher_all.ButtonColor = System.Drawing.Color.White;
+            this.btnTeacher_all.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_all.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_all.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTeacher_all.FlatAppearance.BorderSize = 0;
             this.btnTeacher_all.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnTeacher_all.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -270,19 +279,20 @@
             this.btnTeacher_all.ForeColor = System.Drawing.Color.Black;
             this.btnTeacher_all.Location = new System.Drawing.Point(43, 224);
             this.btnTeacher_all.Name = "btnTeacher_all";
-            this.btnTeacher_all.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(156)))));
-            this.btnTeacher_all.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(156)))));
+            this.btnTeacher_all.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnTeacher_all.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.btnTeacher_all.OnHoverTextColor = System.Drawing.Color.White;
             this.btnTeacher_all.Size = new System.Drawing.Size(61, 31);
             this.btnTeacher_all.TabIndex = 71;
             this.btnTeacher_all.Text = "ALL";
-            this.btnTeacher_all.TextColor = System.Drawing.Color.Black;
+            this.btnTeacher_all.TextColor = System.Drawing.Color.White;
             this.btnTeacher_all.UseVisualStyleBackColor = true;
             // 
             // btnTeacher_clear
             // 
-            this.btnTeacher_clear.BorderColor = System.Drawing.Color.Black;
-            this.btnTeacher_clear.ButtonColor = System.Drawing.Color.White;
+            this.btnTeacher_clear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_clear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_clear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTeacher_clear.FlatAppearance.BorderSize = 0;
             this.btnTeacher_clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnTeacher_clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -297,13 +307,14 @@
             this.btnTeacher_clear.Size = new System.Drawing.Size(66, 33);
             this.btnTeacher_clear.TabIndex = 69;
             this.btnTeacher_clear.Text = "CLEAR";
-            this.btnTeacher_clear.TextColor = System.Drawing.Color.Black;
+            this.btnTeacher_clear.TextColor = System.Drawing.Color.White;
             this.btnTeacher_clear.UseVisualStyleBackColor = true;
             // 
             // btnTeacher_delete
             // 
-            this.btnTeacher_delete.BorderColor = System.Drawing.Color.Black;
-            this.btnTeacher_delete.ButtonColor = System.Drawing.Color.White;
+            this.btnTeacher_delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_delete.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTeacher_delete.FlatAppearance.BorderSize = 0;
             this.btnTeacher_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnTeacher_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -318,13 +329,14 @@
             this.btnTeacher_delete.Size = new System.Drawing.Size(66, 33);
             this.btnTeacher_delete.TabIndex = 67;
             this.btnTeacher_delete.Text = "XÓA";
-            this.btnTeacher_delete.TextColor = System.Drawing.Color.Black;
+            this.btnTeacher_delete.TextColor = System.Drawing.Color.White;
             this.btnTeacher_delete.UseVisualStyleBackColor = true;
             // 
             // btnTeacher_fix
             // 
-            this.btnTeacher_fix.BorderColor = System.Drawing.Color.Black;
-            this.btnTeacher_fix.ButtonColor = System.Drawing.Color.White;
+            this.btnTeacher_fix.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_fix.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_fix.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTeacher_fix.FlatAppearance.BorderSize = 0;
             this.btnTeacher_fix.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnTeacher_fix.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -333,13 +345,13 @@
             this.btnTeacher_fix.ForeColor = System.Drawing.Color.Black;
             this.btnTeacher_fix.Location = new System.Drawing.Point(773, 102);
             this.btnTeacher_fix.Name = "btnTeacher_fix";
-            this.btnTeacher_fix.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(64)))));
-            this.btnTeacher_fix.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(64)))));
+            this.btnTeacher_fix.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
+            this.btnTeacher_fix.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
             this.btnTeacher_fix.OnHoverTextColor = System.Drawing.Color.White;
             this.btnTeacher_fix.Size = new System.Drawing.Size(66, 33);
             this.btnTeacher_fix.TabIndex = 65;
             this.btnTeacher_fix.Text = "SỬA";
-            this.btnTeacher_fix.TextColor = System.Drawing.Color.Black;
+            this.btnTeacher_fix.TextColor = System.Drawing.Color.White;
             this.btnTeacher_fix.UseVisualStyleBackColor = true;
             // 
             // panel19
@@ -352,8 +364,9 @@
             // 
             // btnTeacher_add
             // 
-            this.btnTeacher_add.BorderColor = System.Drawing.Color.Black;
-            this.btnTeacher_add.ButtonColor = System.Drawing.Color.White;
+            this.btnTeacher_add.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_add.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnTeacher_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTeacher_add.FlatAppearance.BorderSize = 0;
             this.btnTeacher_add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnTeacher_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -368,7 +381,7 @@
             this.btnTeacher_add.Size = new System.Drawing.Size(66, 33);
             this.btnTeacher_add.TabIndex = 64;
             this.btnTeacher_add.Text = "THÊM";
-            this.btnTeacher_add.TextColor = System.Drawing.Color.Black;
+            this.btnTeacher_add.TextColor = System.Drawing.Color.White;
             this.btnTeacher_add.UseVisualStyleBackColor = true;
             // 
             // panel6
@@ -424,6 +437,7 @@
             this.txtTeacherSearch.BackColor = System.Drawing.Color.White;
             this.txtTeacherSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTeacherSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtTeacherSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtTeacherSearch.Location = new System.Drawing.Point(648, 232);
             this.txtTeacherSearch.Name = "txtTeacherSearch";
             this.txtTeacherSearch.Size = new System.Drawing.Size(187, 18);
@@ -452,6 +466,7 @@
             this.txtSalaryID.BackColor = System.Drawing.Color.White;
             this.txtSalaryID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSalaryID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtSalaryID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSalaryID.Location = new System.Drawing.Point(498, 167);
             this.txtSalaryID.Name = "txtSalaryID";
             this.txtSalaryID.Size = new System.Drawing.Size(193, 18);
@@ -462,6 +477,7 @@
             this.txtTeacherPhone.BackColor = System.Drawing.Color.White;
             this.txtTeacherPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTeacherPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtTeacherPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtTeacherPhone.Location = new System.Drawing.Point(498, 106);
             this.txtTeacherPhone.Name = "txtTeacherPhone";
             this.txtTeacherPhone.Size = new System.Drawing.Size(193, 18);
@@ -472,6 +488,7 @@
             this.txtSubjectID.BackColor = System.Drawing.Color.White;
             this.txtSubjectID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSubjectID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtSubjectID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSubjectID.Location = new System.Drawing.Point(498, 135);
             this.txtSubjectID.Name = "txtSubjectID";
             this.txtSubjectID.Size = new System.Drawing.Size(193, 18);
@@ -482,6 +499,7 @@
             this.txtTeacherAddress.BackColor = System.Drawing.Color.White;
             this.txtTeacherAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTeacherAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtTeacherAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtTeacherAddress.Location = new System.Drawing.Point(498, 76);
             this.txtTeacherAddress.Name = "txtTeacherAddress";
             this.txtTeacherAddress.Size = new System.Drawing.Size(193, 18);
@@ -506,6 +524,7 @@
             this.txtTeacherName.BackColor = System.Drawing.Color.White;
             this.txtTeacherName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTeacherName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtTeacherName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtTeacherName.Location = new System.Drawing.Point(162, 107);
             this.txtTeacherName.Name = "txtTeacherName";
             this.txtTeacherName.Size = new System.Drawing.Size(193, 18);
@@ -516,6 +535,7 @@
             this.txtTeacherID.BackColor = System.Drawing.Color.White;
             this.txtTeacherID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTeacherID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtTeacherID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtTeacherID.Location = new System.Drawing.Point(162, 78);
             this.txtTeacherID.Name = "txtTeacherID";
             this.txtTeacherID.Size = new System.Drawing.Size(193, 18);
@@ -525,6 +545,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.label6.Location = new System.Drawing.Point(412, 165);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 19);
@@ -535,6 +556,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.label9.Location = new System.Drawing.Point(401, 104);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 19);
@@ -545,6 +567,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.label5.Location = new System.Drawing.Point(405, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 19);
@@ -555,6 +578,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.label8.Location = new System.Drawing.Point(440, 75);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 19);
@@ -565,6 +589,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.label4.Location = new System.Drawing.Point(92, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 19);
@@ -575,6 +600,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.label3.Location = new System.Drawing.Point(85, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 19);
@@ -585,6 +611,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.label2.Location = new System.Drawing.Point(65, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 19);
@@ -595,6 +622,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.label7.Location = new System.Drawing.Point(67, 77);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 19);
@@ -606,6 +634,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.label1.Location = new System.Drawing.Point(431, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 20);

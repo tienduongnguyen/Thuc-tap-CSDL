@@ -22,7 +22,7 @@ namespace Thuc_Tap_CSDL
             if (txtTeacherBirth.Text == "YYYY-MM-DD")
             {
                 txtTeacherBirth.Text = "";
-                txtTeacherBirth.ForeColor = Color.Black;
+                txtTeacherBirth.ForeColor = Color.FromArgb(0, 72, 39);
             }
         }
 

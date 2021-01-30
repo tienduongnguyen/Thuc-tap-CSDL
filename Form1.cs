@@ -40,7 +40,7 @@ namespace Thuc_Tap_CSDL
             if(txtUser.Text == "Tên đăng nhập")
             {
                 txtUser.Text = "";
-                txtUser.ForeColor = Color.FromArgb(146, 42, 148);
+                txtUser.ForeColor = Color.FromArgb(0, 134, 75);
             }    
         }
 
@@ -59,7 +59,7 @@ namespace Thuc_Tap_CSDL
             {
                 txtPassword.Text = "";
                 txtPassword.UseSystemPasswordChar = true;
-                txtPassword.ForeColor = Color.FromArgb(146, 42, 148);
+                txtPassword.ForeColor = Color.FromArgb(0, 134, 75);
             }    
         }
 

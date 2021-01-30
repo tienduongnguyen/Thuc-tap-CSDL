@@ -15,3 +15,20 @@ D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fSalary.resources
 D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fStudent.resources
 D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fTeacher.resources
 D:\Thuc Tap CSDL\obj\Debug\Thuc_Tap_CSDL.fStatistic.resources
+D:\Repository files\bin\Debug\Thuc Tap CSDL.exe.config
+D:\Repository files\bin\Debug\Thuc Tap CSDL.exe
+D:\Repository files\bin\Debug\Thuc Tap CSDL.pdb
+D:\Repository files\obj\Debug\Thuc Tap CSDL.csprojAssemblyReference.cache
+D:\Repository files\obj\Debug\Thuc_Tap_CSDL.fClass.resources
+D:\Repository files\obj\Debug\Thuc_Tap_CSDL.fFee.resources
+D:\Repository files\obj\Debug\Thuc_Tap_CSDL.fMain.resources
+D:\Repository files\obj\Debug\Thuc_Tap_CSDL.Form1.resources
+D:\Repository files\obj\Debug\Thuc_Tap_CSDL.fSalary.resources
+D:\Repository files\obj\Debug\Thuc_Tap_CSDL.fStatistic.resources
+D:\Repository files\obj\Debug\Thuc_Tap_CSDL.fStudent.resources
+D:\Repository files\obj\Debug\Thuc_Tap_CSDL.fTeacher.resources
+D:\Repository files\obj\Debug\Thuc_Tap_CSDL.Properties.Resources.resources
+D:\Repository files\obj\Debug\Thuc Tap CSDL.csproj.GenerateResource.cache
+D:\Repository files\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
+D:\Repository files\obj\Debug\Thuc Tap CSDL.exe
+D:\Repository files\obj\Debug\Thuc Tap CSDL.pdb

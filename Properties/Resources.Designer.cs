@@ -63,6 +63,16 @@ namespace Thuc_Tap_CSDL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0_134_75 {
+            get {
+                object obj = ResourceManager.GetObject("0-134-75", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _class {
             get {
                 object obj = ResourceManager.GetObject("class", resourceCulture);
