@@ -286,7 +286,7 @@
             this.colorBorderGroupBox1.Size = new System.Drawing.Size(448, 478);
             this.colorBorderGroupBox1.TabIndex = 86;
             this.colorBorderGroupBox1.TabStop = false;
-            this.colorBorderGroupBox1.Text = "Danh sách lớp học";
+            this.colorBorderGroupBox1.Text = "Danh sách học sinh lớp học";
             // 
             // dgvSalary
             // 
@@ -421,8 +421,8 @@
             this.btnFeeBill_search.ForeColor = System.Drawing.Color.Black;
             this.btnFeeBill_search.Location = new System.Drawing.Point(846, 317);
             this.btnFeeBill_search.Name = "btnFeeBill_search";
-            this.btnFeeBill_search.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnFeeBill_search.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_search.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(114)))), ((int)(((byte)(187)))));
+            this.btnFeeBill_search.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(114)))), ((int)(((byte)(187)))));
             this.btnFeeBill_search.OnHoverTextColor = System.Drawing.Color.White;
             this.btnFeeBill_search.Size = new System.Drawing.Size(61, 31);
             this.btnFeeBill_search.TabIndex = 73;
@@ -466,8 +466,8 @@
             this.btnFeeBill_clear.ForeColor = System.Drawing.Color.Black;
             this.btnFeeBill_clear.Location = new System.Drawing.Point(828, 170);
             this.btnFeeBill_clear.Name = "btnFeeBill_clear";
-            this.btnFeeBill_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnFeeBill_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
+            this.btnFeeBill_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
             this.btnFeeBill_clear.OnHoverTextColor = System.Drawing.Color.White;
             this.btnFeeBill_clear.Size = new System.Drawing.Size(66, 33);
             this.btnFeeBill_clear.TabIndex = 70;
@@ -489,8 +489,8 @@
             this.btnFeeBill_delete.ForeColor = System.Drawing.Color.Black;
             this.btnFeeBill_delete.Location = new System.Drawing.Point(828, 131);
             this.btnFeeBill_delete.Name = "btnFeeBill_delete";
-            this.btnFeeBill_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnFeeBill_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
+            this.btnFeeBill_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
             this.btnFeeBill_delete.OnHoverTextColor = System.Drawing.Color.White;
             this.btnFeeBill_delete.Size = new System.Drawing.Size(66, 33);
             this.btnFeeBill_delete.TabIndex = 68;
@@ -512,8 +512,8 @@
             this.btnFeeBill_fix.ForeColor = System.Drawing.Color.Black;
             this.btnFeeBill_fix.Location = new System.Drawing.Point(828, 92);
             this.btnFeeBill_fix.Name = "btnFeeBill_fix";
-            this.btnFeeBill_fix.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnFeeBill_fix.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_fix.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
+            this.btnFeeBill_fix.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
             this.btnFeeBill_fix.OnHoverTextColor = System.Drawing.Color.White;
             this.btnFeeBill_fix.Size = new System.Drawing.Size(66, 33);
             this.btnFeeBill_fix.TabIndex = 66;
@@ -543,8 +543,8 @@
             this.btnFeeBill_add.ForeColor = System.Drawing.Color.Black;
             this.btnFeeBill_add.Location = new System.Drawing.Point(828, 53);
             this.btnFeeBill_add.Name = "btnFeeBill_add";
-            this.btnFeeBill_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnFeeBill_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
+            this.btnFeeBill_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
             this.btnFeeBill_add.OnHoverTextColor = System.Drawing.Color.White;
             this.btnFeeBill_add.Size = new System.Drawing.Size(66, 33);
             this.btnFeeBill_add.TabIndex = 74;

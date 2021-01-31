@@ -186,6 +186,7 @@
             "Mã học sinh",
             "Tên học sinh",
             "Ngày sinh",
+            "Giới tính",
             "Địa chỉ",
             "Số điện thoại"});
             this.cmbStudent.Location = new System.Drawing.Point(139, 295);

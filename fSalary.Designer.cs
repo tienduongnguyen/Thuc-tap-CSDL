@@ -194,8 +194,8 @@
             this.cmbSalary_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.cmbSalary_search.FormattingEnabled = true;
             this.cmbSalary_search.Items.AddRange(new object[] {
-            "Mã lớp học",
-            "Tên lớp học"});
+            "Mã môn học",
+            "Tên môn học"});
             this.cmbSalary_search.Location = new System.Drawing.Point(53, 59);
             this.cmbSalary_search.Name = "cmbSalary_search";
             this.cmbSalary_search.Size = new System.Drawing.Size(106, 25);
@@ -211,9 +211,9 @@
             "Tổng lương",
             "Mã giáo viên",
             "Mã lớp học"});
-            this.cmbSalaryBill_search.Location = new System.Drawing.Point(630, 297);
+            this.cmbSalaryBill_search.Location = new System.Drawing.Point(610, 297);
             this.cmbSalaryBill_search.Name = "cmbSalaryBill_search";
-            this.cmbSalaryBill_search.Size = new System.Drawing.Size(96, 25);
+            this.cmbSalaryBill_search.Size = new System.Drawing.Size(116, 25);
             this.cmbSalaryBill_search.TabIndex = 90;
             // 
             // colorBorderGroupBox2
@@ -267,7 +267,7 @@
             this.colorBorderGroupBox1.Size = new System.Drawing.Size(448, 478);
             this.colorBorderGroupBox1.TabIndex = 86;
             this.colorBorderGroupBox1.TabStop = false;
-            this.colorBorderGroupBox1.Text = "Danh sách lớp học";
+            this.colorBorderGroupBox1.Text = "Danh sách giáo viên bộ môn";
             // 
             // dgvSalary
             // 
@@ -447,8 +447,8 @@
             this.btnSalaryBill_clear.ForeColor = System.Drawing.Color.Black;
             this.btnSalaryBill_clear.Location = new System.Drawing.Point(828, 170);
             this.btnSalaryBill_clear.Name = "btnSalaryBill_clear";
-            this.btnSalaryBill_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnSalaryBill_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnSalaryBill_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
+            this.btnSalaryBill_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
             this.btnSalaryBill_clear.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSalaryBill_clear.Size = new System.Drawing.Size(66, 33);
             this.btnSalaryBill_clear.TabIndex = 70;
@@ -470,8 +470,8 @@
             this.btnSalaryBill_delete.ForeColor = System.Drawing.Color.Black;
             this.btnSalaryBill_delete.Location = new System.Drawing.Point(828, 131);
             this.btnSalaryBill_delete.Name = "btnSalaryBill_delete";
-            this.btnSalaryBill_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnSalaryBill_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnSalaryBill_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
+            this.btnSalaryBill_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
             this.btnSalaryBill_delete.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSalaryBill_delete.Size = new System.Drawing.Size(66, 33);
             this.btnSalaryBill_delete.TabIndex = 68;
@@ -493,8 +493,8 @@
             this.btnSalaryBill_fix.ForeColor = System.Drawing.Color.Black;
             this.btnSalaryBill_fix.Location = new System.Drawing.Point(828, 92);
             this.btnSalaryBill_fix.Name = "btnSalaryBill_fix";
-            this.btnSalaryBill_fix.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnSalaryBill_fix.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnSalaryBill_fix.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
+            this.btnSalaryBill_fix.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
             this.btnSalaryBill_fix.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSalaryBill_fix.Size = new System.Drawing.Size(66, 33);
             this.btnSalaryBill_fix.TabIndex = 66;
@@ -524,8 +524,8 @@
             this.btnSalaryBill_add.ForeColor = System.Drawing.Color.Black;
             this.btnSalaryBill_add.Location = new System.Drawing.Point(828, 53);
             this.btnSalaryBill_add.Name = "btnSalaryBill_add";
-            this.btnSalaryBill_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnSalaryBill_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnSalaryBill_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
+            this.btnSalaryBill_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
             this.btnSalaryBill_add.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSalaryBill_add.Size = new System.Drawing.Size(66, 33);
             this.btnSalaryBill_add.TabIndex = 74;

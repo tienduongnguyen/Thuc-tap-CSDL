@@ -137,6 +137,7 @@
             "Mã giáo viên",
             "Tên giáo viên",
             "Ngày sinh",
+            "Giới tính",
             "Địa chỉ",
             "Số điện thoại",
             "Mã môn học",
