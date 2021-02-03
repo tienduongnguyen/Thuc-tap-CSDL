@@ -170,7 +170,7 @@
             // 
             this.ptrEyes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptrEyes.Image = global::Thuc_Tap_CSDL.Properties.Resources.eyeclose;
-            this.ptrEyes.Location = new System.Drawing.Point(436, 181);
+            this.ptrEyes.Location = new System.Drawing.Point(436, 179);
             this.ptrEyes.Name = "ptrEyes";
             this.ptrEyes.Size = new System.Drawing.Size(19, 19);
             this.ptrEyes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
