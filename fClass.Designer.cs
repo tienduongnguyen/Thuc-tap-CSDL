@@ -245,6 +245,7 @@
             this.dgvLesson.RowHeadersWidth = 51;
             this.dgvLesson.Size = new System.Drawing.Size(585, 316);
             this.dgvLesson.TabIndex = 0;
+            this.dgvLesson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLesson_CellContentClick);
             // 
             // panel14
             // 
@@ -291,6 +292,7 @@
             this.dgvClass.RowHeadersWidth = 51;
             this.dgvClass.Size = new System.Drawing.Size(585, 316);
             this.dgvClass.TabIndex = 0;
+            this.dgvClass.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellContentClick);
             // 
             // panel16
             // 
@@ -377,6 +379,7 @@
             this.btnClass_search.Text = "TÌM";
             this.btnClass_search.TextColor = System.Drawing.Color.White;
             this.btnClass_search.UseVisualStyleBackColor = true;
+            this.btnClass_search.Click += new System.EventHandler(this.btnClass_search_Click);
             // 
             // panel7
             // 
@@ -409,6 +412,7 @@
             this.btnLesson_search.Text = "TÌM";
             this.btnLesson_search.TextColor = System.Drawing.Color.White;
             this.btnLesson_search.UseVisualStyleBackColor = true;
+            this.btnLesson_search.Click += new System.EventHandler(this.btnLesson_search_Click);
             // 
             // btnLesson_all
             // 
@@ -432,6 +436,7 @@
             this.btnLesson_all.Text = "ALL";
             this.btnLesson_all.TextColor = System.Drawing.Color.White;
             this.btnLesson_all.UseVisualStyleBackColor = true;
+            this.btnLesson_all.Click += new System.EventHandler(this.btnLesson_all_Click);
             // 
             // btnClass_all
             // 
@@ -455,6 +460,7 @@
             this.btnClass_all.Text = "ALL";
             this.btnClass_all.TextColor = System.Drawing.Color.White;
             this.btnClass_all.UseVisualStyleBackColor = true;
+            this.btnClass_all.Click += new System.EventHandler(this.btnClass_all_Click);
             // 
             // btnLesson_clear
             // 
@@ -478,6 +484,7 @@
             this.btnLesson_clear.Text = "CLEAR";
             this.btnLesson_clear.TextColor = System.Drawing.Color.White;
             this.btnLesson_clear.UseVisualStyleBackColor = true;
+            this.btnLesson_clear.Click += new System.EventHandler(this.btnLesson_clear_Click);
             // 
             // btnClass_clear
             // 
@@ -501,6 +508,7 @@
             this.btnClass_clear.Text = "CLEAR";
             this.btnClass_clear.TextColor = System.Drawing.Color.White;
             this.btnClass_clear.UseVisualStyleBackColor = true;
+            this.btnClass_clear.Click += new System.EventHandler(this.btnClass_clear_Click);
             // 
             // btnLesson_delete
             // 
@@ -524,6 +532,7 @@
             this.btnLesson_delete.Text = "XÓA";
             this.btnLesson_delete.TextColor = System.Drawing.Color.White;
             this.btnLesson_delete.UseVisualStyleBackColor = true;
+            this.btnLesson_delete.Click += new System.EventHandler(this.btnLesson_delete_Click);
             // 
             // btnClass_delete
             // 
@@ -547,6 +556,7 @@
             this.btnClass_delete.Text = "XÓA";
             this.btnClass_delete.TextColor = System.Drawing.Color.White;
             this.btnClass_delete.UseVisualStyleBackColor = true;
+            this.btnClass_delete.Click += new System.EventHandler(this.btnClass_delete_Click);
             // 
             // btnLesson_edit
             // 
@@ -570,6 +580,7 @@
             this.btnLesson_edit.Text = "SỬA";
             this.btnLesson_edit.TextColor = System.Drawing.Color.White;
             this.btnLesson_edit.UseVisualStyleBackColor = true;
+            this.btnLesson_edit.Click += new System.EventHandler(this.btnLesson_edit_Click);
             // 
             // btnClass_edit
             // 
@@ -593,6 +604,7 @@
             this.btnClass_edit.Text = "SỬA";
             this.btnClass_edit.TextColor = System.Drawing.Color.White;
             this.btnClass_edit.UseVisualStyleBackColor = true;
+            this.btnClass_edit.Click += new System.EventHandler(this.btnClass_edit_Click);
             // 
             // btnLesson_add
             // 
@@ -649,6 +661,7 @@
             this.btnClass_add.Text = "THÊM";
             this.btnClass_add.TextColor = System.Drawing.Color.White;
             this.btnClass_add.UseVisualStyleBackColor = true;
+            this.btnClass_add.Click += new System.EventHandler(this.btnClass_add_Click);
             // 
             // panel15
             // 

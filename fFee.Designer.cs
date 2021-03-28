@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlSalary = new System.Windows.Forms.Panel();
+            this.btnFeeBill_clear = new ePOSOne.btnProduct.Button_WOC();
+            this.btnFeeBill_add = new ePOSOne.btnProduct.Button_WOC();
+            this.btnFeeBill_edit = new ePOSOne.btnProduct.Button_WOC();
+            this.btnFeeBill_delete = new ePOSOne.btnProduct.Button_WOC();
             this.ckbTaked = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbSalary_bill = new System.Windows.Forms.ComboBox();
@@ -39,7 +43,7 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
-            this.dgvSalary = new System.Windows.Forms.DataGridView();
+            this.dgvFee = new System.Windows.Forms.DataGridView();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,11 +56,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnFeeBill_search = new ePOSOne.btnProduct.Button_WOC();
             this.btnFeeBill_all = new ePOSOne.btnProduct.Button_WOC();
-            this.btnFeeBill_clear = new ePOSOne.btnProduct.Button_WOC();
-            this.btnFeeBill_delete = new ePOSOne.btnProduct.Button_WOC();
-            this.btnFeeBill_edit = new ePOSOne.btnProduct.Button_WOC();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnFeeBill_add = new ePOSOne.btnProduct.Button_WOC();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
@@ -95,12 +95,16 @@
             this.colorBorderGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalary_bill)).BeginInit();
             this.colorBorderGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFee)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSalary
             // 
             this.pnlSalary.BackColor = System.Drawing.Color.White;
+            this.pnlSalary.Controls.Add(this.btnFeeBill_clear);
+            this.pnlSalary.Controls.Add(this.btnFeeBill_add);
+            this.pnlSalary.Controls.Add(this.btnFeeBill_edit);
+            this.pnlSalary.Controls.Add(this.btnFeeBill_delete);
             this.pnlSalary.Controls.Add(this.ckbTaked);
             this.pnlSalary.Controls.Add(this.label5);
             this.pnlSalary.Controls.Add(this.cmbSalary_bill);
@@ -122,11 +126,7 @@
             this.pnlSalary.Controls.Add(this.panel7);
             this.pnlSalary.Controls.Add(this.btnFeeBill_search);
             this.pnlSalary.Controls.Add(this.btnFeeBill_all);
-            this.pnlSalary.Controls.Add(this.btnFeeBill_clear);
-            this.pnlSalary.Controls.Add(this.btnFeeBill_delete);
-            this.pnlSalary.Controls.Add(this.btnFeeBill_edit);
             this.pnlSalary.Controls.Add(this.panel2);
-            this.pnlSalary.Controls.Add(this.btnFeeBill_add);
             this.pnlSalary.Controls.Add(this.panel19);
             this.pnlSalary.Controls.Add(this.panel15);
             this.pnlSalary.Controls.Add(this.panel24);
@@ -164,25 +164,122 @@
             this.pnlSalary.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlSalary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlSalary.Location = new System.Drawing.Point(0, 0);
-            this.pnlSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSalary.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSalary.Name = "pnlSalary";
             this.pnlSalary.Size = new System.Drawing.Size(1257, 773);
             this.pnlSalary.TabIndex = 3;
+            // 
+            // btnFeeBill_clear
+            // 
+            this.btnFeeBill_clear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_clear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFeeBill_clear.FlatAppearance.BorderSize = 0;
+            this.btnFeeBill_clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeeBill_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnFeeBill_clear.ForeColor = System.Drawing.Color.Black;
+            this.btnFeeBill_clear.Location = new System.Drawing.Point(1128, 261);
+            this.btnFeeBill_clear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFeeBill_clear.Name = "btnFeeBill_clear";
+            this.btnFeeBill_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_clear.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnFeeBill_clear.Size = new System.Drawing.Size(81, 38);
+            this.btnFeeBill_clear.TabIndex = 99;
+            this.btnFeeBill_clear.Text = "RESET";
+            this.btnFeeBill_clear.TextColor = System.Drawing.Color.White;
+            this.btnFeeBill_clear.UseVisualStyleBackColor = true;
+            this.btnFeeBill_clear.Click += new System.EventHandler(this.btnFeeBill_clear_Click);
+            // 
+            // btnFeeBill_add
+            // 
+            this.btnFeeBill_add.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_add.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFeeBill_add.FlatAppearance.BorderSize = 0;
+            this.btnFeeBill_add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeeBill_add.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnFeeBill_add.ForeColor = System.Drawing.Color.Black;
+            this.btnFeeBill_add.Location = new System.Drawing.Point(1128, 43);
+            this.btnFeeBill_add.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFeeBill_add.Name = "btnFeeBill_add";
+            this.btnFeeBill_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_add.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnFeeBill_add.Size = new System.Drawing.Size(81, 38);
+            this.btnFeeBill_add.TabIndex = 98;
+            this.btnFeeBill_add.Text = "THÊM";
+            this.btnFeeBill_add.TextColor = System.Drawing.Color.White;
+            this.btnFeeBill_add.UseVisualStyleBackColor = true;
+            this.btnFeeBill_add.Click += new System.EventHandler(this.btnFeeBill_add_Click);
+            // 
+            // btnFeeBill_edit
+            // 
+            this.btnFeeBill_edit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_edit.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFeeBill_edit.FlatAppearance.BorderSize = 0;
+            this.btnFeeBill_edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeeBill_edit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnFeeBill_edit.ForeColor = System.Drawing.Color.Black;
+            this.btnFeeBill_edit.Location = new System.Drawing.Point(1128, 114);
+            this.btnFeeBill_edit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFeeBill_edit.Name = "btnFeeBill_edit";
+            this.btnFeeBill_edit.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_edit.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_edit.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnFeeBill_edit.Size = new System.Drawing.Size(81, 38);
+            this.btnFeeBill_edit.TabIndex = 97;
+            this.btnFeeBill_edit.Text = "SỬA";
+            this.btnFeeBill_edit.TextColor = System.Drawing.Color.White;
+            this.btnFeeBill_edit.UseVisualStyleBackColor = true;
+            this.btnFeeBill_edit.Click += new System.EventHandler(this.btnFeeBill_edit_Click);
+            // 
+            // btnFeeBill_delete
+            // 
+            this.btnFeeBill_delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_delete.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFeeBill_delete.FlatAppearance.BorderSize = 0;
+            this.btnFeeBill_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeeBill_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnFeeBill_delete.ForeColor = System.Drawing.Color.Black;
+            this.btnFeeBill_delete.Location = new System.Drawing.Point(1128, 187);
+            this.btnFeeBill_delete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFeeBill_delete.Name = "btnFeeBill_delete";
+            this.btnFeeBill_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_delete.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnFeeBill_delete.Size = new System.Drawing.Size(81, 38);
+            this.btnFeeBill_delete.TabIndex = 96;
+            this.btnFeeBill_delete.Text = "XÓA";
+            this.btnFeeBill_delete.TextColor = System.Drawing.Color.White;
+            this.btnFeeBill_delete.UseVisualStyleBackColor = true;
+            this.btnFeeBill_delete.Click += new System.EventHandler(this.btnFeeBill_delete_Click);
             // 
             // ckbTaked
             // 
             this.ckbTaked.AutoSize = true;
             this.ckbTaked.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbTaked.Enabled = false;
             this.ckbTaked.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.ckbTaked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.ckbTaked.Location = new System.Drawing.Point(832, 350);
-            this.ckbTaked.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckbTaked.Location = new System.Drawing.Point(827, 351);
+            this.ckbTaked.Margin = new System.Windows.Forms.Padding(4);
             this.ckbTaked.Name = "ckbTaked";
             this.ckbTaked.Size = new System.Drawing.Size(82, 27);
             this.ckbTaked.TabIndex = 95;
             this.ckbTaked.Text = "đã thu";
+            this.ckbTaked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ckbTaked.UseVisualStyleBackColor = true;
+            this.ckbTaked.CheckedChanged += new System.EventHandler(this.ckbTaked_CheckedChanged);
             // 
             // label5
             // 
@@ -205,7 +302,7 @@
             "Mã học sinh",
             "Tên học sinh"});
             this.cmbSalary_bill.Location = new System.Drawing.Point(71, 124);
-            this.cmbSalary_bill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSalary_bill.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSalary_bill.Name = "cmbSalary_bill";
             this.cmbSalary_bill.Size = new System.Drawing.Size(140, 31);
             this.cmbSalary_bill.TabIndex = 91;
@@ -219,7 +316,7 @@
             "Mã lớp học",
             "Tên lớp học"});
             this.cmbSalary_search.Location = new System.Drawing.Point(71, 73);
-            this.cmbSalary_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSalary_search.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSalary_search.Name = "cmbSalary_search";
             this.cmbSalary_search.Size = new System.Drawing.Size(140, 31);
             this.cmbSalary_search.TabIndex = 91;
@@ -236,7 +333,7 @@
             "Học phí/buổi",
             "Tổng học phí"});
             this.cmbFeeBill_search.Location = new System.Drawing.Point(840, 393);
-            this.cmbFeeBill_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbFeeBill_search.Margin = new System.Windows.Forms.Padding(4);
             this.cmbFeeBill_search.Name = "cmbFeeBill_search";
             this.cmbFeeBill_search.Size = new System.Drawing.Size(127, 31);
             this.cmbFeeBill_search.TabIndex = 90;
@@ -248,9 +345,9 @@
             this.colorBorderGroupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.colorBorderGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.colorBorderGroupBox2.Location = new System.Drawing.Point(639, 433);
-            this.colorBorderGroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.colorBorderGroupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.colorBorderGroupBox2.Name = "colorBorderGroupBox2";
-            this.colorBorderGroupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.colorBorderGroupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.colorBorderGroupBox2.Size = new System.Drawing.Size(599, 324);
             this.colorBorderGroupBox2.TabIndex = 87;
             this.colorBorderGroupBox2.TabStop = false;
@@ -263,17 +360,18 @@
             this.dgvSalary_bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalary_bill.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvSalary_bill.Location = new System.Drawing.Point(8, 30);
-            this.dgvSalary_bill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSalary_bill.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalary_bill.Name = "dgvSalary_bill";
             this.dgvSalary_bill.RowHeadersWidth = 51;
             this.dgvSalary_bill.Size = new System.Drawing.Size(585, 287);
             this.dgvSalary_bill.TabIndex = 0;
+            this.dgvSalary_bill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalary_bill_CellContentClick);
             // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel14.Location = new System.Drawing.Point(635, 759);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(607, 1);
             this.panel14.TabIndex = 84;
@@ -282,7 +380,7 @@
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel13.Location = new System.Drawing.Point(17, 759);
-            this.panel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(607, 1);
             this.panel13.TabIndex = 84;
@@ -290,36 +388,36 @@
             // colorBorderGroupBox1
             // 
             this.colorBorderGroupBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.colorBorderGroupBox1.Controls.Add(this.dgvSalary);
+            this.colorBorderGroupBox1.Controls.Add(this.dgvFee);
             this.colorBorderGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.colorBorderGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.colorBorderGroupBox1.Location = new System.Drawing.Point(20, 169);
-            this.colorBorderGroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.colorBorderGroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.colorBorderGroupBox1.Name = "colorBorderGroupBox1";
-            this.colorBorderGroupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.colorBorderGroupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.colorBorderGroupBox1.Size = new System.Drawing.Size(597, 588);
             this.colorBorderGroupBox1.TabIndex = 86;
             this.colorBorderGroupBox1.TabStop = false;
             this.colorBorderGroupBox1.Text = "Danh sách học sinh lớp học";
             // 
-            // dgvSalary
+            // dgvFee
             // 
-            this.dgvSalary.BackgroundColor = System.Drawing.Color.White;
-            this.dgvSalary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSalary.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvSalary.Location = new System.Drawing.Point(8, 30);
-            this.dgvSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvSalary.Name = "dgvSalary";
-            this.dgvSalary.RowHeadersWidth = 51;
-            this.dgvSalary.Size = new System.Drawing.Size(585, 551);
-            this.dgvSalary.TabIndex = 0;
+            this.dgvFee.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvFee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvFee.Location = new System.Drawing.Point(8, 30);
+            this.dgvFee.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvFee.Name = "dgvFee";
+            this.dgvFee.RowHeadersWidth = 51;
+            this.dgvFee.Size = new System.Drawing.Size(585, 551);
+            this.dgvFee.TabIndex = 0;
             // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel16.Location = new System.Drawing.Point(1008, 32);
-            this.panel16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(233, 1);
             this.panel16.TabIndex = 80;
@@ -328,7 +426,7 @@
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel12.Location = new System.Drawing.Point(636, 32);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(233, 1);
             this.panel12.TabIndex = 80;
@@ -337,7 +435,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel1.Location = new System.Drawing.Point(391, 32);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(233, 1);
             this.panel1.TabIndex = 80;
@@ -346,7 +444,7 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel11.Location = new System.Drawing.Point(16, 31);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(233, 1);
             this.panel11.TabIndex = 80;
@@ -355,7 +453,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel10.Location = new System.Drawing.Point(1241, 32);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1, 729);
             this.panel10.TabIndex = 77;
@@ -364,7 +462,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel9.Location = new System.Drawing.Point(635, 32);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1, 729);
             this.panel9.TabIndex = 76;
@@ -381,7 +479,7 @@
             this.btnFee_bill.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnFee_bill.ForeColor = System.Drawing.Color.Black;
             this.btnFee_bill.Location = new System.Drawing.Point(436, 122);
-            this.btnFee_bill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFee_bill.Margin = new System.Windows.Forms.Padding(4);
             this.btnFee_bill.Name = "btnFee_bill";
             this.btnFee_bill.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.btnFee_bill.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -397,7 +495,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel8.Location = new System.Drawing.Point(623, 32);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1, 729);
             this.panel8.TabIndex = 79;
@@ -414,7 +512,7 @@
             this.btnFee_search.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnFee_search.ForeColor = System.Drawing.Color.Black;
             this.btnFee_search.Location = new System.Drawing.Point(436, 70);
-            this.btnFee_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFee_search.Margin = new System.Windows.Forms.Padding(4);
             this.btnFee_search.Name = "btnFee_search";
             this.btnFee_search.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.btnFee_search.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -424,12 +522,13 @@
             this.btnFee_search.Text = "TÌM KIẾM";
             this.btnFee_search.TextColor = System.Drawing.Color.White;
             this.btnFee_search.UseVisualStyleBackColor = true;
+            this.btnFee_search.Click += new System.EventHandler(this.btnFee_search_Click);
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.panel7.Location = new System.Drawing.Point(16, 32);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1, 729);
             this.panel7.TabIndex = 78;
@@ -446,7 +545,7 @@
             this.btnFeeBill_search.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnFeeBill_search.ForeColor = System.Drawing.Color.Black;
             this.btnFeeBill_search.Location = new System.Drawing.Point(1128, 390);
-            this.btnFeeBill_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFeeBill_search.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeeBill_search.Name = "btnFeeBill_search";
             this.btnFeeBill_search.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(114)))), ((int)(((byte)(187)))));
             this.btnFeeBill_search.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(114)))), ((int)(((byte)(187)))));
@@ -456,6 +555,7 @@
             this.btnFeeBill_search.Text = "TÌM";
             this.btnFeeBill_search.TextColor = System.Drawing.Color.White;
             this.btnFeeBill_search.UseVisualStyleBackColor = true;
+            this.btnFeeBill_search.Click += new System.EventHandler(this.btnFeeBill_search_Click);
             // 
             // btnFeeBill_all
             // 
@@ -469,7 +569,7 @@
             this.btnFeeBill_all.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnFeeBill_all.ForeColor = System.Drawing.Color.Black;
             this.btnFeeBill_all.Location = new System.Drawing.Point(663, 390);
-            this.btnFeeBill_all.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFeeBill_all.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeeBill_all.Name = "btnFeeBill_all";
             this.btnFeeBill_all.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.btnFeeBill_all.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -479,117 +579,22 @@
             this.btnFeeBill_all.Text = "ALL";
             this.btnFeeBill_all.TextColor = System.Drawing.Color.White;
             this.btnFeeBill_all.UseVisualStyleBackColor = true;
-            // 
-            // btnFeeBill_clear
-            // 
-            this.btnFeeBill_clear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_clear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_clear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFeeBill_clear.Enabled = false;
-            this.btnFeeBill_clear.FlatAppearance.BorderSize = 0;
-            this.btnFeeBill_clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeBill_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnFeeBill_clear.ForeColor = System.Drawing.Color.Black;
-            this.btnFeeBill_clear.Location = new System.Drawing.Point(1104, 209);
-            this.btnFeeBill_clear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnFeeBill_clear.Name = "btnFeeBill_clear";
-            this.btnFeeBill_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
-            this.btnFeeBill_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
-            this.btnFeeBill_clear.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnFeeBill_clear.Size = new System.Drawing.Size(88, 41);
-            this.btnFeeBill_clear.TabIndex = 70;
-            this.btnFeeBill_clear.Text = "CLEAR";
-            this.btnFeeBill_clear.TextColor = System.Drawing.Color.White;
-            this.btnFeeBill_clear.UseVisualStyleBackColor = true;
-            // 
-            // btnFeeBill_delete
-            // 
-            this.btnFeeBill_delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_delete.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFeeBill_delete.Enabled = false;
-            this.btnFeeBill_delete.FlatAppearance.BorderSize = 0;
-            this.btnFeeBill_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeBill_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnFeeBill_delete.ForeColor = System.Drawing.Color.Black;
-            this.btnFeeBill_delete.Location = new System.Drawing.Point(1104, 161);
-            this.btnFeeBill_delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnFeeBill_delete.Name = "btnFeeBill_delete";
-            this.btnFeeBill_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
-            this.btnFeeBill_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
-            this.btnFeeBill_delete.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnFeeBill_delete.Size = new System.Drawing.Size(88, 41);
-            this.btnFeeBill_delete.TabIndex = 68;
-            this.btnFeeBill_delete.Text = "XÓA";
-            this.btnFeeBill_delete.TextColor = System.Drawing.Color.White;
-            this.btnFeeBill_delete.UseVisualStyleBackColor = true;
-            // 
-            // btnFeeBill_edit
-            // 
-            this.btnFeeBill_edit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_edit.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_edit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFeeBill_edit.Enabled = false;
-            this.btnFeeBill_edit.FlatAppearance.BorderSize = 0;
-            this.btnFeeBill_edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeBill_edit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnFeeBill_edit.ForeColor = System.Drawing.Color.Black;
-            this.btnFeeBill_edit.Location = new System.Drawing.Point(1104, 113);
-            this.btnFeeBill_edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnFeeBill_edit.Name = "btnFeeBill_edit";
-            this.btnFeeBill_edit.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
-            this.btnFeeBill_edit.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
-            this.btnFeeBill_edit.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnFeeBill_edit.Size = new System.Drawing.Size(88, 41);
-            this.btnFeeBill_edit.TabIndex = 66;
-            this.btnFeeBill_edit.Text = "SỬA";
-            this.btnFeeBill_edit.TextColor = System.Drawing.Color.White;
-            this.btnFeeBill_edit.UseVisualStyleBackColor = true;
+            this.btnFeeBill_all.Click += new System.EventHandler(this.btnFeeBill_all_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.Location = new System.Drawing.Point(219, 156);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(209, 1);
             this.panel2.TabIndex = 62;
-            // 
-            // btnFeeBill_add
-            // 
-            this.btnFeeBill_add.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_add.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFeeBill_add.Enabled = false;
-            this.btnFeeBill_add.FlatAppearance.BorderSize = 0;
-            this.btnFeeBill_add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeBill_add.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnFeeBill_add.ForeColor = System.Drawing.Color.Black;
-            this.btnFeeBill_add.Location = new System.Drawing.Point(1104, 65);
-            this.btnFeeBill_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnFeeBill_add.Name = "btnFeeBill_add";
-            this.btnFeeBill_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
-            this.btnFeeBill_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
-            this.btnFeeBill_add.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnFeeBill_add.Size = new System.Drawing.Size(88, 41);
-            this.btnFeeBill_add.TabIndex = 74;
-            this.btnFeeBill_add.Text = "THÊM";
-            this.btnFeeBill_add.TextColor = System.Drawing.Color.White;
-            this.btnFeeBill_add.UseVisualStyleBackColor = true;
             // 
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel19.Location = new System.Drawing.Point(219, 105);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(209, 1);
             this.panel19.TabIndex = 62;
@@ -598,7 +603,7 @@
             // 
             this.panel15.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel15.Location = new System.Drawing.Point(973, 425);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(147, 1);
             this.panel15.TabIndex = 63;
@@ -607,7 +612,7 @@
             // 
             this.panel24.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel24.Location = new System.Drawing.Point(827, 191);
-            this.panel24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel24.Margin = new System.Windows.Forms.Padding(4);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(224, 1);
             this.panel24.TabIndex = 56;
@@ -616,7 +621,7 @@
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel6.Location = new System.Drawing.Point(825, 263);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(224, 1);
             this.panel6.TabIndex = 56;
@@ -625,7 +630,7 @@
             // 
             this.panel18.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel18.Location = new System.Drawing.Point(825, 117);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(224, 1);
             this.panel18.TabIndex = 56;
@@ -634,7 +639,7 @@
             // 
             this.panel17.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel17.Location = new System.Drawing.Point(827, 337);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(224, 1);
             this.panel17.TabIndex = 55;
@@ -643,7 +648,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel5.Location = new System.Drawing.Point(827, 300);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(224, 1);
             this.panel5.TabIndex = 55;
@@ -652,7 +657,7 @@
             // 
             this.panel23.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel23.Location = new System.Drawing.Point(827, 154);
-            this.panel23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel23.Margin = new System.Windows.Forms.Padding(4);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(224, 1);
             this.panel23.TabIndex = 55;
@@ -664,7 +669,7 @@
             this.txtFeeBill.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill.Location = new System.Drawing.Point(224, 129);
-            this.txtFeeBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill.Name = "txtFeeBill";
             this.txtFeeBill.Size = new System.Drawing.Size(204, 23);
             this.txtFeeBill.TabIndex = 53;
@@ -673,7 +678,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel3.Location = new System.Drawing.Point(825, 226);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(224, 1);
             this.panel3.TabIndex = 55;
@@ -682,7 +687,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel4.Location = new System.Drawing.Point(825, 80);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(224, 1);
             this.panel4.TabIndex = 55;
@@ -693,7 +698,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.textBox1.Location = new System.Drawing.Point(224, 132);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 23);
             this.textBox1.TabIndex = 49;
@@ -705,7 +710,7 @@
             this.txtFeeSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeSearch.Location = new System.Drawing.Point(224, 78);
-            this.txtFeeSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeSearch.Name = "txtFeeSearch";
             this.txtFeeSearch.Size = new System.Drawing.Size(204, 23);
             this.txtFeeSearch.TabIndex = 53;
@@ -716,7 +721,7 @@
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.textBox10.Location = new System.Drawing.Point(224, 80);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(200, 23);
             this.textBox10.TabIndex = 49;
@@ -728,10 +733,11 @@
             this.txtFeeBill_search.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill_search.Location = new System.Drawing.Point(979, 398);
-            this.txtFeeBill_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill_search.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill_search.Name = "txtFeeBill_search";
             this.txtFeeBill_search.Size = new System.Drawing.Size(137, 23);
             this.txtFeeBill_search.TabIndex = 52;
+            this.txtFeeBill_search.TextChanged += new System.EventHandler(this.txtFeeBill_search_TextChanged);
             // 
             // textBox8
             // 
@@ -739,7 +745,7 @@
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.textBox8.Location = new System.Drawing.Point(979, 400);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(137, 23);
             this.textBox8.TabIndex = 51;
@@ -748,11 +754,10 @@
             // 
             this.txtFeeBill_sumDay.BackColor = System.Drawing.Color.White;
             this.txtFeeBill_sumDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeeBill_sumDay.Enabled = false;
             this.txtFeeBill_sumDay.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill_sumDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill_sumDay.Location = new System.Drawing.Point(832, 166);
-            this.txtFeeBill_sumDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill_sumDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill_sumDay.Name = "txtFeeBill_sumDay";
             this.txtFeeBill_sumDay.Size = new System.Drawing.Size(215, 23);
             this.txtFeeBill_sumDay.TabIndex = 44;
@@ -761,11 +766,10 @@
             // 
             this.txtFeeBill_sumFee.BackColor = System.Drawing.Color.White;
             this.txtFeeBill_sumFee.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeeBill_sumFee.Enabled = false;
             this.txtFeeBill_sumFee.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill_sumFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill_sumFee.Location = new System.Drawing.Point(831, 239);
-            this.txtFeeBill_sumFee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill_sumFee.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill_sumFee.Name = "txtFeeBill_sumFee";
             this.txtFeeBill_sumFee.Size = new System.Drawing.Size(215, 23);
             this.txtFeeBill_sumFee.TabIndex = 44;
@@ -774,11 +778,10 @@
             // 
             this.txtFeeBill_studentID.BackColor = System.Drawing.Color.White;
             this.txtFeeBill_studentID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeeBill_studentID.Enabled = false;
             this.txtFeeBill_studentID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill_studentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill_studentID.Location = new System.Drawing.Point(831, 92);
-            this.txtFeeBill_studentID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill_studentID.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill_studentID.Name = "txtFeeBill_studentID";
             this.txtFeeBill_studentID.Size = new System.Drawing.Size(215, 23);
             this.txtFeeBill_studentID.TabIndex = 44;
@@ -787,11 +790,10 @@
             // 
             this.txtFeeBill_takeForDate.BackColor = System.Drawing.Color.White;
             this.txtFeeBill_takeForDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeeBill_takeForDate.Enabled = false;
             this.txtFeeBill_takeForDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill_takeForDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill_takeForDate.Location = new System.Drawing.Point(832, 313);
-            this.txtFeeBill_takeForDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill_takeForDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill_takeForDate.Name = "txtFeeBill_takeForDate";
             this.txtFeeBill_takeForDate.Size = new System.Drawing.Size(215, 23);
             this.txtFeeBill_takeForDate.TabIndex = 46;
@@ -800,11 +802,10 @@
             // 
             this.txtFeeBill_dateTake.BackColor = System.Drawing.Color.White;
             this.txtFeeBill_dateTake.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeeBill_dateTake.Enabled = false;
             this.txtFeeBill_dateTake.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill_dateTake.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill_dateTake.Location = new System.Drawing.Point(832, 276);
-            this.txtFeeBill_dateTake.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill_dateTake.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill_dateTake.Name = "txtFeeBill_dateTake";
             this.txtFeeBill_dateTake.Size = new System.Drawing.Size(215, 23);
             this.txtFeeBill_dateTake.TabIndex = 46;
@@ -813,11 +814,10 @@
             // 
             this.txtFeeBill_classID.BackColor = System.Drawing.Color.White;
             this.txtFeeBill_classID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeeBill_classID.Enabled = false;
             this.txtFeeBill_classID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill_classID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill_classID.Location = new System.Drawing.Point(832, 129);
-            this.txtFeeBill_classID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill_classID.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill_classID.Name = "txtFeeBill_classID";
             this.txtFeeBill_classID.Size = new System.Drawing.Size(215, 23);
             this.txtFeeBill_classID.TabIndex = 46;
@@ -826,11 +826,10 @@
             // 
             this.txtFeeBill_feePerDay.BackColor = System.Drawing.Color.White;
             this.txtFeeBill_feePerDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeeBill_feePerDay.Enabled = false;
             this.txtFeeBill_feePerDay.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill_feePerDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill_feePerDay.Location = new System.Drawing.Point(831, 202);
-            this.txtFeeBill_feePerDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill_feePerDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill_feePerDay.Name = "txtFeeBill_feePerDay";
             this.txtFeeBill_feePerDay.Size = new System.Drawing.Size(215, 23);
             this.txtFeeBill_feePerDay.TabIndex = 46;
@@ -839,11 +838,10 @@
             // 
             this.txtFeeBill_id.BackColor = System.Drawing.Color.White;
             this.txtFeeBill_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeeBill_id.Enabled = false;
             this.txtFeeBill_id.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtFeeBill_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtFeeBill_id.Location = new System.Drawing.Point(831, 55);
-            this.txtFeeBill_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFeeBill_id.Margin = new System.Windows.Forms.Padding(4);
             this.txtFeeBill_id.Name = "txtFeeBill_id";
             this.txtFeeBill_id.Size = new System.Drawing.Size(215, 23);
             this.txtFeeBill_id.TabIndex = 46;
@@ -977,15 +975,16 @@
             this.ClientSize = new System.Drawing.Size(1257, 773);
             this.Controls.Add(this.pnlSalary);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fFee";
             this.Text = "QUẢN LÝ HỌC PHÍ";
+            this.Load += new System.EventHandler(this.fFee_Load);
             this.pnlSalary.ResumeLayout(false);
             this.pnlSalary.PerformLayout();
             this.colorBorderGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalary_bill)).EndInit();
             this.colorBorderGroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFee)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1001,7 +1000,7 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         private ColorBorderGroupBox colorBorderGroupBox1;
-        private System.Windows.Forms.DataGridView dgvSalary;
+        private System.Windows.Forms.DataGridView dgvFee;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel1;
@@ -1014,11 +1013,7 @@
         private System.Windows.Forms.Panel panel7;
         private ePOSOne.btnProduct.Button_WOC btnFeeBill_search;
         private ePOSOne.btnProduct.Button_WOC btnFeeBill_all;
-        private ePOSOne.btnProduct.Button_WOC btnFeeBill_clear;
-        private ePOSOne.btnProduct.Button_WOC btnFeeBill_delete;
-        private ePOSOne.btnProduct.Button_WOC btnFeeBill_edit;
         private System.Windows.Forms.Panel panel2;
-        private ePOSOne.btnProduct.Button_WOC btnFeeBill_add;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel24;
@@ -1033,7 +1028,6 @@
         private System.Windows.Forms.TextBox txtFeeSearch;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox txtFeeBill_search;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox txtFeeBill_sumDay;
         private System.Windows.Forms.TextBox txtFeeBill_sumFee;
         private System.Windows.Forms.TextBox txtFeeBill_studentID;
@@ -1055,5 +1049,10 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.TextBox txtFeeBill_takeForDate;
         private System.Windows.Forms.Label label6;
+        private ePOSOne.btnProduct.Button_WOC btnFeeBill_clear;
+        private ePOSOne.btnProduct.Button_WOC btnFeeBill_add;
+        private ePOSOne.btnProduct.Button_WOC btnFeeBill_edit;
+        private ePOSOne.btnProduct.Button_WOC btnFeeBill_delete;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }

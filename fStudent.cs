@@ -24,7 +24,6 @@ namespace Thuc_Tap_CSDL
         SqlConnection con;
 
 
-
         private void fStudent_Load(object sender, EventArgs e)
         {
             txtStudentID.Focus();
@@ -147,14 +146,113 @@ namespace Thuc_Tap_CSDL
 
         private void btnStudent_search_Click(object sender, EventArgs e)
         {
-            string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_MAHS('" + txtStudentSearch.Text + "')";
+            if(cmbStudent.SelectedItem == "Mã học sinh")
+                {
 
-            SqlCommand cmd = new SqlCommand(sqlCode1, con);
-            cmd.ExecuteNonQuery();
-            SqlDataReader dataReader = cmd.ExecuteReader();
-            DataTable dataTable = new DataTable();
-            dataTable.Load(dataReader);
-            dgvStudent.DataSource = dataTable;
+
+                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_MAHS('" + txtStudentSearch.Text + "')";
+
+                SqlCommand cmd = new SqlCommand(sqlCode1, con);
+                cmd.ExecuteNonQuery();
+
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                dgvStudent.DataSource = dataTable;
+            }
+
+            if (cmbStudent.SelectedItem == "Tên học sinh")
+            {
+
+                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_TENHS('" + txtStudentSearch.Text + "')";
+
+                SqlCommand cmd = new SqlCommand(sqlCode1, con);
+                cmd.ExecuteNonQuery();
+
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                dgvStudent.DataSource = dataTable;
+            }
+
+            if (cmbStudent.SelectedItem == "Ngày sinh")
+            {
+
+                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_NGAYSINH('" + txtStudentSearch.Text + "')";
+
+                SqlCommand cmd = new SqlCommand(sqlCode1, con);
+                cmd.ExecuteNonQuery();
+
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                dgvStudent.DataSource = dataTable;
+            }
+
+            if (cmbStudent.SelectedItem == "Giới tính")
+            {
+
+                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_GIOITINH('" + txtStudentSearch.Text + "')";
+
+                SqlCommand cmd = new SqlCommand(sqlCode1, con);
+                cmd.ExecuteNonQuery();
+
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                dgvStudent.DataSource = dataTable;
+            }
+
+            if (cmbStudent.SelectedItem == "Địa chỉ")
+            {
+
+                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_DIACHI('" + txtStudentSearch.Text + "')";
+
+                SqlCommand cmd = new SqlCommand(sqlCode1, con);
+                cmd.ExecuteNonQuery();
+
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                dgvStudent.DataSource = dataTable;
+            }
+
+            if (cmbStudent.SelectedItem == "Số điện thoại")
+            {
+
+                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_SDT('" + txtStudentSearch.Text + "')";
+
+                SqlCommand cmd = new SqlCommand(sqlCode1, con);
+                cmd.ExecuteNonQuery();
+
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                dgvStudent.DataSource = dataTable;
+            }
+
+        }
+
+        private void dgvStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dgvStudent.CurrentRow.Index;
+            txtStudentID.Text = dgvStudent.Rows[i].Cells[0].Value.ToString();
+            txtStudentName.Text = dgvStudent.Rows[i].Cells[1].Value.ToString();
+            txtStudentBirth.Text = dgvStudent.Rows[i].Cells[2].Value.ToString();
+            //radGender_male.Checked = dgvStudent.Rows[i].Cells[3].Value.ToString();
+            txtStudentAddress.Text = dgvStudent.Rows[i].Cells[4].Value.ToString();
+            txtStudentPhone.Text = dgvStudent.Rows[i].Cells[5].Value.ToString();
+        }
+
+        private void txtStudentID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbStudent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

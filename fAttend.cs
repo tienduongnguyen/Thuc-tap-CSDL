@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Thuc_Tap_CSDL
 {
@@ -21,6 +23,7 @@ namespace Thuc_Tap_CSDL
         }
 
         private Form activeForm;
+        SqlConnection con;
 
         private void openChildForm(Form childForm, object btnsender)
         {
@@ -56,6 +59,27 @@ namespace Thuc_Tap_CSDL
         {
             lblPresent.Text = "0";
             lblSum.Text = sum.ToString();
+
+
+            string conString = ConfigurationManager.ConnectionStrings["QLTrungTamHocThem"].ConnectionString.ToString();
+            con = new SqlConnection(conString);
+            con.Open();
+
+            Display();
+        }
+
+        public void Display()
+        {
+            string sqlCode = "SELECT * FROM DIEMDANH";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+
+
+            dataTable.Load(dataReader);
+            dgvAttend.DataSource = dataTable;
         }
     }
 }

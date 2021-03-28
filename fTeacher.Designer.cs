@@ -148,6 +148,7 @@
             this.cmbTeacher.Name = "cmbTeacher";
             this.cmbTeacher.Size = new System.Drawing.Size(157, 31);
             this.cmbTeacher.TabIndex = 91;
+            this.cmbTeacher.SelectedIndexChanged += new System.EventHandler(this.cmbTeacher_SelectedIndexChanged);
             // 
             // radGender_female
             // 
@@ -222,6 +223,7 @@
             this.dgvTeacher.RowHeadersWidth = 51;
             this.dgvTeacher.Size = new System.Drawing.Size(1201, 399);
             this.dgvTeacher.TabIndex = 0;
+            this.dgvTeacher.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTeacher_CellContentClick);
             // 
             // panel1
             // 
