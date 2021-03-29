@@ -17,6 +17,18 @@ namespace Thuc_Tap_CSDL
             InitializeComponent();
         }
 
+        public fMain(string name)
+        {
+            if (name == "staff")
+            {
+                InitializeComponent();
+                btnFee.Visible = false;
+                btnSalary.Visible = false;
+                btnStatistic.Visible = false;               
+            }
+            else InitializeComponent();
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();

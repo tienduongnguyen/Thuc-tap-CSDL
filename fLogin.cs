@@ -95,7 +95,7 @@ namespace Thuc_Tap_CSDL
             if((txtUser.Text == "admin" && txtPassword.Text == "admin") || (txtUser.Text == "staff" && txtPassword.Text == "staff"))
             {
                 this.Hide();
-                fMain fmain = new fMain();
+                fMain fmain = new fMain(txtUser.Text);
                 fmain.ShowDialog();
                 this.Show();
                 txtUser.Text = "Tên đăng nhập";
