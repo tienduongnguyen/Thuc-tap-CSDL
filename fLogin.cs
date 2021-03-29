@@ -17,8 +17,8 @@ namespace Thuc_Tap_CSDL
             InitializeComponent();
         }
 
-        string username = "admin";
-        string password = "admin";
+        //string username = "admin";
+        //string password = "admin";
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -92,7 +92,7 @@ namespace Thuc_Tap_CSDL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUser.Text == username && txtPassword.Text == password)
+            if((txtUser.Text == "admin" && txtPassword.Text == "admin") || (txtUser.Text == "staff" && txtPassword.Text == "staff"))
             {
                 this.Hide();
                 fMain fmain = new fMain();

@@ -86,3 +86,21 @@ D:\QUAN TRỌNG\Thực tập CSDL\TT CSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.
 D:\QUAN TRỌNG\Thực tập CSDL\TT CSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
 D:\QUAN TRỌNG\Thực tập CSDL\TT CSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.exe
 D:\QUAN TRỌNG\Thực tập CSDL\TT CSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.pdb
+D:\Repos\Thuc-tap-CSDL\bin\Debug\Thuc Tap CSDL.exe.config
+D:\Repos\Thuc-tap-CSDL\bin\Debug\Thuc Tap CSDL.exe
+D:\Repos\Thuc-tap-CSDL\bin\Debug\Thuc Tap CSDL.pdb
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csprojAssemblyReference.cache
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fAttend.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fClass.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fFee.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fMain.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fLogin.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fSalary.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fStatistic.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fStudent.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fTeacher.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.Properties.Resources.resources
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.GenerateResource.cache
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.exe
+D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.pdb
