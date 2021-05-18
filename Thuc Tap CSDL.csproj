@@ -109,6 +109,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLTrungTamHocThemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTrungTamHocThemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLTrungTamHocThemDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTrungTamHocThemDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="fAttend.resx">
       <DependentUpon>fAttend.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +170,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLTrungTamHocThemDataSet.xsc">
+      <DependentUpon>QLTrungTamHocThemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTrungTamHocThemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTrungTamHocThemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTrungTamHocThemDataSet.xss">
+      <DependentUpon>QLTrungTamHocThemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTrungTamHocThemDataSet1.xsc">
+      <DependentUpon>QLTrungTamHocThemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLTrungTamHocThemDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTrungTamHocThemDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTrungTamHocThemDataSet1.xss">
+      <DependentUpon>QLTrungTamHocThemDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Resources\add.ico" />
   </ItemGroup>
   <ItemGroup>

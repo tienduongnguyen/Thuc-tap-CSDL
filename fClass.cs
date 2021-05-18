@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 
 namespace Thuc_Tap_CSDL
 {
+  
     public partial class fClass : Form
     {
         public fClass()
@@ -82,7 +83,7 @@ namespace Thuc_Tap_CSDL
         {
          
 
-            string sqlInsert = "exec PROC_INSERT_HOCSINH '" + txtClassID.Text + "','" + txtClassName.Text + "','" + txtSumStudent.Text + "','" + txtCourse.Text + "','" + txtFeeLevel.Text + "', '" + txtTeacherID.Text + "','" + txtSubjectID.Text + "'";
+            string sqlInsert = "exec PROC_INSERT_LOPHOC '" + txtClassID.Text + "','" + txtClassName.Text + "','" + txtSumStudent.Text + "','" + txtCourse.Text + "','" + txtFeeLevel.Text + "', '" + txtTeacherID.Text + "','" + txtSubjectID.Text + "'";
 
 
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
@@ -152,6 +153,19 @@ namespace Thuc_Tap_CSDL
                 DataTable dataTable = new DataTable();
                 dataTable.Load(dataReader);
                 dgvClass.DataSource = dataTable;
+            }
+
+            if (cmbClass.SelectedItem == "Mã lớp học")
+            {
+
+                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BH_MALH('" + txtClassSearch.Text + "')";
+
+                SqlCommand cmd = new SqlCommand(sqlCode2, con);
+                cmd.ExecuteNonQuery();
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                dgvLesson.DataSource = dataTable;
             }
 
             if (cmbClass.SelectedItem == "Tên lớp học")
@@ -244,13 +258,24 @@ namespace Thuc_Tap_CSDL
         {
             int i;
             i = dgvClass.CurrentRow.Index;
-            txtClassID.Text = dgvClass.Rows[i].Cells[0].Value.ToString();
+            txtClassID.Text = txtLessonClassID.Text  = dgvClass.Rows[i].Cells[0].Value.ToString();
             txtClassName.Text = dgvClass.Rows[i].Cells[1].Value.ToString();
             txtSumStudent.Text = dgvClass.Rows[i].Cells[2].Value.ToString();
             txtCourse.Text = dgvClass.Rows[i].Cells[3].Value.ToString();
             txtFeeLevel.Text = dgvClass.Rows[i].Cells[4].Value.ToString();
             txtTeacherID.Text = dgvClass.Rows[i].Cells[5].Value.ToString();
             txtSubjectID.Text = dgvClass.Rows[i].Cells[6].Value.ToString();
+
+            
+
+            //print buoi hoc cua lop duoc chon sang dgvLesson
+            string lesson_sqlCode = "SELECT * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text +"'";
+            SqlCommand lesson_cmd = new SqlCommand(lesson_sqlCode, con);
+            SqlDataReader lesson_dataReader = lesson_cmd.ExecuteReader();
+            DataTable lesson_dataTable = new DataTable();
+            lesson_dataTable.Load(lesson_dataReader);
+            dgvLesson.DataSource = lesson_dataTable;
+
         }
 
         private void dgvLesson_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -261,13 +286,10 @@ namespace Thuc_Tap_CSDL
             txtLessonDate.Text = dgvLesson.Rows[i].Cells[1].Value.ToString();
             txtLessonTime.Text = dgvLesson.Rows[i].Cells[2].Value.ToString();
             txtLessonClassID.Text = dgvLesson.Rows[i].Cells[3].Value.ToString();
-            
         }
 
         private void btnLesson_add_Click(object sender, EventArgs e)
         {
-            openChildForm(new fAttend(), sender); 
-
             string sqlInsert = "exec PROC_INSERT_BUOIHOC '" + txtLessonID.Text + "','" + txtLessonDate.Text + "','" + txtLessonTime.Text + "','" + txtLessonClassID.Text + "' ";
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
             cmd.ExecuteNonQuery();
@@ -368,6 +390,28 @@ namespace Thuc_Tap_CSDL
            
         }
 
-       
+        private void button_WOC1_Click(object sender, EventArgs e)
+        {
+            string text = txtLessonID.Text;
+            if (text != "")
+                openChildForm(new fAttend(), sender);
+
+           
+        }
+
+        private void btnDSL_Click(object sender, EventArgs e)
+        {
+            string class_sqlCode = "SELECT * FROM DANHSACHLOP WHERE MaLopHoc = '" + txtClassID.Text + "'";
+            SqlCommand class_cmd = new SqlCommand(class_sqlCode, con);
+            SqlDataReader class_dataReader = class_cmd.ExecuteReader();
+            DataTable class_dataTable = new DataTable();
+            class_dataTable.Load(class_dataReader);
+            dgvClass.DataSource = class_dataTable;
+        }
+
+        private void txtLessonID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

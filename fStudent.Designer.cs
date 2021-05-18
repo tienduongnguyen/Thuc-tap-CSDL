@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlStudent = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textmalop = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtStudentBirth = new System.Windows.Forms.TextBox();
             this.cmbStudent = new System.Windows.Forms.ComboBox();
@@ -36,19 +41,11 @@
             this.radGender_male = new System.Windows.Forms.RadioButton();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
-            this.dgvStudent = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.btnStudent_search = new ePOSOne.btnProduct.Button_WOC();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.btnStudent_all = new ePOSOne.btnProduct.Button_WOC();
-            this.btnStudent_clear = new ePOSOne.btnProduct.Button_WOC();
-            this.btnStudent_delete = new ePOSOne.btnProduct.Button_WOC();
-            this.btnStudent_edit = new ePOSOne.btnProduct.Button_WOC();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.btnStudent_add = new ePOSOne.btnProduct.Button_WOC();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -66,7 +63,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lOPHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLTrungTamHocThemDataSet1 = new Thuc_Tap_CSDL.QLTrungTamHocThemDataSet1();
+            this.lOPHOCTableAdapter = new Thuc_Tap_CSDL.QLTrungTamHocThemDataSet1TableAdapters.LOPHOCTableAdapter();
+            this.qLTrungTamHocThemDataSet = new Thuc_Tap_CSDL.QLTrungTamHocThemDataSet();
+            this.qLTrungTamHocThemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
+            this.dgvStudent = new System.Windows.Forms.DataGridView();
+            this.btnStudent_search = new ePOSOne.btnProduct.Button_WOC();
+            this.btnStudent_all = new ePOSOne.btnProduct.Button_WOC();
+            this.btnStudent_clear = new ePOSOne.btnProduct.Button_WOC();
+            this.btnStudent_delete = new ePOSOne.btnProduct.Button_WOC();
+            this.btnStudent_edit = new ePOSOne.btnProduct.Button_WOC();
+            this.btnStudent_add = new ePOSOne.btnProduct.Button_WOC();
             this.pnlStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPHOCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSetBindingSource)).BeginInit();
             this.colorBorderGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +88,10 @@
             // pnlStudent
             // 
             this.pnlStudent.BackColor = System.Drawing.Color.White;
+            this.pnlStudent.Controls.Add(this.comboBox1);
+            this.pnlStudent.Controls.Add(this.panel5);
+            this.pnlStudent.Controls.Add(this.textmalop);
+            this.pnlStudent.Controls.Add(this.label5);
             this.pnlStudent.Controls.Add(this.panel3);
             this.pnlStudent.Controls.Add(this.txtStudentBirth);
             this.pnlStudent.Controls.Add(this.cmbStudent);
@@ -117,6 +135,48 @@
             this.pnlStudent.Size = new System.Drawing.Size(1257, 773);
             this.pnlStudent.TabIndex = 2;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(835, 206);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 97;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel5.Location = new System.Drawing.Point(689, 230);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(267, 1);
+            this.panel5.TabIndex = 96;
+            // 
+            // textmalop
+            // 
+            this.textmalop.BackColor = System.Drawing.Color.White;
+            this.textmalop.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textmalop.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.textmalop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.textmalop.Location = new System.Drawing.Point(689, 205);
+            this.textmalop.Margin = new System.Windows.Forms.Padding(4);
+            this.textmalop.Name = "textmalop";
+            this.textmalop.Size = new System.Drawing.Size(99, 23);
+            this.textmalop.TabIndex = 95;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label5.Location = new System.Drawing.Point(610, 205);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 23);
+            this.label5.TabIndex = 94;
+            this.label5.Text = "Mã lớp:";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -158,7 +218,6 @@
             this.cmbStudent.Name = "cmbStudent";
             this.cmbStudent.Size = new System.Drawing.Size(178, 31);
             this.cmbStudent.TabIndex = 91;
-            this.cmbStudent.SelectedIndexChanged += new System.EventHandler(this.cmbStudent_SelectedIndexChanged);
             // 
             // radGender_female
             // 
@@ -206,35 +265,6 @@
             this.panel13.Size = new System.Drawing.Size(736, 1);
             this.panel13.TabIndex = 84;
             // 
-            // colorBorderGroupBox1
-            // 
-            this.colorBorderGroupBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.colorBorderGroupBox1.Controls.Add(this.dgvStudent);
-            this.colorBorderGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.colorBorderGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.colorBorderGroupBox1.Location = new System.Drawing.Point(20, 321);
-            this.colorBorderGroupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.colorBorderGroupBox1.Name = "colorBorderGroupBox1";
-            this.colorBorderGroupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.colorBorderGroupBox1.Size = new System.Drawing.Size(1217, 436);
-            this.colorBorderGroupBox1.TabIndex = 86;
-            this.colorBorderGroupBox1.TabStop = false;
-            this.colorBorderGroupBox1.Text = "Danh sách học sinh";
-            // 
-            // dgvStudent
-            // 
-            this.dgvStudent.BackgroundColor = System.Drawing.Color.White;
-            this.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvStudent.Location = new System.Drawing.Point(8, 30);
-            this.dgvStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvStudent.Name = "dgvStudent";
-            this.dgvStudent.RowHeadersWidth = 51;
-            this.dgvStudent.Size = new System.Drawing.Size(1201, 399);
-            this.dgvStudent.TabIndex = 0;
-            this.dgvStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudent_CellContentClick);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -262,30 +292,6 @@
             this.panel10.Size = new System.Drawing.Size(1, 729);
             this.panel10.TabIndex = 77;
             // 
-            // btnStudent_search
-            // 
-            this.btnStudent_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_search.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStudent_search.FlatAppearance.BorderSize = 0;
-            this.btnStudent_search.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent_search.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnStudent_search.ForeColor = System.Drawing.Color.Black;
-            this.btnStudent_search.Location = new System.Drawing.Point(1125, 281);
-            this.btnStudent_search.Margin = new System.Windows.Forms.Padding(4);
-            this.btnStudent_search.Name = "btnStudent_search";
-            this.btnStudent_search.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(114)))), ((int)(((byte)(187)))));
-            this.btnStudent_search.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(114)))), ((int)(((byte)(187)))));
-            this.btnStudent_search.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnStudent_search.Size = new System.Drawing.Size(81, 36);
-            this.btnStudent_search.TabIndex = 75;
-            this.btnStudent_search.Text = "TÌM";
-            this.btnStudent_search.TextColor = System.Drawing.Color.White;
-            this.btnStudent_search.UseVisualStyleBackColor = true;
-            this.btnStudent_search.Click += new System.EventHandler(this.btnStudent_search_Click);
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -295,102 +301,6 @@
             this.panel7.Size = new System.Drawing.Size(1, 729);
             this.panel7.TabIndex = 78;
             // 
-            // btnStudent_all
-            // 
-            this.btnStudent_all.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_all.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_all.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStudent_all.FlatAppearance.BorderSize = 0;
-            this.btnStudent_all.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_all.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_all.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent_all.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnStudent_all.ForeColor = System.Drawing.Color.Black;
-            this.btnStudent_all.Location = new System.Drawing.Point(57, 276);
-            this.btnStudent_all.Margin = new System.Windows.Forms.Padding(4);
-            this.btnStudent_all.Name = "btnStudent_all";
-            this.btnStudent_all.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnStudent_all.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnStudent_all.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnStudent_all.Size = new System.Drawing.Size(81, 38);
-            this.btnStudent_all.TabIndex = 71;
-            this.btnStudent_all.Text = "ALL";
-            this.btnStudent_all.TextColor = System.Drawing.Color.White;
-            this.btnStudent_all.UseVisualStyleBackColor = true;
-            this.btnStudent_all.Click += new System.EventHandler(this.btnStudent_all_Click);
-            // 
-            // btnStudent_clear
-            // 
-            this.btnStudent_clear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_clear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_clear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStudent_clear.FlatAppearance.BorderSize = 0;
-            this.btnStudent_clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnStudent_clear.ForeColor = System.Drawing.Color.Black;
-            this.btnStudent_clear.Location = new System.Drawing.Point(1031, 222);
-            this.btnStudent_clear.Margin = new System.Windows.Forms.Padding(4);
-            this.btnStudent_clear.Name = "btnStudent_clear";
-            this.btnStudent_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
-            this.btnStudent_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
-            this.btnStudent_clear.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnStudent_clear.Size = new System.Drawing.Size(88, 41);
-            this.btnStudent_clear.TabIndex = 69;
-            this.btnStudent_clear.Text = "CLEAR";
-            this.btnStudent_clear.TextColor = System.Drawing.Color.White;
-            this.btnStudent_clear.UseVisualStyleBackColor = true;
-            this.btnStudent_clear.Click += new System.EventHandler(this.btnStudent_clear_Click);
-            // 
-            // btnStudent_delete
-            // 
-            this.btnStudent_delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_delete.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStudent_delete.FlatAppearance.BorderSize = 0;
-            this.btnStudent_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnStudent_delete.ForeColor = System.Drawing.Color.Black;
-            this.btnStudent_delete.Location = new System.Drawing.Point(1031, 174);
-            this.btnStudent_delete.Margin = new System.Windows.Forms.Padding(4);
-            this.btnStudent_delete.Name = "btnStudent_delete";
-            this.btnStudent_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
-            this.btnStudent_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
-            this.btnStudent_delete.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnStudent_delete.Size = new System.Drawing.Size(88, 41);
-            this.btnStudent_delete.TabIndex = 67;
-            this.btnStudent_delete.Text = "XÓA";
-            this.btnStudent_delete.TextColor = System.Drawing.Color.White;
-            this.btnStudent_delete.UseVisualStyleBackColor = true;
-            this.btnStudent_delete.Click += new System.EventHandler(this.btnStudent_delete_Click);
-            // 
-            // btnStudent_edit
-            // 
-            this.btnStudent_edit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_edit.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_edit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStudent_edit.FlatAppearance.BorderSize = 0;
-            this.btnStudent_edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent_edit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnStudent_edit.ForeColor = System.Drawing.Color.Black;
-            this.btnStudent_edit.Location = new System.Drawing.Point(1031, 126);
-            this.btnStudent_edit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnStudent_edit.Name = "btnStudent_edit";
-            this.btnStudent_edit.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
-            this.btnStudent_edit.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
-            this.btnStudent_edit.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnStudent_edit.Size = new System.Drawing.Size(88, 41);
-            this.btnStudent_edit.TabIndex = 65;
-            this.btnStudent_edit.Text = "SỬA";
-            this.btnStudent_edit.TextColor = System.Drawing.Color.White;
-            this.btnStudent_edit.UseVisualStyleBackColor = true;
-            this.btnStudent_edit.Click += new System.EventHandler(this.btnStudent_edit_Click);
-            // 
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -399,30 +309,6 @@
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(259, 1);
             this.panel19.TabIndex = 62;
-            // 
-            // btnStudent_add
-            // 
-            this.btnStudent_add.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_add.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnStudent_add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStudent_add.FlatAppearance.BorderSize = 0;
-            this.btnStudent_add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnStudent_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent_add.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnStudent_add.ForeColor = System.Drawing.Color.Black;
-            this.btnStudent_add.Location = new System.Drawing.Point(1031, 78);
-            this.btnStudent_add.Margin = new System.Windows.Forms.Padding(4);
-            this.btnStudent_add.Name = "btnStudent_add";
-            this.btnStudent_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
-            this.btnStudent_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
-            this.btnStudent_add.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnStudent_add.Size = new System.Drawing.Size(88, 41);
-            this.btnStudent_add.TabIndex = 64;
-            this.btnStudent_add.Text = "THÊM";
-            this.btnStudent_add.TextColor = System.Drawing.Color.White;
-            this.btnStudent_add.UseVisualStyleBackColor = true;
-            this.btnStudent_add.Click += new System.EventHandler(this.btnStudent_add_Click);
             // 
             // panel8
             // 
@@ -530,7 +416,6 @@
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.Size = new System.Drawing.Size(257, 23);
             this.txtStudentID.TabIndex = 45;
-            this.txtStudentID.TextChanged += new System.EventHandler(this.txtStudentID_TextChanged);
             // 
             // label9
             // 
@@ -617,6 +502,203 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "HỌC SINH";
             // 
+            // lOPHOCBindingSource
+            // 
+            this.lOPHOCBindingSource.DataMember = "LOPHOC";
+            this.lOPHOCBindingSource.DataSource = this.qLTrungTamHocThemDataSet1;
+            // 
+            // qLTrungTamHocThemDataSet1
+            // 
+            this.qLTrungTamHocThemDataSet1.DataSetName = "QLTrungTamHocThemDataSet1";
+            this.qLTrungTamHocThemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lOPHOCTableAdapter
+            // 
+            this.lOPHOCTableAdapter.ClearBeforeFill = true;
+            // 
+            // qLTrungTamHocThemDataSet
+            // 
+            this.qLTrungTamHocThemDataSet.DataSetName = "QLTrungTamHocThemDataSet";
+            this.qLTrungTamHocThemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // qLTrungTamHocThemDataSetBindingSource
+            // 
+            this.qLTrungTamHocThemDataSetBindingSource.DataSource = this.qLTrungTamHocThemDataSet;
+            this.qLTrungTamHocThemDataSetBindingSource.Position = 0;
+            // 
+            // colorBorderGroupBox1
+            // 
+            this.colorBorderGroupBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.colorBorderGroupBox1.Controls.Add(this.dgvStudent);
+            this.colorBorderGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.colorBorderGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.colorBorderGroupBox1.Location = new System.Drawing.Point(20, 321);
+            this.colorBorderGroupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.colorBorderGroupBox1.Name = "colorBorderGroupBox1";
+            this.colorBorderGroupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.colorBorderGroupBox1.Size = new System.Drawing.Size(1217, 436);
+            this.colorBorderGroupBox1.TabIndex = 86;
+            this.colorBorderGroupBox1.TabStop = false;
+            this.colorBorderGroupBox1.Text = "Danh sách học sinh";
+            // 
+            // dgvStudent
+            // 
+            this.dgvStudent.BackgroundColor = System.Drawing.Color.White;
+            this.dgvStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvStudent.Location = new System.Drawing.Point(8, 30);
+            this.dgvStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvStudent.Name = "dgvStudent";
+            this.dgvStudent.RowHeadersWidth = 51;
+            this.dgvStudent.Size = new System.Drawing.Size(1201, 399);
+            this.dgvStudent.TabIndex = 0;
+            this.dgvStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudent_CellContentClick);
+            // 
+            // btnStudent_search
+            // 
+            this.btnStudent_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_search.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStudent_search.FlatAppearance.BorderSize = 0;
+            this.btnStudent_search.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_search.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudent_search.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnStudent_search.ForeColor = System.Drawing.Color.Black;
+            this.btnStudent_search.Location = new System.Drawing.Point(1125, 281);
+            this.btnStudent_search.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStudent_search.Name = "btnStudent_search";
+            this.btnStudent_search.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(114)))), ((int)(((byte)(187)))));
+            this.btnStudent_search.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(114)))), ((int)(((byte)(187)))));
+            this.btnStudent_search.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnStudent_search.Size = new System.Drawing.Size(81, 36);
+            this.btnStudent_search.TabIndex = 75;
+            this.btnStudent_search.Text = "TÌM";
+            this.btnStudent_search.TextColor = System.Drawing.Color.White;
+            this.btnStudent_search.UseVisualStyleBackColor = true;
+            this.btnStudent_search.Click += new System.EventHandler(this.btnStudent_search_Click);
+            // 
+            // btnStudent_all
+            // 
+            this.btnStudent_all.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_all.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_all.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStudent_all.FlatAppearance.BorderSize = 0;
+            this.btnStudent_all.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_all.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_all.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudent_all.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnStudent_all.ForeColor = System.Drawing.Color.Black;
+            this.btnStudent_all.Location = new System.Drawing.Point(57, 276);
+            this.btnStudent_all.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStudent_all.Name = "btnStudent_all";
+            this.btnStudent_all.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnStudent_all.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnStudent_all.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnStudent_all.Size = new System.Drawing.Size(81, 38);
+            this.btnStudent_all.TabIndex = 71;
+            this.btnStudent_all.Text = "ALL";
+            this.btnStudent_all.TextColor = System.Drawing.Color.White;
+            this.btnStudent_all.UseVisualStyleBackColor = true;
+            this.btnStudent_all.Click += new System.EventHandler(this.btnStudent_all_Click);
+            // 
+            // btnStudent_clear
+            // 
+            this.btnStudent_clear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_clear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStudent_clear.FlatAppearance.BorderSize = 0;
+            this.btnStudent_clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudent_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnStudent_clear.ForeColor = System.Drawing.Color.Black;
+            this.btnStudent_clear.Location = new System.Drawing.Point(1031, 222);
+            this.btnStudent_clear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStudent_clear.Name = "btnStudent_clear";
+            this.btnStudent_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
+            this.btnStudent_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
+            this.btnStudent_clear.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnStudent_clear.Size = new System.Drawing.Size(88, 41);
+            this.btnStudent_clear.TabIndex = 69;
+            this.btnStudent_clear.Text = "CLEAR";
+            this.btnStudent_clear.TextColor = System.Drawing.Color.White;
+            this.btnStudent_clear.UseVisualStyleBackColor = true;
+            this.btnStudent_clear.Click += new System.EventHandler(this.btnStudent_clear_Click);
+            // 
+            // btnStudent_delete
+            // 
+            this.btnStudent_delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_delete.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStudent_delete.FlatAppearance.BorderSize = 0;
+            this.btnStudent_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudent_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnStudent_delete.ForeColor = System.Drawing.Color.Black;
+            this.btnStudent_delete.Location = new System.Drawing.Point(1031, 174);
+            this.btnStudent_delete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStudent_delete.Name = "btnStudent_delete";
+            this.btnStudent_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
+            this.btnStudent_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
+            this.btnStudent_delete.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnStudent_delete.Size = new System.Drawing.Size(88, 41);
+            this.btnStudent_delete.TabIndex = 67;
+            this.btnStudent_delete.Text = "XÓA";
+            this.btnStudent_delete.TextColor = System.Drawing.Color.White;
+            this.btnStudent_delete.UseVisualStyleBackColor = true;
+            this.btnStudent_delete.Click += new System.EventHandler(this.btnStudent_delete_Click);
+            // 
+            // btnStudent_edit
+            // 
+            this.btnStudent_edit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_edit.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_edit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStudent_edit.FlatAppearance.BorderSize = 0;
+            this.btnStudent_edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudent_edit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnStudent_edit.ForeColor = System.Drawing.Color.Black;
+            this.btnStudent_edit.Location = new System.Drawing.Point(1031, 126);
+            this.btnStudent_edit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStudent_edit.Name = "btnStudent_edit";
+            this.btnStudent_edit.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
+            this.btnStudent_edit.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
+            this.btnStudent_edit.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnStudent_edit.Size = new System.Drawing.Size(88, 41);
+            this.btnStudent_edit.TabIndex = 65;
+            this.btnStudent_edit.Text = "SỬA";
+            this.btnStudent_edit.TextColor = System.Drawing.Color.White;
+            this.btnStudent_edit.UseVisualStyleBackColor = true;
+            this.btnStudent_edit.Click += new System.EventHandler(this.btnStudent_edit_Click);
+            // 
+            // btnStudent_add
+            // 
+            this.btnStudent_add.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_add.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnStudent_add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStudent_add.FlatAppearance.BorderSize = 0;
+            this.btnStudent_add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnStudent_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudent_add.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnStudent_add.ForeColor = System.Drawing.Color.Black;
+            this.btnStudent_add.Location = new System.Drawing.Point(1031, 78);
+            this.btnStudent_add.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStudent_add.Name = "btnStudent_add";
+            this.btnStudent_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
+            this.btnStudent_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
+            this.btnStudent_add.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnStudent_add.Size = new System.Drawing.Size(88, 41);
+            this.btnStudent_add.TabIndex = 64;
+            this.btnStudent_add.Text = "THÊM";
+            this.btnStudent_add.TextColor = System.Drawing.Color.White;
+            this.btnStudent_add.UseVisualStyleBackColor = true;
+            this.btnStudent_add.Click += new System.EventHandler(this.btnStudent_add_Click);
+            // 
             // fStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -632,6 +714,10 @@
             this.Load += new System.EventHandler(this.fStudent_Load);
             this.pnlStudent.ResumeLayout(false);
             this.pnlStudent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPHOCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSetBindingSource)).EndInit();
             this.colorBorderGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
             this.ResumeLayout(false);
@@ -642,8 +728,6 @@
 
         private System.Windows.Forms.Panel pnlStudent;
         private System.Windows.Forms.ComboBox cmbStudent;
-        private System.Windows.Forms.RadioButton radGender_female;
-        private System.Windows.Forms.RadioButton radGender_male;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         private ColorBorderGroupBox colorBorderGroupBox1;
@@ -678,5 +762,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtStudentBirth;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textmalop;
+        private System.Windows.Forms.Label label5;
+        private QLTrungTamHocThemDataSet1 qLTrungTamHocThemDataSet1;
+        private System.Windows.Forms.BindingSource lOPHOCBindingSource;
+        private QLTrungTamHocThemDataSet1TableAdapters.LOPHOCTableAdapter lOPHOCTableAdapter;
+        private System.Windows.Forms.RadioButton radGender_female;
+        private System.Windows.Forms.RadioButton radGender_male;
+        private System.Windows.Forms.BindingSource qLTrungTamHocThemDataSetBindingSource;
+        private QLTrungTamHocThemDataSet qLTrungTamHocThemDataSet;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

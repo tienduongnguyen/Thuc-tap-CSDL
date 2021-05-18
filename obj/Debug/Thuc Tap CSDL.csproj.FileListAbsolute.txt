@@ -104,3 +104,57 @@ D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.GenerateResource.cache
 D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
 D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.exe
 D:\Repos\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.pdb
+D:\TTCSDL\Thuc-tap-CSDL\bin\Debug\Thuc Tap CSDL.exe.config
+D:\TTCSDL\Thuc-tap-CSDL\bin\Debug\Thuc Tap CSDL.exe
+D:\TTCSDL\Thuc-tap-CSDL\bin\Debug\Thuc Tap CSDL.pdb
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csprojAssemblyReference.cache
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fAttend.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fClass.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fFee.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fMain.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fLogin.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fSalary.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fStatistic.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fStudent.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fTeacher.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.Properties.Resources.resources
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.GenerateResource.cache
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.exe
+D:\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.pdb
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc Tap CSDL.csprojAssemblyReference.cache
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.fAttend.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.fClass.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.fFee.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.fMain.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.fLogin.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.fSalary.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.fStatistic.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.fStudent.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.fTeacher.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc_Tap_CSDL.Properties.Resources.resources
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc Tap CSDL.csproj.GenerateResource.cache
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc Tap CSDL.exe
+D:\Tai Lieu Hoc\ThucTapCSDL\done\obj\Debug\Thuc Tap CSDL.pdb
+D:\Tai Lieu Hoc\ThucTapCSDL\done\bin\Debug\Thuc Tap CSDL.exe.config
+D:\Tai Lieu Hoc\ThucTapCSDL\done\bin\Debug\Thuc Tap CSDL.exe
+D:\Tai Lieu Hoc\ThucTapCSDL\done\bin\Debug\Thuc Tap CSDL.pdb
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\bin\Debug\Thuc Tap CSDL.exe.config
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\bin\Debug\Thuc Tap CSDL.exe
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\bin\Debug\Thuc Tap CSDL.pdb
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc Tap CSDL.csprojAssemblyReference.cache
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.fAttend.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.fClass.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.fFee.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.fMain.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.fLogin.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.fSalary.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.fStatistic.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.fStudent.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.fTeacher.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc_Tap_CSDL.Properties.Resources.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc Tap CSDL.csproj.GenerateResource.cache
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc Tap CSDL.exe
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\QLTrungTamHocThem\obj\Debug\Thuc Tap CSDL.pdb

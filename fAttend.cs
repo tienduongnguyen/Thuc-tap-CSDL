@@ -10,20 +10,26 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
 namespace Thuc_Tap_CSDL
 {
     public partial class fAttend : Form
     {
         int sum = 49;
-        int present;
+        //int present;
+
+        
 
         public fAttend()
         {
             InitializeComponent();
+           
         }
 
+        
         private Form activeForm;
         SqlConnection con;
+
 
         private void openChildForm(Form childForm, object btnsender)
         {
@@ -49,15 +55,11 @@ namespace Thuc_Tap_CSDL
         private void btnAttend_confirm_Click(object sender, EventArgs e)
         {
             btnAttend_cancel.Text = "THOÁT";
-
-            Random rd = new Random();
-            present = rd.Next(25, sum);
-            lblPresent.Text = present.ToString();
         }
 
         private void fAttend_Load(object sender, EventArgs e)
         {
-            lblPresent.Text = "0";
+          
             lblSum.Text = sum.ToString();
 
 
@@ -65,21 +67,44 @@ namespace Thuc_Tap_CSDL
             con = new SqlConnection(conString);
             con.Open();
 
-            Display();
+            Displayattend();
         }
 
-        public void Display()
+        public  virtual void Displayattend()
         {
-            string sqlCode = "SELECT * FROM DIEMDANH";
-
+           
+            string sqlCode = "SELECT HOCSINH.MaHocSinh, TenHocSinh FROM HOCSINH, DANHSACHLOP, BUOIHOC Where DANHSACHLOP.MaHocSinh=HOCSINH.MaHocSinh AND DANHSACHLOP.MaLopHoc=BUOIHOC.MaLopHoc AND MaBuoiHoc = '" + lbl + "' ";
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
             SqlDataReader dataReader = cmd.ExecuteReader();
             DataTable dataTable = new DataTable();
-
-
             dataTable.Load(dataReader);
             dgvAttend.DataSource = dataTable;
+
+
+            string sqlCode1 = "SELECT count(HOCSINH.MaHocSinh) FROM HOCSINH, DANHSACHLOP, BUOIHOC Where DANHSACHLOP.MaHocSinh=HOCSINH.MaHocSinhAND DANHSACHLOP.MaLopHoc=BUOIHOC.MaLopHoc AND MaBuoiHoc = '" + lbl + "'";
+            SqlCommand cmd1 = new SqlCommand(sqlCode, con);
+            SqlDataReader dataReader1 = cmd.ExecuteReader();
+            DataTable dataTable1 = new DataTable();
+
+
+            dataTable1.Load(dataReader);
+            soluong.DataSource = dataTable1;
+        }
+
+        private void dgvAttend_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblPresent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }
