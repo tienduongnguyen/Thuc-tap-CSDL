@@ -30,14 +30,11 @@ namespace Thuc_Tap_CSDL
         private void InitializeComponent()
         {
             this.pnlAttend = new System.Windows.Forms.Panel();
-            this.soluong = new System.Windows.Forms.DataGridView();
-            this.lblSum = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl = new System.Windows.Forms.Label();
             this.btnAttend_cancel = new ePOSOne.btnProduct.Button_WOC();
             this.btnAttend_confirm = new ePOSOne.btnProduct.Button_WOC();
             this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
-            this.lbl = new System.Windows.Forms.Label();
             this.dgvAttend = new System.Windows.Forms.DataGridView();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -47,7 +44,6 @@ namespace Thuc_Tap_CSDL
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlAttend.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.soluong)).BeginInit();
             this.colorBorderGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttend)).BeginInit();
             this.SuspendLayout();
@@ -55,10 +51,8 @@ namespace Thuc_Tap_CSDL
             // pnlAttend
             // 
             this.pnlAttend.BackColor = System.Drawing.Color.White;
-            this.pnlAttend.Controls.Add(this.soluong);
-            this.pnlAttend.Controls.Add(this.lblSum);
-            this.pnlAttend.Controls.Add(this.label3);
-            this.pnlAttend.Controls.Add(this.label8);
+            this.pnlAttend.Controls.Add(this.lbl2);
+            this.pnlAttend.Controls.Add(this.lbl);
             this.pnlAttend.Controls.Add(this.btnAttend_cancel);
             this.pnlAttend.Controls.Add(this.btnAttend_confirm);
             this.pnlAttend.Controls.Add(this.colorBorderGroupBox1);
@@ -77,55 +71,23 @@ namespace Thuc_Tap_CSDL
             this.pnlAttend.Size = new System.Drawing.Size(1257, 773);
             this.pnlAttend.TabIndex = 3;
             // 
-            // soluong
+            // lbl2
             // 
-            this.soluong.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.soluong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.soluong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.soluong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.soluong.Location = new System.Drawing.Point(1138, 272);
-            this.soluong.Name = "soluong";
-            this.soluong.RowHeadersWidth = 51;
-            this.soluong.RowTemplate.Height = 24;
-            this.soluong.Size = new System.Drawing.Size(28, 23);
-            this.soluong.TabIndex = 1;
-            this.soluong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.lbl2.ForeColor = System.Drawing.Color.White;
+            this.lbl2.Location = new System.Drawing.Point(1050, 677);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(49, 28);
+            this.lbl2.TabIndex = 1;
+            this.lbl2.Text = "\r\n";
             // 
-            // lblSum
+            // lbl
             // 
-            this.lblSum.AutoSize = true;
-            this.lblSum.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.lblSum.Location = new System.Drawing.Point(1180, 272);
-            this.lblSum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSum.Name = "lblSum";
-            this.lblSum.Size = new System.Drawing.Size(28, 23);
-            this.lblSum.TabIndex = 92;
-            this.lblSum.Text = "99";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label3.Location = new System.Drawing.Point(1166, 272);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 23);
-            this.label3.TabIndex = 91;
-            this.label3.Text = "/";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label8.Location = new System.Drawing.Point(1049, 272);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 23);
-            this.label8.TabIndex = 89;
-            this.label8.Text = "Số lượng:";
+            this.lbl.ForeColor = System.Drawing.Color.White;
+            this.lbl.Location = new System.Drawing.Point(1143, 687);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(55, 27);
+            this.lbl.TabIndex = 1;
+            this.lbl.Text = "\r\n";
             // 
             // btnAttend_cancel
             // 
@@ -138,7 +100,7 @@ namespace Thuc_Tap_CSDL
             this.btnAttend_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAttend_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnAttend_cancel.ForeColor = System.Drawing.Color.Black;
-            this.btnAttend_cancel.Location = new System.Drawing.Point(1066, 179);
+            this.btnAttend_cancel.Location = new System.Drawing.Point(1066, 162);
             this.btnAttend_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAttend_cancel.Name = "btnAttend_cancel";
             this.btnAttend_cancel.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
@@ -162,7 +124,7 @@ namespace Thuc_Tap_CSDL
             this.btnAttend_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAttend_confirm.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnAttend_confirm.ForeColor = System.Drawing.Color.Black;
-            this.btnAttend_confirm.Location = new System.Drawing.Point(1066, 106);
+            this.btnAttend_confirm.Location = new System.Drawing.Point(1066, 89);
             this.btnAttend_confirm.Margin = new System.Windows.Forms.Padding(4);
             this.btnAttend_confirm.Name = "btnAttend_confirm";
             this.btnAttend_confirm.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
@@ -178,7 +140,6 @@ namespace Thuc_Tap_CSDL
             // colorBorderGroupBox1
             // 
             this.colorBorderGroupBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.colorBorderGroupBox1.Controls.Add(this.lbl);
             this.colorBorderGroupBox1.Controls.Add(this.dgvAttend);
             this.colorBorderGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.colorBorderGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -190,15 +151,6 @@ namespace Thuc_Tap_CSDL
             this.colorBorderGroupBox1.TabIndex = 87;
             this.colorBorderGroupBox1.TabStop = false;
             this.colorBorderGroupBox1.Text = "Danh sách học sinh";
-            // 
-            // lbl
-            // 
-            this.lbl.ForeColor = System.Drawing.Color.White;
-            this.lbl.Location = new System.Drawing.Point(166, 62);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(121, 61);
-            this.lbl.TabIndex = 1;
-            this.lbl.Text = "\r\n";
             // 
             // dgvAttend
             // 
@@ -294,7 +246,6 @@ namespace Thuc_Tap_CSDL
             this.Load += new System.EventHandler(this.fAttend_Load);
             this.pnlAttend.ResumeLayout(false);
             this.pnlAttend.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.soluong)).EndInit();
             this.colorBorderGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttend)).EndInit();
             this.ResumeLayout(false);
@@ -315,10 +266,7 @@ namespace Thuc_Tap_CSDL
         private System.Windows.Forms.DataGridView dgvAttend;
         private ePOSOne.btnProduct.Button_WOC btnAttend_cancel;
         private ePOSOne.btnProduct.Button_WOC btnAttend_confirm;
-        private System.Windows.Forms.Label lblSum;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView soluong;
         private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.Label lbl2;
     }
 }

@@ -20,22 +20,22 @@ namespace Thuc_Tap_CSDL
         }
 
 
-
         SqlConnection con;
 
 
         private void fStudent_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLTrungTamHocThemDataSet1.LOPHOC' table. You can move, or remove it, as needed.
-            this.lOPHOCTableAdapter.Fill(this.qLTrungTamHocThemDataSet1.LOPHOC);
+            //this.lOPHOCTableAdapter.Fill(this.qLTrungTamHocThemDataSet1.LOPHOC);
             txtStudentID.Focus();
 
             string conString = ConfigurationManager.ConnectionStrings["QLTrungTamHocThem"].ConnectionString.ToString();
             con = new SqlConnection(conString);
             con.Open();
-            Display();
-            loadcbb();
 
+            Display();
+            autoLoadStudentID();
+            loadDataCombobox();
         }
 
         private void fStudent_FormClosing(object sender, FormClosingEventArgs e)
@@ -45,7 +45,7 @@ namespace Thuc_Tap_CSDL
 
         public void Display()
         {
-            string sqlCode = "SELECT * FROM HOCSINH";
+            string sqlCode = "SELECT TOP(30) * FROM HOCSINH";
 
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -55,6 +55,22 @@ namespace Thuc_Tap_CSDL
 
             dataTable.Load(dataReader);
             dgvStudent.DataSource = dataTable;
+        }
+
+        public void autoLoadStudentID()
+        {
+            string sqlCode = "SELECT TOP(1) MaHocSinh FROM HOCSINH ORDER BY MaHocSinh DESC";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                int id = Convert.ToInt32(dr.GetValue(0).ToString().Substring(2)) + 1;
+                txtStudentID.Text = "HS" + id.ToString();
+            }
+            dr.Close();
         }
 
         private void txtStudentBirth_Enter(object sender, EventArgs e)
@@ -74,7 +90,7 @@ namespace Thuc_Tap_CSDL
                 txtStudentBirth.ForeColor = Color.Silver;
             }
         }
-        
+
         private void btnStudent_add_Click(object sender, EventArgs e)
         {
             string gender;
@@ -89,17 +105,17 @@ namespace Thuc_Tap_CSDL
 
 
             //string sqlInsert = "exec PROC_INSERT_HOCSINH '" + txtStudentID.Text + "','" + txtStudentName.Text + "','" + txtStudentBirth.Text + "','" + gender + "','" + txtStudentAddress.Text + "','" + txtStudentPhone.Text + "'";
-            string st = "Select * from HOCSINH where MaHocSinh = '"+txtStudentID.Text+"' ";
+            string st = "Select * from HOCSINH where MaHocSinh = '" + txtStudentID.Text + "' ";
             SqlCommand cmd3 = new SqlCommand(st, con);
             SqlDataReader dataReader2 = cmd3.ExecuteReader();
             //cmd3.ExecuteNonQuery();
-           
 
-            if (dataReader2.Read() == true ) 
+
+            if (dataReader2.Read() == true)
             {
 
                 dataReader2.Close();
-                string sql= "exec PROC_INSERT_DANHSACHLOP '" + textmalop.Text + "','" + txtStudentID.Text +"' ";
+                string sql = "exec PROC_INSERT_DANHSACHLOP '" + textmalop.Text + "','" + txtStudentID.Text + "' ";
                 SqlCommand cmd1 = new SqlCommand(sql, con);
                 cmd1.ExecuteNonQuery();
             }
@@ -112,7 +128,7 @@ namespace Thuc_Tap_CSDL
                 SqlCommand cmd2 = new SqlCommand(sqlInsert, con);
                 cmd2.ExecuteNonQuery();
 
-                string sql = "exec PROC_INSERT_DANHSACHLOP '"+textmalop.Text+"','" + txtStudentID.Text + "' ";
+                string sql = "exec PROC_INSERT_DANHSACHLOP '" + textmalop.Text + "','" + txtStudentID.Text + "' ";
                 SqlCommand cmd1 = new SqlCommand(sql, con);
                 cmd1.ExecuteNonQuery();
             }
@@ -166,7 +182,9 @@ namespace Thuc_Tap_CSDL
             txtStudentAddress.Text = "";
             txtStudentPhone.Text = "";
             txtStudentSearch.Text = "";
-            textmalop.Text = "";
+            //textmalop.Text = "";
+
+            autoLoadStudentID();
         }
 
         private void btnStudent_all_Click(object sender, EventArgs e)
@@ -176,8 +194,8 @@ namespace Thuc_Tap_CSDL
 
         private void btnStudent_search_Click(object sender, EventArgs e)
         {
-            if(cmbStudent.SelectedItem == "Mã học sinh")
-                {
+            if (cmbStudent.SelectedItem == "Mã học sinh")
+            {
 
 
                 string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_MAHS('" + txtStudentSearch.Text + "')";
@@ -275,11 +293,11 @@ namespace Thuc_Tap_CSDL
             txtStudentPhone.Text = dgvStudent.Rows[i].Cells[5].Value.ToString();
         }
 
-        
 
-       public void loadcbb() 
+
+        public void loadDataCombobox()
         {
-            var sqlCode1 = "Select MaLopHoc from LOPHOC";
+            var sqlCode1 = "Select TenLopHoc from LOPHOC";
 
             SqlCommand cmd = new SqlCommand(sqlCode1, con);
             ///cmd.ExecuteNonQuery();
@@ -288,15 +306,22 @@ namespace Thuc_Tap_CSDL
             var dt = new DataTable();
             dt.Load(dr);
             dr.Dispose();
-            comboBox1.ValueMember= "MaLopHoc";
+            comboBox1.ValueMember = "TenLopHoc";
             comboBox1.DataSource = dt;
         }
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            textmalop.Text = comboBox1.SelectedValue.ToString();
+            string sqlCode = "SELECT MaLopHoc FROM LOPHOC WHERE TenLopHoc = '" + comboBox1.SelectedValue.ToString() + "'";
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                textmalop.Text = dr.GetValue(0).ToString();              
+            }
+            dr.Close();
         }
     }
 }

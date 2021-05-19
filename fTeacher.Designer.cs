@@ -72,6 +72,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbbSubID = new System.Windows.Forms.ComboBox();
             this.pnlTeacher.SuspendLayout();
             this.colorBorderGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeacher)).BeginInit();
@@ -80,6 +81,7 @@
             // pnlTeacher
             // 
             this.pnlTeacher.BackColor = System.Drawing.Color.White;
+            this.pnlTeacher.Controls.Add(this.cbbSubID);
             this.pnlTeacher.Controls.Add(this.cmbTeacher);
             this.pnlTeacher.Controls.Add(this.radGender_female);
             this.pnlTeacher.Controls.Add(this.radGender_male);
@@ -143,7 +145,7 @@
             "Số điện thoại",
             "Mã môn học",
             "Mã mức TT"});
-            this.cmbTeacher.Location = new System.Drawing.Point(692, 284);
+            this.cmbTeacher.Location = new System.Drawing.Point(701, 284);
             this.cmbTeacher.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTeacher.Name = "cmbTeacher";
             this.cmbTeacher.Size = new System.Drawing.Size(157, 31);
@@ -696,6 +698,17 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "GIÁO VIÊN";
             // 
+            // cbbSubID
+            // 
+            this.cbbSubID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cbbSubID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.cbbSubID.FormattingEnabled = true;
+            this.cbbSubID.Location = new System.Drawing.Point(837, 161);
+            this.cbbSubID.Name = "cbbSubID";
+            this.cbbSubID.Size = new System.Drawing.Size(121, 31);
+            this.cbbSubID.TabIndex = 98;
+            this.cbbSubID.SelectedIndexChanged += new System.EventHandler(this.cbbSubID_SelectedIndexChanged);
+            // 
             // fTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -762,5 +775,6 @@
         private System.Windows.Forms.TextBox txtSubjectID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbbSubID;
     }
 }

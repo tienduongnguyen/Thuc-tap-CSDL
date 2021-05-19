@@ -392,16 +392,13 @@ namespace Thuc_Tap_CSDL
 
         private void button_WOC1_Click(object sender, EventArgs e)
         {
-            string text = txtLessonID.Text;
-            if (text != "")
-                openChildForm(new fAttend(), sender);
-
-           
+            if (txtLessonID.Text != "")
+                openChildForm(new fAttend(txtLessonClassID.Text,txtLessonID.Text), sender);      
         }
 
         private void btnDSL_Click(object sender, EventArgs e)
         {
-            string class_sqlCode = "SELECT * FROM DANHSACHLOP WHERE MaLopHoc = '" + txtClassID.Text + "'";
+            string class_sqlCode = "SELECT MaLopHoc,dsl.MaHocSinh,TenHocSinh FROM DANHSACHLOP dsl, HOCSINH hs WHERE dsl.MaHocSinh = hs.MaHocSinh and MaLopHoc = '" + txtClassID.Text + "'";
             SqlCommand class_cmd = new SqlCommand(class_sqlCode, con);
             SqlDataReader class_dataReader = class_cmd.ExecuteReader();
             DataTable class_dataTable = new DataTable();

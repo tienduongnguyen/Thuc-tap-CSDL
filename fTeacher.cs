@@ -32,6 +32,8 @@ namespace Thuc_Tap_CSDL
             con.Open();
 
             Display();
+            loadDataCombobox();
+            autoLoadTeacherID();
         }
 
         private void fTeacher_FormClosing(object sender, FormClosingEventArgs e)
@@ -51,6 +53,22 @@ namespace Thuc_Tap_CSDL
 
             dataTable.Load(dataReader);
             dgvTeacher.DataSource = dataTable;
+        }
+
+        public void autoLoadTeacherID()
+        {
+            string sqlCode = "SELECT TOP(1) MaGiaoVien FROM GIAOVIEN ORDER BY MaGiaoVien DESC";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                int id = Convert.ToInt32(dr.GetValue(0).ToString().Substring(2)) + 1;
+                txtTeacherID.Text = "GV" + id.ToString();
+            }
+            dr.Close();
         }
 
         private void txtTeacherBirth_Enter(object sender, EventArgs e)
@@ -144,9 +162,11 @@ namespace Thuc_Tap_CSDL
             radGender_male.Checked = true;
             txtTeacherAddress.Text = "";
             txtTeacherPhone.Text = "";
-            txtSubjectID.Text = "";
+            //txtSubjectID.Text = "";
             txtSalaryID.Text = "";
             txtTeacherSearch.Text = "";
+
+            autoLoadTeacherID();
         }
 
         private void btnTeacher_search_Click(object sender, EventArgs e)
@@ -271,6 +291,34 @@ namespace Thuc_Tap_CSDL
         private void cmbTeacher_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void loadDataCombobox()
+        {
+            var sqlCode1 = "Select TenMonHoc from MONHOC";
+
+            SqlCommand cmd = new SqlCommand(sqlCode1, con);
+            ///cmd.ExecuteNonQuery();
+
+            var dr = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(dr);
+            dr.Dispose();
+            cbbSubID.ValueMember = "TenMonHoc";
+            cbbSubID.DataSource = dt;
+        }
+
+        private void cbbSubID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sqlCode = "SELECT MaMonHoc FROM MONHOC WHERE TenMonHoc = '" + cbbSubID.SelectedValue.ToString() + "'";
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                txtSubjectID.Text = dr.GetValue(0).ToString();
+            }
+            dr.Close();
         }
     }
 }
