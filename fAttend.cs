@@ -55,7 +55,8 @@ namespace Thuc_Tap_CSDL
 
         private void btnAttend_confirm_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dgvAttend.Rows.Count; i++)
+            int row = dgvAttend.Rows.Count;
+            for (int i = 0; i < row; i++)
             {
                 string sqlCode = "UPDATE DIEMDANH SET TichVang='" + dgvAttend.Rows[i].Cells[4].Value + "' WHERE MaHocSinh='" + dgvAttend.Rows[i].Cells[2].Value + "'";
                 SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -65,8 +66,23 @@ namespace Thuc_Tap_CSDL
 
                 cmd.ExecuteNonQuery();
             }
-            MessageBox.Show("Điểm danh thành công");
+            MessageBox.Show("Điểm danh thành công\n" + "Sĩ số: " + countAttend(lbl.Text) + "/" + (row - 1).ToString());
             btnAttend_cancel.Text = "THOÁT";
+        }
+
+        public string countAttend(string id)
+        {
+            string result = "";
+
+            string sqlCode = "select count(MaHocSinh) from DIEMDANH where MaBuoiHoc='" + id + "' and TichVang='0'";
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            result = dr.GetValue(0).ToString();
+            dr.Close();
+
+            return result;
         }
 
         private void fAttend_Load(object sender, EventArgs e)
