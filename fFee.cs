@@ -34,6 +34,8 @@ namespace Thuc_Tap_CSDL
             btnFeeBill_edit.Enabled = true;
             btnFeeBill_delete.Enabled = true;
             btnFeeBill_clear.Enabled = true;
+
+            autoLoadBillID();
         }
 
         SqlConnection con;
@@ -48,13 +50,10 @@ namespace Thuc_Tap_CSDL
 
             string sqlCode = "SELECT top(30) * FROM HOCSINH";
             Display(sqlCode);
-            Display1();
         }
 
         public void Display(string code)
         {
-            
-
 
             SqlCommand cmd = new SqlCommand(code, con);
             SqlDataReader dataReader = cmd.ExecuteReader();
@@ -65,36 +64,43 @@ namespace Thuc_Tap_CSDL
             dgvFee.DataSource = dataTable;
         }
 
+        public void autoLoadBillID()
+        {
+            string sqlCode = "SELECT TOP(1) MaBLThuHP FROM BLTHUHP ORDER BY MaBLThuHP DESC";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                int id = Convert.ToInt32(dr.GetValue(0).ToString().Substring(7)) + 1;
+                string ID = "";
+                if (id < 100) ID = "0" + id.ToString();
+                else ID = id.ToString();
+                txtFeeBill_id.Text = "BLTHUHP" + ID;
+            }
+            dr.Close();
+        }
+
         private void btnFee_search_Click(object sender, EventArgs e)
         {
-            if (cmbSalary_search.SelectedItem == "Mã lớp học")
+            string sqlCode2 = "select * from FUNC_LIST_STUDENT_CLASS('" + txtFeeSearch.Text + "')";
+
+            Display(sqlCode2);
+
+            string sqlCode = "SELECT TenLopHoc FROM LOPHOC WHERE MaLopHoc = '" + txtFeeSearch.Text + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
             {
-
-                //string sqlCode2 = "Select * from DBO.FUNC_SEARCH_HS_MAHS('" + txtFeeSearch.Text + "')";
-                string sqlCode2 = "Select MaLopHoc, DANHSACHLOP.MaHocSinh, TenHocSinh from HOCSINH, DANHSACHLOP where HOCSINH.MaHocSinh = DANHSACHLOP.MaHocSinh and MaLopHoc = '" + txtFeeSearch.Text + "'";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvFee.DataSource = dataTable;
-                Display(sqlCode2);
+                string result = dr.GetValue(0).ToString();
+                txtFeeSearch2.Text = result;
             }
-
-            if (cmbSalary_search.SelectedItem == "Tên lớp học")
-            {
-
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_HS_TENHS('" + txtFeeSearch.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvFee.DataSource = dataTable;
-                //Display();
-            }
+            dr.Close();
         }
 
         public void Display1()
@@ -108,113 +114,30 @@ namespace Thuc_Tap_CSDL
 
 
             dataTable.Load(dataReader);
-            dgvSalary_bill.DataSource = dataTable;
+            dgvFee_bill.DataSource = dataTable;
         }
 
-        private void dgvSalary_bill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvFee_bill_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
-            i = dgvSalary_bill.CurrentRow.Index;
-            txtFeeBill_id.Text = dgvSalary_bill.Rows[i].Cells[0].Value.ToString();
-            txtFeeBill_studentID.Text = dgvSalary_bill.Rows[i].Cells[1].Value.ToString();
-            txtFeeBill_classID.Text = dgvSalary_bill.Rows[i].Cells[2].Value.ToString();
-            txtFeeBill_sumDay.Text = dgvSalary_bill.Rows[i].Cells[3].Value.ToString();
-            txtFeeBill_feePerDay.Text = dgvSalary_bill.Rows[i].Cells[4].Value.ToString();
-            txtFeeBill_sumFee.Text = dgvSalary_bill.Rows[i].Cells[5].Value.ToString();
-            txtFeeBill_dateTake.Text = dgvSalary_bill.Rows[i].Cells[6].Value.ToString();
-            txtFeeBill_takeForDate.Text = dgvSalary_bill.Rows[i].Cells[7].Value.ToString();
-            ckbTaked.Checked = (dgvSalary_bill.Rows[i].Cells[8].Value.ToString()=="1");
-            if (ckbTaked.Checked)
-                ckbTaked.Text = "đã thu";
-            else
-                ckbTaked.Text = "chưa thu";
+            i = dgvFee_bill.CurrentRow.Index;
+            txtFeeBill_id.Text = dgvFee_bill.Rows[i].Cells[0].Value.ToString();
+            txtFeeBill_studentID.Text = dgvFee_bill.Rows[i].Cells[1].Value.ToString();
+            txtFeeBill_classID.Text = dgvFee_bill.Rows[i].Cells[2].Value.ToString();
+            txtFeeBill_sumDay.Text = dgvFee_bill.Rows[i].Cells[3].Value.ToString();
+            txtFeeBill_feePerDay.Text = dgvFee_bill.Rows[i].Cells[4].Value.ToString();
+            txtFeeBill_sumFee.Text = dgvFee_bill.Rows[i].Cells[5].Value.ToString();
+            txtFeeBill_dateTake.Text = dgvFee_bill.Rows[i].Cells[6].Value.ToString();
+            txtFeeBill_takeForDate.Text = dgvFee_bill.Rows[i].Cells[7].Value.ToString();
+            ckbTaked.Checked = (dgvFee_bill.Rows[i].Cells[8].Value.ToString() == "1");
         }
 
         private void ckbTaked_CheckedChanged(object sender, EventArgs e)
         {
-            
-        }
-
-        private void btnFeeBill_search_Click(object sender, EventArgs e)
-        {
-            if (cmbFeeBill_search.SelectedItem == "Mã biên lai")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTHUHP_MABL('" + txtFeeBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-              
-                dgvSalary_bill.DataSource = dataTable;
-            }
-
-            if (cmbFeeBill_search.SelectedItem == "Mã học sinh")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTHUHP_MAHS('" + txtFeeBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-               
-                dgvSalary_bill.DataSource = dataTable;
-            }
-
-            if (cmbFeeBill_search.SelectedItem == "Mã lớp học")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTHUHP_MALH('" + txtFeeBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-               
-                dgvSalary_bill.DataSource = dataTable;
-            }
-
-            if (cmbFeeBill_search.SelectedItem == "Tổng số buổi")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTHUHP_TONGSB('" + txtFeeBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-               
-                dgvSalary_bill.DataSource = dataTable;
-            }
-
-            if (cmbFeeBill_search.SelectedItem == "Học phí/buổi")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTHUHP_HP1B('" + txtFeeBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                
-                dgvSalary_bill.DataSource = dataTable;
-            }
-
-            if (cmbFeeBill_search.SelectedItem == "Tổng học phí")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTHUHP_TONGHP('" + txtFeeBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                
-                dgvSalary_bill.DataSource = dataTable;
-            }
-
+            if (ckbTaked.Checked)
+                ckbTaked.Text = "đã thu";
+            else
+                ckbTaked.Text = "chưa thu";
         }
 
         private void btnFeeBill_add_Click(object sender, EventArgs e)
@@ -246,7 +169,6 @@ namespace Thuc_Tap_CSDL
 
         private void btnFeeBill_delete_Click(object sender, EventArgs e)
         {
-          
             string sqlDelete = "exec PROC_DELETE_BLTHUHP '" + txtFeeBill_id.Text + "'";
             SqlCommand cmd = new SqlCommand(sqlDelete, con);
             cmd.ExecuteNonQuery();
@@ -264,9 +186,7 @@ namespace Thuc_Tap_CSDL
             txtFeeBill_sumFee.Text = "";
             txtFeeBill_dateTake.Text = "";
             txtFeeBill_takeForDate.Text = "";
-            ckbTaked.Text = "đã thu";
-            txtFeeBill_search.Text= "";
-            //Display();
+            ckbTaked.Text = "chưa thu";
             Display1();
         }
 
@@ -275,24 +195,54 @@ namespace Thuc_Tap_CSDL
             Display1();
         }
 
-        private void txtFeeBill_search_TextChanged(object sender, EventArgs e)
+        public string getFeePerDay(string ClassID)
         {
+            string result = "";
 
+            string sqlCode = "SELECT SoHocPhi FROM MUCHOCPHI, LOPHOC WHERE MUCHOCPHI.MaMHP = LOPHOC.MaMHP and MUCHOCPHI.MaMHP = '" + txtFeeSearch2.Text + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                result = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+
+            return result;
         }
 
         private void dgvFee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int i;
-            //i = dgvFee.CurrentRow.Index;
-            //txtFeeBill_id.Text = dgvSalary_bill.Rows[i].Cells[0].Value.ToString();
-            //txtFeeBill_studentID.Text = dgvSalary_bill.Rows[i].Cells[1].Value.ToString();
-            //txtFeeBill_classID.Text = dgvSalary_bill.Rows[i].Cells[2].Value.ToString();
-            //txtFeeBill_sumDay.Text = dgvSalary_bill.Rows[i].Cells[3].Value.ToString();
-            //txtFeeBill_feePerDay.Text = dgvSalary_bill.Rows[i].Cells[4].Value.ToString();
-            //txtFeeBill_sumFee.Text = dgvSalary_bill.Rows[i].Cells[5].Value.ToString();
-            //txtFeeBill_dateTake.Text = dgvSalary_bill.Rows[i].Cells[6].Value.ToString();
-            //txtFeeBill_takeForDate.Text = dgvSalary_bill.Rows[i].Cells[7].Value.ToString();
-            //ckbTaked.Checked = (dgvSalary_bill.Rows[i].Cells[8].Value.ToString() == "1");
+            int i;
+            i = dgvFee.CurrentRow.Index;
+
+            autoLoadBillID();
+
+            txtFeeBill_id.Text = dgvFee.Rows[i].Cells[0].Value.ToString();
+            txtFeeBill_classID.Text = txtFeeSearch.Text;
+        }
+
+        private void btnFee_search2_Click(object sender, EventArgs e)
+        {
+            string sqlCode2 = "select * from FUNC_LIST_STUDENT_BY_CLASS_NAME('" + txtFeeSearch2.Text + "')";
+
+            Display(sqlCode2);
+
+            string sqlCode = "SELECT MaLopHoc FROM LOPHOC WHERE TenLopHoc = '" + txtFeeSearch2.Text + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                string result = dr.GetValue(0).ToString();
+                txtFeeSearch.Text = result;
+            }
+            dr.Close();
         }
     }
 }
