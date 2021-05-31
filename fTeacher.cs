@@ -274,13 +274,20 @@ namespace Thuc_Tap_CSDL
             Display();
         }
 
+        public string convertDate(string date)
+        {
+            string[] info = date.Split('/');
+
+            return info[1] + "/" + info[0] + "/" + info[2];
+        }
+
         private void dgvTeacher_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
             i = dgvTeacher.CurrentRow.Index;
             txtTeacherID.Text = dgvTeacher.Rows[i].Cells[0].Value.ToString();
             txtTeacherName.Text = dgvTeacher.Rows[i].Cells[1].Value.ToString();
-            txtTeacherBirth.Text = dgvTeacher.Rows[i].Cells[2].Value.ToString();
+            txtTeacherBirth.Text = convertDate(dgvTeacher.Rows[i].Cells[2].Value.ToString());
             //radGender_male.Checked = dgvStudent.Rows[i].Cells[3].Value.ToString();
             txtTeacherAddress.Text = dgvTeacher.Rows[i].Cells[4].Value.ToString();
             txtTeacherPhone.Text = dgvTeacher.Rows[i].Cells[5].Value.ToString();

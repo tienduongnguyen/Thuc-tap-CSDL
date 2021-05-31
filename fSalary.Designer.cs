@@ -474,6 +474,7 @@
             // 
             this.txtSalaryBill_teacherID.BackColor = System.Drawing.Color.White;
             this.txtSalaryBill_teacherID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalaryBill_teacherID.Enabled = false;
             this.txtSalaryBill_teacherID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryBill_teacherID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSalaryBill_teacherID.Location = new System.Drawing.Point(833, 169);
@@ -498,6 +499,7 @@
             // 
             this.txtSalaryBill_sumDay.BackColor = System.Drawing.Color.White;
             this.txtSalaryBill_sumDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalaryBill_sumDay.Enabled = false;
             this.txtSalaryBill_sumDay.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryBill_sumDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSalaryBill_sumDay.Location = new System.Drawing.Point(832, 95);
@@ -522,6 +524,7 @@
             // 
             this.txtSalaryBill_sumMoney.BackColor = System.Drawing.Color.White;
             this.txtSalaryBill_sumMoney.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalaryBill_sumMoney.Enabled = false;
             this.txtSalaryBill_sumMoney.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryBill_sumMoney.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSalaryBill_sumMoney.Location = new System.Drawing.Point(833, 132);
@@ -534,6 +537,7 @@
             // 
             this.txtSalaryBill_classID.BackColor = System.Drawing.Color.White;
             this.txtSalaryBill_classID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalaryBill_classID.Enabled = false;
             this.txtSalaryBill_classID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryBill_classID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSalaryBill_classID.Location = new System.Drawing.Point(832, 204);
@@ -546,6 +550,7 @@
             // 
             this.txtSalaryBill_id.BackColor = System.Drawing.Color.White;
             this.txtSalaryBill_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalaryBill_id.Enabled = false;
             this.txtSalaryBill_id.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryBill_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSalaryBill_id.Location = new System.Drawing.Point(832, 58);

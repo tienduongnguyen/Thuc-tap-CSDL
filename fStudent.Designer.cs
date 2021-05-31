@@ -64,9 +64,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lOPHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLTrungTamHocThemDataSet1 = new Thuc_Tap_CSDL.QLTrungTamHocThemDataSet1();
-            this.lOPHOCTableAdapter = new Thuc_Tap_CSDL.QLTrungTamHocThemDataSet1TableAdapters.LOPHOCTableAdapter();
-            this.qLTrungTamHocThemDataSet = new Thuc_Tap_CSDL.QLTrungTamHocThemDataSet();
+            //this.qLTrungTamHocThemDataSet1 = new Thuc_Tap_CSDL.QLTrungTamHocThemDataSet1();
+            //this.lOPHOCTableAdapter = new Thuc_Tap_CSDL.QLTrungTamHocThemDataSet1TableAdapters.LOPHOCTableAdapter();
+            //this.qLTrungTamHocThemDataSet = new Thuc_Tap_CSDL.QLTrungTamHocThemDataSet();
             this.qLTrungTamHocThemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
             this.dgvStudent = new System.Windows.Forms.DataGridView();
@@ -77,10 +77,10 @@
             this.btnStudent_edit = new ePOSOne.btnProduct.Button_WOC();
             this.btnStudent_add = new ePOSOne.btnProduct.Button_WOC();
             this.pnlStudent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPHOCBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSetBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.lOPHOCBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet1)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSetBindingSource)).BeginInit();
             this.colorBorderGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
             this.SuspendLayout();
@@ -506,27 +506,27 @@
             // 
             // lOPHOCBindingSource
             // 
-            this.lOPHOCBindingSource.DataMember = "LOPHOC";
-            this.lOPHOCBindingSource.DataSource = this.qLTrungTamHocThemDataSet1;
+            //this.lOPHOCBindingSource.DataMember = "LOPHOC";
+            //this.lOPHOCBindingSource.DataSource = this.qLTrungTamHocThemDataSet1;
             // 
             // qLTrungTamHocThemDataSet1
             // 
-            this.qLTrungTamHocThemDataSet1.DataSetName = "QLTrungTamHocThemDataSet1";
-            this.qLTrungTamHocThemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lOPHOCTableAdapter
-            // 
-            this.lOPHOCTableAdapter.ClearBeforeFill = true;
-            // 
-            // qLTrungTamHocThemDataSet
-            // 
-            this.qLTrungTamHocThemDataSet.DataSetName = "QLTrungTamHocThemDataSet";
-            this.qLTrungTamHocThemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // qLTrungTamHocThemDataSetBindingSource
-            // 
-            this.qLTrungTamHocThemDataSetBindingSource.DataSource = this.qLTrungTamHocThemDataSet;
-            this.qLTrungTamHocThemDataSetBindingSource.Position = 0;
+            //this.qLTrungTamHocThemDataSet1.DataSetName = "QLTrungTamHocThemDataSet1";
+            //this.qLTrungTamHocThemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //// 
+            //// lOPHOCTableAdapter
+            //// 
+            //this.lOPHOCTableAdapter.ClearBeforeFill = true;
+            //// 
+            //// qLTrungTamHocThemDataSet
+            //// 
+            //this.qLTrungTamHocThemDataSet.DataSetName = "QLTrungTamHocThemDataSet";
+            //this.qLTrungTamHocThemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //// 
+            //// qLTrungTamHocThemDataSetBindingSource
+            //// 
+            //this.qLTrungTamHocThemDataSetBindingSource.DataSource = this.qLTrungTamHocThemDataSet;
+            //this.qLTrungTamHocThemDataSetBindingSource.Position = 0;
             // 
             // colorBorderGroupBox1
             // 
@@ -716,10 +716,10 @@
             this.Load += new System.EventHandler(this.fStudent_Load);
             this.pnlStudent.ResumeLayout(false);
             this.pnlStudent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPHOCBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSetBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.lOPHOCBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.qLTrungTamHocThemDataSetBindingSource)).EndInit();
             this.colorBorderGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
             this.ResumeLayout(false);
@@ -767,13 +767,13 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textmalop;
         private System.Windows.Forms.Label label5;
-        private QLTrungTamHocThemDataSet1 qLTrungTamHocThemDataSet1;
+        //private QLTrungTamHocThemDataSet1 qLTrungTamHocThemDataSet1;
         private System.Windows.Forms.BindingSource lOPHOCBindingSource;
-        private QLTrungTamHocThemDataSet1TableAdapters.LOPHOCTableAdapter lOPHOCTableAdapter;
+        //private QLTrungTamHocThemDataSet1TableAdapters.LOPHOCTableAdapter lOPHOCTableAdapter;
         private System.Windows.Forms.RadioButton radGender_female;
         private System.Windows.Forms.RadioButton radGender_male;
         private System.Windows.Forms.BindingSource qLTrungTamHocThemDataSetBindingSource;
-        private QLTrungTamHocThemDataSet qLTrungTamHocThemDataSet;
+        //private QLTrungTamHocThemDataSet qLTrungTamHocThemDataSet;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }
