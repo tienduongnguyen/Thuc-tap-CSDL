@@ -31,7 +31,7 @@ namespace Thuc_Tap_CSDL
             con.Open();
 
             Display1();
-
+            loadCombobox();
         }
 
         public void Display(string code)
@@ -71,7 +71,7 @@ namespace Thuc_Tap_CSDL
         private void btnFee_search_Click(object sender, EventArgs e)
         {
 
-            string sqlCode2 = "select * from FUNC_LIST_STUDENT_CLASS('" + txtFeeSearch.Text + "')";
+            string sqlCode2 = "select top(20) * from FUNC_LIST_STUDENT_CLASS('" + txtFeeSearch.Text + "')";
             Display(sqlCode2);
 
             string sqlCode = "SELECT TenLopHoc FROM LOPHOC WHERE MaLopHoc = '" + txtFeeSearch.Text + "'";
@@ -174,7 +174,6 @@ namespace Thuc_Tap_CSDL
             cmd.ExecuteNonQuery();
 
             Display1();
-
         }
 
         private void btnFeeBill_clear_Click(object sender, EventArgs e)
@@ -203,7 +202,7 @@ namespace Thuc_Tap_CSDL
         {
             string result = "";
 
-            string sqlCode = "select * from FUNC_CALC_TONGSOBUOI('" + ClassID + "','" + StudentID + "')";
+            string sqlCode = "select top(20) * from FUNC_CALC_TONGSOBUOI('" + ClassID + "','" + StudentID + "')";
 
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -254,10 +253,8 @@ namespace Thuc_Tap_CSDL
 
         private void dgvFee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             int i;
             i = dgvFee.CurrentRow.Index;
-
             autoLoadBillID(); //MaBienLai
             txtFeeBill_studentID.Text = dgvFee.Rows[i].Cells[0].Value.ToString(); //MaHocSinh
             txtFeeBill_classID.Text = txtFeeSearch.Text; //MaLopHoc
@@ -271,7 +268,7 @@ namespace Thuc_Tap_CSDL
         private void btnFee_search2_Click(object sender, EventArgs e)
         {
 
-            string sqlCode2 = "select * from FUNC_LIST_STUDENT_BY_CLASS_NAME('" + txtFeeSearch2.Text + "')";
+            string sqlCode2 = "select top(20) * from FUNC_LIST_STUDENT_BY_CLASS_NAME('" + txtFeeSearch2.Text + "')";
 
             Display(sqlCode2);
 
@@ -288,6 +285,32 @@ namespace Thuc_Tap_CSDL
             }
             dr.Close();
 
+        }
+
+        public void loadCombobox()
+        {
+            var sqlCode = "Select MaLopHoc from LOPHOC";
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            ///cmd.ExecuteNonQuery();
+            var dr = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(dr);
+            dr.Dispose();
+            cbbMLH.ValueMember = "MaLopHoc";
+            cbbMLH.DataSource = dt;
+        }
+
+        private void cbbMLH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sqlCode = "SELECT MaLopHoc FROM LOPHOC WHERE MaLopHoc = '" + cbbMLH.SelectedValue.ToString() + "'";
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                txtFeeSearch.Text = dr.GetValue(0).ToString();
+            }
+            dr.Close();
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlTeacher = new System.Windows.Forms.Panel();
+            this.cbbSubID = new System.Windows.Forms.ComboBox();
             this.cmbTeacher = new System.Windows.Forms.ComboBox();
             this.radGender_female = new System.Windows.Forms.RadioButton();
             this.radGender_male = new System.Windows.Forms.RadioButton();
@@ -72,7 +73,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbbSubID = new System.Windows.Forms.ComboBox();
+            this.cbbMMTT = new System.Windows.Forms.ComboBox();
             this.pnlTeacher.SuspendLayout();
             this.colorBorderGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeacher)).BeginInit();
@@ -81,6 +82,7 @@
             // pnlTeacher
             // 
             this.pnlTeacher.BackColor = System.Drawing.Color.White;
+            this.pnlTeacher.Controls.Add(this.cbbMMTT);
             this.pnlTeacher.Controls.Add(this.cbbSubID);
             this.pnlTeacher.Controls.Add(this.cmbTeacher);
             this.pnlTeacher.Controls.Add(this.radGender_female);
@@ -130,6 +132,17 @@
             this.pnlTeacher.Name = "pnlTeacher";
             this.pnlTeacher.Size = new System.Drawing.Size(1257, 773);
             this.pnlTeacher.TabIndex = 1;
+            // 
+            // cbbSubID
+            // 
+            this.cbbSubID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cbbSubID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.cbbSubID.FormattingEnabled = true;
+            this.cbbSubID.Location = new System.Drawing.Point(837, 161);
+            this.cbbSubID.Name = "cbbSubID";
+            this.cbbSubID.Size = new System.Drawing.Size(121, 31);
+            this.cbbSubID.TabIndex = 98;
+            this.cbbSubID.SelectedIndexChanged += new System.EventHandler(this.cbbSubID_SelectedIndexChanged);
             // 
             // cmbTeacher
             // 
@@ -698,16 +711,16 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "GIÁO VIÊN";
             // 
-            // cbbSubID
+            // cbbMMTT
             // 
-            this.cbbSubID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.cbbSubID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.cbbSubID.FormattingEnabled = true;
-            this.cbbSubID.Location = new System.Drawing.Point(837, 161);
-            this.cbbSubID.Name = "cbbSubID";
-            this.cbbSubID.Size = new System.Drawing.Size(121, 31);
-            this.cbbSubID.TabIndex = 98;
-            this.cbbSubID.SelectedIndexChanged += new System.EventHandler(this.cbbSubID_SelectedIndexChanged);
+            this.cbbMMTT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cbbMMTT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.cbbMMTT.FormattingEnabled = true;
+            this.cbbMMTT.Location = new System.Drawing.Point(837, 199);
+            this.cbbMMTT.Name = "cbbMMTT";
+            this.cbbMMTT.Size = new System.Drawing.Size(121, 31);
+            this.cbbMMTT.TabIndex = 99;
+            this.cbbMMTT.SelectedIndexChanged += new System.EventHandler(this.cbbMMTT_SelectedIndexChanged);
             // 
             // fTeacher
             // 
@@ -776,5 +789,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbbSubID;
+        private System.Windows.Forms.ComboBox cbbMMTT;
     }
 }

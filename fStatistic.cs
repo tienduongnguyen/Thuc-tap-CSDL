@@ -65,7 +65,7 @@ namespace Thuc_Tap_CSDL
 
         public void Display()
         {
-            string sqlCode = "SELECT * FROM BLTHUHP where TrangThaiThu = 1";
+            string sqlCode = "select top(20) * FROM BLTHUHP where TrangThaiThu = 1";
 
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlSalary = new System.Windows.Forms.Panel();
+            this.cbbMLH = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnFeeBill_clear = new ePOSOne.btnProduct.Button_WOC();
@@ -42,6 +43,7 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dgvFee = new System.Windows.Forms.DataGridView();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -95,6 +97,7 @@
             // pnlSalary
             // 
             this.pnlSalary.BackColor = System.Drawing.Color.White;
+            this.pnlSalary.Controls.Add(this.cbbMLH);
             this.pnlSalary.Controls.Add(this.label12);
             this.pnlSalary.Controls.Add(this.label7);
             this.pnlSalary.Controls.Add(this.btnFeeBill_clear);
@@ -156,6 +159,16 @@
             this.pnlSalary.Name = "pnlSalary";
             this.pnlSalary.Size = new System.Drawing.Size(1257, 773);
             this.pnlSalary.TabIndex = 3;
+            // 
+            // cbbMLH
+            // 
+            this.cbbMLH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbMLH.FormattingEnabled = true;
+            this.cbbMLH.Location = new System.Drawing.Point(274, 72);
+            this.cbbMLH.Name = "cbbMLH";
+            this.cbbMLH.Size = new System.Drawing.Size(135, 28);
+            this.cbbMLH.TabIndex = 2;
+            this.cbbMLH.SelectedIndexChanged += new System.EventHandler(this.cbbMLH_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -355,6 +368,7 @@
             // colorBorderGroupBox1
             // 
             this.colorBorderGroupBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.colorBorderGroupBox1.Controls.Add(this.comboBox1);
             this.colorBorderGroupBox1.Controls.Add(this.dgvFee);
             this.colorBorderGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.colorBorderGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -366,6 +380,14 @@
             this.colorBorderGroupBox1.TabIndex = 86;
             this.colorBorderGroupBox1.TabStop = false;
             this.colorBorderGroupBox1.Text = "Danh sách học sinh lớp học";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(16, 38);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 31);
+            this.comboBox1.TabIndex = 1;
             // 
             // dgvFee
             // 
@@ -941,5 +963,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtFeeSearch2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbbMLH;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

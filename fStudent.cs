@@ -105,7 +105,7 @@ namespace Thuc_Tap_CSDL
 
 
             //string sqlInsert = "exec PROC_INSERT_HOCSINH '" + txtStudentID.Text + "','" + txtStudentName.Text + "','" + txtStudentBirth.Text + "','" + gender + "','" + txtStudentAddress.Text + "','" + txtStudentPhone.Text + "'";
-            string st = "Select * from HOCSINH where MaHocSinh = '" + txtStudentID.Text + "' ";
+            string st = "select top(20) * from HOCSINH where MaHocSinh = '" + txtStudentID.Text + "' ";
             SqlCommand cmd3 = new SqlCommand(st, con);
             SqlDataReader dataReader2 = cmd3.ExecuteReader();
             //cmd3.ExecuteNonQuery();
@@ -198,7 +198,7 @@ namespace Thuc_Tap_CSDL
             {
 
 
-                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_MAHS('" + txtStudentSearch.Text + "')";
+                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_HS_MAHS('" + txtStudentSearch.Text + "')";
 
                 SqlCommand cmd = new SqlCommand(sqlCode1, con);
                 cmd.ExecuteNonQuery();
@@ -212,7 +212,7 @@ namespace Thuc_Tap_CSDL
             if (cmbStudent.SelectedItem == "Tên học sinh")
             {
 
-                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_TENHS('" + txtStudentSearch.Text + "')";
+                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_HS_TENHS('" + txtStudentSearch.Text + "')";
 
                 SqlCommand cmd = new SqlCommand(sqlCode1, con);
                 cmd.ExecuteNonQuery();
@@ -226,7 +226,7 @@ namespace Thuc_Tap_CSDL
             if (cmbStudent.SelectedItem == "Ngày sinh")
             {
 
-                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_NGAYSINH('" + txtStudentSearch.Text + "')";
+                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_HS_NGAYSINH('" + txtStudentSearch.Text + "')";
 
                 SqlCommand cmd = new SqlCommand(sqlCode1, con);
                 cmd.ExecuteNonQuery();
@@ -240,7 +240,7 @@ namespace Thuc_Tap_CSDL
             if (cmbStudent.SelectedItem == "Giới tính")
             {
 
-                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_GIOITINH('" + txtStudentSearch.Text + "')";
+                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_HS_GIOITINH('" + txtStudentSearch.Text + "')";
 
                 SqlCommand cmd = new SqlCommand(sqlCode1, con);
                 cmd.ExecuteNonQuery();
@@ -254,7 +254,7 @@ namespace Thuc_Tap_CSDL
             if (cmbStudent.SelectedItem == "Địa chỉ")
             {
 
-                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_DIACHI('" + txtStudentSearch.Text + "')";
+                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_HS_DIACHI('" + txtStudentSearch.Text + "')";
 
                 SqlCommand cmd = new SqlCommand(sqlCode1, con);
                 cmd.ExecuteNonQuery();
@@ -268,7 +268,7 @@ namespace Thuc_Tap_CSDL
             if (cmbStudent.SelectedItem == "Số điện thoại")
             {
 
-                string sqlCode1 = "Select * from DBO.FUNC_SEARCH_HS_SDT('" + txtStudentSearch.Text + "')";
+                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_HS_SDT('" + txtStudentSearch.Text + "')";
 
                 SqlCommand cmd = new SqlCommand(sqlCode1, con);
                 cmd.ExecuteNonQuery();

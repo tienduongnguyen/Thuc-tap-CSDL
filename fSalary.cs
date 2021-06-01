@@ -54,37 +54,10 @@ namespace Thuc_Tap_CSDL
             dgvSalary.DataSource = dataTable;
         }
 
-        private void btnSalary_search_Click(object sender, EventArgs e)
-        {
-            if (cmbSalary_search.SelectedItem == "Mã môn học")
-            {
-                // string sqlCode2 = "Select * from DBO.FUNC_SEARCH_GV_MAGV('" + txtSalarySearch.Text + "')";
-                string sqlCode2 = "Select MaGiaoVien, TenGiaoVien from GIAOVIEN, MONHOC where GIAOVIEN.MaMonHoc = MONHOC.MaMonHoc and MONHOC.MaMonHoc = '" + txtSalarySearch.Text + "'";
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvSalary.DataSource = dataTable;
-                Display(sqlCode2);
-            }
-
-            if (cmbSalary_search.SelectedItem == "Tên môn học")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_GV_TENGV('" + txtSalarySearch.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvSalary.DataSource = dataTable;
-            }
-        }
 
         public void Display1()
         {
-            string sqlCode = "SELECT * FROM BLTRALUONG ";
+            string sqlCode = "select top(20) * FROM BLTRALUONG ";
 
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -102,9 +75,10 @@ namespace Thuc_Tap_CSDL
             string conString = ConfigurationManager.ConnectionStrings["QLTrungTamHocThem"].ConnectionString.ToString();
             con = new SqlConnection(conString);
             con.Open();
-            string sqlCode = "SELECT * FROM GIAOVIEN ";
+            string sqlCode = "select top(20) * FROM GIAOVIEN ";
             Display(sqlCode);
             Display1();
+            loadCombobox();
         }
 
         private void dgvSalary_bill_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -177,89 +151,33 @@ namespace Thuc_Tap_CSDL
             txtSalaryBill_datePay.Text = "";
             txtSalaryBill_datePayFor.Text = "";
             ckbPayed.Text = "đã thu";
-            txtSalaryBill_search.Text = "";
-           // Display();
             Display1();
         }
 
-        private void btnSalaryBill_all_Click(object sender, EventArgs e)
+        public void loadCombobox()
         {
-            Display1();
+            var sqlCode = "Select MaMonHoc from MONHOC";
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            ///cmd.ExecuteNonQuery();
+            var dr = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(dr);
+            dr.Dispose();
+            cbbMMH.ValueMember = "MaMonHoc";
+            cbbMMH.DataSource = dt;
         }
 
-        private void btnSalaryBill_search_Click(object sender, EventArgs e)
+        private void cbbMBM_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbSalaryBill_search.SelectedItem == "Mã biên lai")
+            string sqlCode = "SELECT MaMonHoc FROM MONHOC WHERE MaMonHoc = '" + cbbMMH.SelectedValue.ToString() + "'";
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTRALUONG_MABL('" + txtSalaryBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvSalary_bill.DataSource = dataTable;
-               
+                txtSalarySearch.Text = dr.GetValue(0).ToString();
             }
-
-            if (cmbSalaryBill_search.SelectedItem == "Tổng số buổi dạy")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTRALUONG_TONGSBD('" + txtSalaryBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvSalary_bill.DataSource = dataTable;
-                
-            }
-
-            if (cmbSalaryBill_search.SelectedItem == "Tổng lương")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTRALUONG_TONGLUONG('" + txtSalaryBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvSalary_bill.DataSource = dataTable;
-                
-            }
-
-            if (cmbSalaryBill_search.SelectedItem == "Mã giáo viên")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTRALUONG_MAGV('" + txtSalaryBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvSalary_bill.DataSource = dataTable;
-               
-            }
-
-            if (cmbSalaryBill_search.SelectedItem == "Mã lớp học")
-            {
-                string sqlCode2 = "Select * from DBO.FUNC_SEARCH_BLTRALUONG_MALH('" + txtSalaryBill_search.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvSalary_bill.DataSource = dataTable;
-              
-            }
+            dr.Close();
         }
-
-        private void cmbSalaryBill_search_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }

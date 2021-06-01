@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlClass = new System.Windows.Forms.Panel();
+            this.cbbMMHP = new System.Windows.Forms.ComboBox();
+            this.cbbMKH = new System.Windows.Forms.ComboBox();
+            this.cbbMGV = new System.Windows.Forms.ComboBox();
+            this.cbbMMH = new System.Windows.Forms.ComboBox();
             this.btnDSL = new ePOSOne.btnProduct.Button_WOC();
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.cmbClass = new System.Windows.Forms.ComboBox();
@@ -110,6 +114,10 @@
             // pnlClass
             // 
             this.pnlClass.BackColor = System.Drawing.Color.White;
+            this.pnlClass.Controls.Add(this.cbbMMHP);
+            this.pnlClass.Controls.Add(this.cbbMKH);
+            this.pnlClass.Controls.Add(this.cbbMGV);
+            this.pnlClass.Controls.Add(this.cbbMMH);
             this.pnlClass.Controls.Add(this.btnDSL);
             this.pnlClass.Controls.Add(this.button_WOC1);
             this.pnlClass.Controls.Add(this.cmbClass);
@@ -186,6 +194,90 @@
             this.pnlClass.Size = new System.Drawing.Size(1257, 773);
             this.pnlClass.TabIndex = 1;
             // 
+            // cbbMMHP
+            // 
+            this.cbbMMHP.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cbbMMHP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.cbbMMHP.FormattingEnabled = true;
+            this.cbbMMHP.Items.AddRange(new object[] {
+            "Mã lớp học",
+            "Tên lớp học",
+            "Số lượng học sinh",
+            "Mã khóa học",
+            "Học phí/buổi",
+            "Mã mức HP",
+            "Mã giáo viên",
+            "Mã môn học"});
+            this.cbbMMHP.Location = new System.Drawing.Point(324, 163);
+            this.cbbMMHP.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbMMHP.Name = "cbbMMHP";
+            this.cbbMMHP.Size = new System.Drawing.Size(147, 31);
+            this.cbbMMHP.TabIndex = 97;
+            this.cbbMMHP.SelectedIndexChanged += new System.EventHandler(this.cbbMMHP_SelectedIndexChanged);
+            // 
+            // cbbMKH
+            // 
+            this.cbbMKH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cbbMKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.cbbMKH.FormattingEnabled = true;
+            this.cbbMKH.Items.AddRange(new object[] {
+            "Mã lớp học",
+            "Tên lớp học",
+            "Số lượng học sinh",
+            "Mã khóa học",
+            "Học phí/buổi",
+            "Mã mức HP",
+            "Mã giáo viên",
+            "Mã môn học"});
+            this.cbbMKH.Location = new System.Drawing.Point(324, 127);
+            this.cbbMKH.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbMKH.Name = "cbbMKH";
+            this.cbbMKH.Size = new System.Drawing.Size(147, 31);
+            this.cbbMKH.TabIndex = 96;
+            this.cbbMKH.SelectedIndexChanged += new System.EventHandler(this.cbbMKH_SelectedIndexChanged);
+            // 
+            // cbbMGV
+            // 
+            this.cbbMGV.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cbbMGV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.cbbMGV.FormattingEnabled = true;
+            this.cbbMGV.Items.AddRange(new object[] {
+            "Mã lớp học",
+            "Tên lớp học",
+            "Số lượng học sinh",
+            "Mã khóa học",
+            "Học phí/buổi",
+            "Mã mức HP",
+            "Mã giáo viên",
+            "Mã môn học"});
+            this.cbbMGV.Location = new System.Drawing.Point(324, 197);
+            this.cbbMGV.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbMGV.Name = "cbbMGV";
+            this.cbbMGV.Size = new System.Drawing.Size(147, 31);
+            this.cbbMGV.TabIndex = 95;
+            this.cbbMGV.SelectedIndexChanged += new System.EventHandler(this.cbbMGV_SelectedIndexChanged);
+            // 
+            // cbbMMH
+            // 
+            this.cbbMMH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cbbMMH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.cbbMMH.FormattingEnabled = true;
+            this.cbbMMH.Items.AddRange(new object[] {
+            "Mã lớp học",
+            "Tên lớp học",
+            "Số lượng học sinh",
+            "Mã khóa học",
+            "Học phí/buổi",
+            "Mã mức HP",
+            "Mã giáo viên",
+            "Mã môn học"});
+            this.cbbMMH.Location = new System.Drawing.Point(324, 233);
+            this.cbbMMH.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbMMH.Name = "cbbMMH";
+            this.cbbMMH.Size = new System.Drawing.Size(147, 31);
+            this.cbbMMH.TabIndex = 94;
+            this.cbbMMH.SelectedIndexChanged += new System.EventHandler(this.cbbMMH_SelectedIndexChanged);
+            // 
             // btnDSL
             // 
             this.btnDSL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
@@ -197,7 +289,7 @@
             this.btnDSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDSL.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnDSL.ForeColor = System.Drawing.Color.Black;
-            this.btnDSL.Location = new System.Drawing.Point(446, 298);
+            this.btnDSL.Location = new System.Drawing.Point(446, 301);
             this.btnDSL.Margin = new System.Windows.Forms.Padding(4);
             this.btnDSL.Name = "btnDSL";
             this.btnDSL.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -549,7 +641,7 @@
             this.btnClass_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClass_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnClass_clear.ForeColor = System.Drawing.Color.Black;
-            this.btnClass_clear.Location = new System.Drawing.Point(480, 222);
+            this.btnClass_clear.Location = new System.Drawing.Point(504, 223);
             this.btnClass_clear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClass_clear.Name = "btnClass_clear";
             this.btnClass_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
@@ -597,7 +689,7 @@
             this.btnClass_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClass_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnClass_delete.ForeColor = System.Drawing.Color.Black;
-            this.btnClass_delete.Location = new System.Drawing.Point(480, 174);
+            this.btnClass_delete.Location = new System.Drawing.Point(507, 175);
             this.btnClass_delete.Margin = new System.Windows.Forms.Padding(4);
             this.btnClass_delete.Name = "btnClass_delete";
             this.btnClass_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
@@ -645,7 +737,7 @@
             this.btnClass_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClass_edit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnClass_edit.ForeColor = System.Drawing.Color.Black;
-            this.btnClass_edit.Location = new System.Drawing.Point(480, 126);
+            this.btnClass_edit.Location = new System.Drawing.Point(504, 127);
             this.btnClass_edit.Margin = new System.Windows.Forms.Padding(4);
             this.btnClass_edit.Name = "btnClass_edit";
             this.btnClass_edit.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
@@ -702,7 +794,7 @@
             this.btnClass_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClass_add.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnClass_add.ForeColor = System.Drawing.Color.Black;
-            this.btnClass_add.Location = new System.Drawing.Point(480, 78);
+            this.btnClass_add.Location = new System.Drawing.Point(504, 78);
             this.btnClass_add.Margin = new System.Windows.Forms.Padding(4);
             this.btnClass_add.Name = "btnClass_add";
             this.btnClass_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
@@ -1001,7 +1093,7 @@
             this.txtClassID.Location = new System.Drawing.Point(209, 60);
             this.txtClassID.Margin = new System.Windows.Forms.Padding(4);
             this.txtClassID.Name = "txtClassID";
-            this.txtClassID.Size = new System.Drawing.Size(212, 23);
+            this.txtClassID.Size = new System.Drawing.Size(216, 23);
             this.txtClassID.TabIndex = 45;
             // 
             // label13
@@ -1259,5 +1351,9 @@
         private System.Windows.Forms.Panel panel14;
         private ePOSOne.btnProduct.Button_WOC button_WOC1;
         private ePOSOne.btnProduct.Button_WOC btnDSL;
+        private System.Windows.Forms.ComboBox cbbMMH;
+        private System.Windows.Forms.ComboBox cbbMGV;
+        private System.Windows.Forms.ComboBox cbbMMHP;
+        private System.Windows.Forms.ComboBox cbbMKH;
     }
 }
