@@ -529,20 +529,20 @@ namespace Thuc_Tap_CSDL
 
         public void loadDataCombobox3()
         {
-            var sqlCode3 = "Select MaMHP from MUCHOCPHI";
+            var sqlCode3 = "Select SoHocPhi from MUCHOCPHI";
             SqlCommand cmd3 = new SqlCommand(sqlCode3, con);
             ///cmd.ExecuteNonQuery();
             var dr = cmd3.ExecuteReader();
             var dt = new DataTable();
             dt.Load(dr);
             dr.Dispose();
-            cbbMMHP.ValueMember = "MaMHP";
+            cbbMMHP.ValueMember = "SoHocPhi";
             cbbMMHP.DataSource = dt;
         }
 
         private void cbbMMHP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sqlCode = "SELECT MaMHP FROM MUCHOCPHI WHERE MaMHP = '" + cbbMMHP.SelectedValue.ToString() + "'";
+            string sqlCode = "SELECT MaMHP FROM MUCHOCPHI WHERE SoHocPhi = '" + cbbMMHP.SelectedValue.ToString() + "'";
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
             SqlDataReader dr = cmd.ExecuteReader();

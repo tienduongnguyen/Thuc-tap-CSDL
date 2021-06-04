@@ -47,17 +47,14 @@
             this.txtSalaryBill_teacherID = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.txtSalarySearch = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtSalaryBill = new System.Windows.Forms.TextBox();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -70,7 +67,6 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.ckbPayed = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.pnlSalary = new System.Windows.Forms.Panel();
             this.cbbMMH = new System.Windows.Forms.ComboBox();
             this.btnSalaryBill_add = new ePOSOne.btnProduct.Button_WOC();
@@ -81,7 +77,6 @@
             this.dgvSalary_bill = new System.Windows.Forms.DataGridView();
             this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
             this.dgvSalary = new System.Windows.Forms.DataGridView();
-            this.btnSalary_bill = new ePOSOne.btnProduct.Button_WOC();
             this.btnSalary_search = new ePOSOne.btnProduct.Button_WOC();
             this.pnlSalary.SuspendLayout();
             this.colorBorderGroupBox2.SuspendLayout();
@@ -316,6 +311,7 @@
             // 
             this.txtSalarySearch.BackColor = System.Drawing.Color.White;
             this.txtSalarySearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalarySearch.Enabled = false;
             this.txtSalarySearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalarySearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSalarySearch.Location = new System.Drawing.Point(224, 78);
@@ -323,17 +319,6 @@
             this.txtSalarySearch.Name = "txtSalarySearch";
             this.txtSalarySearch.Size = new System.Drawing.Size(204, 23);
             this.txtSalarySearch.TabIndex = 53;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.textBox1.Location = new System.Drawing.Point(224, 132);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 23);
-            this.textBox1.TabIndex = 49;
             // 
             // panel4
             // 
@@ -352,18 +337,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(224, 1);
             this.panel3.TabIndex = 55;
-            // 
-            // txtSalaryBill
-            // 
-            this.txtSalaryBill.BackColor = System.Drawing.Color.White;
-            this.txtSalaryBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSalaryBill.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtSalaryBill.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtSalaryBill.Location = new System.Drawing.Point(224, 129);
-            this.txtSalaryBill.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSalaryBill.Name = "txtSalaryBill";
-            this.txtSalaryBill.Size = new System.Drawing.Size(204, 23);
-            this.txtSalaryBill.TabIndex = 53;
             // 
             // panel23
             // 
@@ -418,15 +391,6 @@
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(209, 1);
             this.panel19.TabIndex = 62;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel2.Location = new System.Drawing.Point(219, 156);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(209, 1);
-            this.panel2.TabIndex = 62;
             // 
             // panel7
             // 
@@ -544,23 +508,10 @@
             this.label7.TabIndex = 101;
             this.label7.Text = "Mã môn học:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label6.Location = new System.Drawing.Point(91, 129);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 23);
-            this.label6.TabIndex = 102;
-            this.label6.Text = "Tên môn học:";
-            // 
             // pnlSalary
             // 
             this.pnlSalary.BackColor = System.Drawing.Color.White;
             this.pnlSalary.Controls.Add(this.cbbMMH);
-            this.pnlSalary.Controls.Add(this.label6);
             this.pnlSalary.Controls.Add(this.label7);
             this.pnlSalary.Controls.Add(this.btnSalaryBill_add);
             this.pnlSalary.Controls.Add(this.btnSalaryBill_edit);
@@ -577,21 +528,17 @@
             this.pnlSalary.Controls.Add(this.panel11);
             this.pnlSalary.Controls.Add(this.panel10);
             this.pnlSalary.Controls.Add(this.panel9);
-            this.pnlSalary.Controls.Add(this.btnSalary_bill);
             this.pnlSalary.Controls.Add(this.panel8);
             this.pnlSalary.Controls.Add(this.btnSalary_search);
             this.pnlSalary.Controls.Add(this.panel7);
-            this.pnlSalary.Controls.Add(this.panel2);
             this.pnlSalary.Controls.Add(this.panel19);
             this.pnlSalary.Controls.Add(this.panel24);
             this.pnlSalary.Controls.Add(this.panel6);
             this.pnlSalary.Controls.Add(this.panel18);
             this.pnlSalary.Controls.Add(this.panel5);
             this.pnlSalary.Controls.Add(this.panel23);
-            this.pnlSalary.Controls.Add(this.txtSalaryBill);
             this.pnlSalary.Controls.Add(this.panel3);
             this.pnlSalary.Controls.Add(this.panel4);
-            this.pnlSalary.Controls.Add(this.textBox1);
             this.pnlSalary.Controls.Add(this.txtSalarySearch);
             this.pnlSalary.Controls.Add(this.textBox10);
             this.pnlSalary.Controls.Add(this.txtSalaryBill_teacherID);
@@ -780,30 +727,7 @@
             this.dgvSalary.RowHeadersWidth = 51;
             this.dgvSalary.Size = new System.Drawing.Size(585, 551);
             this.dgvSalary.TabIndex = 0;
-            // 
-            // btnSalary_bill
-            // 
-            this.btnSalary_bill.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnSalary_bill.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnSalary_bill.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalary_bill.FlatAppearance.BorderSize = 0;
-            this.btnSalary_bill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnSalary_bill.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnSalary_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalary_bill.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnSalary_bill.ForeColor = System.Drawing.Color.Black;
-            this.btnSalary_bill.Location = new System.Drawing.Point(436, 122);
-            this.btnSalary_bill.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSalary_bill.Name = "btnSalary_bill";
-            this.btnSalary_bill.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnSalary_bill.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnSalary_bill.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSalary_bill.Size = new System.Drawing.Size(139, 36);
-            this.btnSalary_bill.TabIndex = 75;
-            this.btnSalary_bill.Text = "TÌM KIẾM";
-            this.btnSalary_bill.TextColor = System.Drawing.Color.White;
-            this.btnSalary_bill.UseVisualStyleBackColor = true;
-            this.btnSalary_bill.Click += new System.EventHandler(this.btnSalary_bill_Click);
+            this.dgvSalary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalary_CellContentClick);
             // 
             // btnSalary_search
             // 
@@ -827,6 +751,7 @@
             this.btnSalary_search.Text = "TÌM KIẾM";
             this.btnSalary_search.TextColor = System.Drawing.Color.White;
             this.btnSalary_search.UseVisualStyleBackColor = true;
+            this.btnSalary_search.Click += new System.EventHandler(this.btnSalary_search_Click);
             // 
             // fSalary
             // 
@@ -870,17 +795,14 @@
         private System.Windows.Forms.TextBox txtSalaryBill_teacherID;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox txtSalarySearch;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtSalaryBill;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel7;
         private ePOSOne.btnProduct.Button_WOC btnSalary_search;
         private System.Windows.Forms.Panel panel8;
@@ -902,9 +824,7 @@
         private ePOSOne.btnProduct.Button_WOC btnSalaryBill_edit;
         private ePOSOne.btnProduct.Button_WOC btnSalaryBill_add;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pnlSalary;
-        private ePOSOne.btnProduct.Button_WOC btnSalary_bill;
         private System.Windows.Forms.ComboBox cbbMMH;
     }
 }

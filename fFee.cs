@@ -83,7 +83,7 @@ namespace Thuc_Tap_CSDL
             while (dr.Read())
             {
                 string result = dr.GetValue(0).ToString();
-                txtFeeSearch2.Text = result;
+                //txtFeeSearch2.Text = result;
             }
             dr.Close();
 
@@ -265,44 +265,24 @@ namespace Thuc_Tap_CSDL
             txtFeeBill_takeForDate.Text = DateTime.Now.Month.ToString(); //ThuChoThangNam
         }
 
-        private void btnFee_search2_Click(object sender, EventArgs e)
-        {
 
-            string sqlCode2 = "select top(20) * from FUNC_LIST_STUDENT_BY_CLASS_NAME('" + txtFeeSearch2.Text + "')";
-
-            Display(sqlCode2);
-
-            string sqlCode = "SELECT MaLopHoc FROM LOPHOC WHERE TenLopHoc = '" + txtFeeSearch2.Text + "'";
-
-
-            SqlCommand cmd = new SqlCommand(sqlCode, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                string result = dr.GetValue(0).ToString();
-                txtFeeSearch.Text = result;
-            }
-            dr.Close();
-
-        }
 
         public void loadCombobox()
         {
-            var sqlCode = "Select MaLopHoc from LOPHOC";
+            var sqlCode = "Select TenLopHoc from LOPHOC";
             SqlCommand cmd = new SqlCommand(sqlCode, con);
             ///cmd.ExecuteNonQuery();
             var dr = cmd.ExecuteReader();
             var dt = new DataTable();
             dt.Load(dr);
             dr.Dispose();
-            cbbMLH.ValueMember = "MaLopHoc";
+            cbbMLH.ValueMember = "TenLopHoc";
             cbbMLH.DataSource = dt;
         }
 
         private void cbbMLH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sqlCode = "SELECT MaLopHoc FROM LOPHOC WHERE MaLopHoc = '" + cbbMLH.SelectedValue.ToString() + "'";
+            string sqlCode = "SELECT MaLopHoc FROM LOPHOC WHERE TenLopHoc = '" + cbbMLH.SelectedValue.ToString() + "'";
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -312,5 +292,7 @@ namespace Thuc_Tap_CSDL
             }
             dr.Close();
         }
+
+       
     }
 }
