@@ -208,6 +208,7 @@ namespace Thuc_Tap_CSDL
             dr.Close();
         }
 
+        //func sql 
         public string getSumDay(string ClassID)
         {
             string result = "";
@@ -250,7 +251,7 @@ namespace Thuc_Tap_CSDL
         //func sql
         public int getFeeClass(string ClassID)
         {
-            string result = "";
+            int result = 0;
 
             string sqlCode = "select * from FUNC_TONGHOCPHI_1LOP('" + ClassID + "') ";
 
@@ -259,11 +260,11 @@ namespace Thuc_Tap_CSDL
 
             while (dr.Read())
             {
-                result = dr.GetValue(0).ToString();
+                Int32.TryParse(dr.GetValue(0).ToString(), out result);
             }
             dr.Close();
 
-            return Convert.ToInt32(result);
+            return result;
         }
         //fun sql
         public int getPercentTeacher(string TeacherID)
