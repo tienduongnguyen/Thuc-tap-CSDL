@@ -211,3 +211,4 @@ D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.c
 D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
 D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.exe
 D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.pdb
+D:\Repo\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csprojAssemblyReference.cache

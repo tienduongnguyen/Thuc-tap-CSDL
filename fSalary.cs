@@ -42,25 +42,18 @@ namespace Thuc_Tap_CSDL
 
         public void Display(string code)
         {
-
-
-
             SqlCommand cmd = new SqlCommand(code, con);
             SqlDataReader dataReader = cmd.ExecuteReader();
             DataTable dataTable = new DataTable();
-
 
             dataTable.Load(dataReader);
             dgvSalary.DataSource = dataTable;
         }
 
 
-        public void Display1()
+        public void Display1(string code)
         {
-            string sqlCode = "select top(20) * FROM BLTRALUONG ";
-
-
-            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlCommand cmd = new SqlCommand(code, con);
             SqlDataReader dataReader = cmd.ExecuteReader();
             DataTable dataTable = new DataTable();
 
@@ -71,20 +64,15 @@ namespace Thuc_Tap_CSDL
 
         private void fSalary_Load(object sender, EventArgs e)
         {
-
             string conString = ConfigurationManager.ConnectionStrings["QLTrungTamHocThem"].ConnectionString.ToString();
             con = new SqlConnection(conString);
             con.Open();
-            string sqlCode = "select top(20) * FROM GIAOVIEN ";
-            // Display(sqlCode);
-            Display1();
+
             loadCombobox();
         }
 
         private void dgvSalary_bill_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
             int i;
             i = dgvSalary_bill.CurrentRow.Index;
             txtSalaryBill_id.Text = dgvSalary_bill.Rows[i].Cells[0].Value.ToString();
@@ -92,13 +80,10 @@ namespace Thuc_Tap_CSDL
             txtSalaryBill_sumMoney.Text = dgvSalary_bill.Rows[i].Cells[2].Value.ToString();
             txtSalaryBill_teacherID.Text = dgvSalary_bill.Rows[i].Cells[3].Value.ToString();
             txtSalaryBill_classID.Text = dgvSalary_bill.Rows[i].Cells[4].Value.ToString();
-            txtSalaryBill_datePay.Text = dgvSalary_bill.Rows[i].Cells[5].Value.ToString();
+            txtSalaryBill_datePay.Text = convertDate(dgvSalary_bill.Rows[i].Cells[5].Value.ToString());
             txtSalaryBill_datePayFor.Text = dgvSalary_bill.Rows[i].Cells[6].Value.ToString();
-            ckbPayed.Checked = (dgvSalary_bill.Rows[i].Cells[7].Value.ToString() == "1");
-            if (ckbPayed.Checked)
-                ckbPayed.Text = "đã thu";
-            else
-                ckbPayed.Text = "chưa thu";
+            if (dgvSalary_bill.Rows[i].Cells[7].Value.ToString() == "1") ckbPayed.Checked = true;
+            else ckbPayed.Checked = false;
         }
 
         private void btnSalaryBill_add_Click_1(object sender, EventArgs e)
@@ -118,7 +103,7 @@ namespace Thuc_Tap_CSDL
             string sqlInsert = "exec PROC_INSERT_BLTRALUONG '" + txtSalaryBill_id.Text + "','" + txtSalaryBill_teacherID.Text + "','" + txtSalaryBill_classID.Text + "'," + tongSoBuoiDay + ",'" + txtSalaryBill_sumMoney.Text + "', '" + txtSalaryBill_datePay.Text + "','" + txtSalaryBill_datePayFor.Text + "','" + text + "' ";
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
             cmd.ExecuteNonQuery();
-            Display1();
+            //Display1();
         }
 
         private void btnSalaryBill_edit_Click_1(object sender, EventArgs e)
@@ -129,31 +114,24 @@ namespace Thuc_Tap_CSDL
             SqlCommand cmd = new SqlCommand(sqlEdit, con);
 
             cmd.ExecuteNonQuery();
-            Display1();
+            //Display1();
         }
 
         private void btnSalaryBill_delete_Click_1(object sender, EventArgs e)
         {
-
-
             string sqlDelete = "exec PROC_DELETE_BLTRALUONG '" + txtSalaryBill_id.Text + "'";
             SqlCommand cmd = new SqlCommand(sqlDelete, con);
             cmd.ExecuteNonQuery();
 
-            Display1();
+            //Display1();
         }
 
         private void btnSalaryBill_clear_Click_1(object sender, EventArgs e)
         {
-            txtSalaryBill_id.Text = "";
-            txtSalaryBill_sumDay.Text = "";
-            txtSalaryBill_sumMoney.Text = "";
-            txtSalaryBill_teacherID.Text = "";
-            txtSalaryBill_classID.Text = "";
             txtSalaryBill_datePay.Text = "";
             txtSalaryBill_datePayFor.Text = "";
-            ckbPayed.Text = "đã thu";
-            Display1();
+            ckbPayed.Checked = false;
+            //Display1();
         }
 
         public void loadCombobox()
@@ -180,11 +158,8 @@ namespace Thuc_Tap_CSDL
                 txtSalarySearch.Text = dr.GetValue(0).ToString();
             }
             dr.Close();
-        }
 
-        private void btnSalary_search_Click(object sender, EventArgs e)
-        {
-            string sqlCode2 = "select MaGiaoVien, TenGiaoVien from GIAOVIEN, MONHOC where GIAOVIEN.MaMonHoc=MONHOC.MaMonHoc and MONHOC.MaMonHoc='" + txtSalarySearch.Text + "'";
+            string sqlCode2 = "select * from FUNC_LIST_TEACHER('" + txtSalarySearch.Text + "')";
             Display(sqlCode2);
         }
 
@@ -229,31 +204,11 @@ namespace Thuc_Tap_CSDL
         }
 
         //func sql
-        public string getFeePerDay(string ClassID)
-        {
-            string result = "";
-
-            string sqlCode = "SELECT SoHocPhi FROM MUCHOCPHI, LOPHOC WHERE MUCHOCPHI.MaMHP = LOPHOC.MaMHP and MaLopHoc = '" + ClassID + "'";
-
-
-            SqlCommand cmd = new SqlCommand(sqlCode, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                result = dr.GetValue(0).ToString();
-            }
-            dr.Close();
-
-            return result;
-        }
-
-        //func sql
         public int getFeeClass(string ClassID)
         {
             int result = 0;
 
-            string sqlCode = "select * from FUNC_TONGHOCPHI_1LOP('" + ClassID + "') ";
+            string sqlCode = "select * from FUNC_TONGHOCPHI_1LOP('" + ClassID + "')";
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -266,25 +221,7 @@ namespace Thuc_Tap_CSDL
 
             return result;
         }
-        //fun sql
-        public int getPercentTeacher(string TeacherID)
-        {
-            string result = "";
 
-            string sqlCode = "select TyLePhanTram from GIAOVIEN,MUCTHANHTOAN where GIAOVIEN.MaMTT = MUCTHANHTOAN.MaMTT and MaGiaoVien = '" + TeacherID + "'";
-
-
-            SqlCommand cmd = new SqlCommand(sqlCode, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                result = dr.GetValue(0).ToString();
-            }
-            dr.Close();
-
-            return Convert.ToInt32(result);
-        }
         //func sql
         public string convertDate(string date)
         {
@@ -293,39 +230,27 @@ namespace Thuc_Tap_CSDL
             return info[1] + "/" + info[0] + "/" + info[2];
         }
 
-        //fun sql
-
-        public string getClassID(string TeacherID)
-        {
-            string result = "";
-
-            string sqlCode = "select MaLopHoc from GIAOVIEN,LOPHOC where GIAOVIEN.MaGiaoVien = LOPHOC.MaGiaoVien and GIAOVIEN.MaGiaoVien = '" + TeacherID + "'";
-
-
-            SqlCommand cmd = new SqlCommand(sqlCode, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                result = dr.GetValue(0).ToString();
-            }
-            dr.Close();
-
-            return result;
-        }
-
         private void dgvSalary_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
             i = dgvSalary.CurrentRow.Index;
-            autoLoadBillID();
-            txtSalaryBill_teacherID.Text = dgvSalary.Rows[i].Cells[0].Value.ToString();
-            txtSalaryBill_classID.Text = getClassID(txtSalaryBill_teacherID.Text);
-            txtSalaryBill_sumDay.Text = getSumDay(txtSalaryBill_classID.Text);
-            txtSalaryBill_sumMoney.Text = (getPercentTeacher(txtSalaryBill_teacherID.Text) * getFeeClass(txtSalaryBill_classID.Text) / 100).ToString();
-            txtSalaryBill_datePay.Text = DateTime.Now.ToString("MM/dd/yyyy");
-            txtSalaryBill_datePayFor.Text = DateTime.Now.Month.ToString();
-           
+            autoLoadBillID(); //Ma bien lai
+            txtSalaryBill_teacherID.Text = dgvSalary.Rows[i].Cells[0].Value.ToString(); //Ma giao vien
+            txtSalaryBill_classID.Text = dgvSalary.Rows[i].Cells[2].Value.ToString(); //Ma lop
+            txtSalaryBill_sumDay.Text = getSumDay(txtSalaryBill_classID.Text); //Tong so buoi day
+            int percent = (int)dgvSalary.Rows[i].Cells[3].Value;
+            txtSalaryBill_sumMoney.Text = (percent * getFeeClass(txtSalaryBill_classID.Text) / 100).ToString(); //Tong luong
+            txtSalaryBill_datePay.Text = DateTime.Now.ToString("MM/dd/yyyy"); //Ngay tra
+            txtSalaryBill_datePayFor.Text = (DateTime.Now.Month - 1).ToString(); //Tra cho thang/nam        
+
+            string sqlCode = "select * from BLTRALUONG where MaGiaoVien = '" + txtSalaryBill_teacherID.Text + "' order by NgayTra desc";
+            Display1(sqlCode);
+        }
+
+        private void ckbPayed_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbPayed.Checked) ckbPayed.Text = "đã trả";
+            else ckbPayed.Text = "chưa trả";
         }
     }
 }

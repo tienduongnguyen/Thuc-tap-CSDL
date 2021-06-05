@@ -30,8 +30,8 @@ namespace Thuc_Tap_CSDL
             con = new SqlConnection(conString);
             con.Open();
 
-            Display1();
             loadCombobox();
+
         }
 
         public void Display(string code)
@@ -68,33 +68,10 @@ namespace Thuc_Tap_CSDL
 
         }
 
-        private void btnFee_search_Click(object sender, EventArgs e)
+        public void Display1(string code)
         {
 
-            string sqlCode2 = "select top(20) * from FUNC_LIST_STUDENT_CLASS('" + txtFeeSearch.Text + "')";
-            Display(sqlCode2);
-
-            string sqlCode = "SELECT TenLopHoc FROM LOPHOC WHERE MaLopHoc = '" + txtFeeSearch.Text + "'";
-
-
-            SqlCommand cmd = new SqlCommand(sqlCode, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                string result = dr.GetValue(0).ToString();
-                //txtFeeSearch2.Text = result;
-            }
-            dr.Close();
-
-        }
-
-        public void Display1()
-        {
-
-            string sqlCode = "SELECT TOP(30) * FROM BLTHUHP";
-
-            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlCommand cmd = new SqlCommand(code, con);
             SqlDataReader dataReader = cmd.ExecuteReader();
             DataTable dataTable = new DataTable();
 
@@ -135,18 +112,16 @@ namespace Thuc_Tap_CSDL
         private void btnFeeBill_add_Click(object sender, EventArgs e)
         {
 
-            string text;
+            string isCheck = "";
+            if (ckbTaked.Checked) isCheck = "1";
+            else isCheck = "0";
 
-            if (ckbTaked.Checked == false)
-                text = "0";
-            else
-                text = "1";
-
-            string sqlInsert = "exec PROC_INSERT_BLTHUHP '" + txtFeeBill_id.Text + "','" + txtFeeBill_studentID.Text + "','" + txtFeeBill_classID.Text + "','" + txtFeeBill_sumDay.Text + "','" + txtFeeBill_feePerDay.Text + "', '" + txtFeeBill_sumFee.Text + "','" + txtFeeBill_dateTake.Text + "','" + txtFeeBill_takeForDate.Text + "', '" + text + "'";
+            string sqlInsert = "exec PROC_INSERT_BLTHUHP '" + txtFeeBill_id.Text + "','" + txtFeeBill_studentID.Text + "','" + txtFeeBill_classID.Text + "','" + txtFeeBill_sumDay.Text + "','" + txtFeeBill_feePerDay.Text + "', '" + txtFeeBill_sumFee.Text + "','" + txtFeeBill_dateTake.Text + "','" + txtFeeBill_takeForDate.Text + "', '" + isCheck + "'";
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
             cmd.ExecuteNonQuery();
 
-            Display1();
+            string sqlCode = "select top(20) * from BLTHUHP where MaHocSinh = '" + txtFeeBill_studentID.Text + "' order by NgayThu desc";
+            Display1(sqlCode);
 
         }
 
@@ -158,43 +133,30 @@ namespace Thuc_Tap_CSDL
             else isCheck = "0";
 
             string sqlEdit = "exec PROC_UPDATE_BLTHUHP '" + txtFeeBill_id.Text + "','" + txtFeeBill_studentID.Text + "','" + txtFeeBill_classID.Text + "','" + txtFeeBill_sumDay.Text + "','" + txtFeeBill_feePerDay.Text + "', '" + txtFeeBill_sumFee.Text + "','" + txtFeeBill_dateTake.Text + "','" + txtFeeBill_takeForDate.Text + "', '" + isCheck + "' ";
-
             SqlCommand cmd = new SqlCommand(sqlEdit, con);
-
             cmd.ExecuteNonQuery();
-            Display1();
+
+            string sqlCode = "select top(20) * from BLTHUHP where MaHocSinh = '" + txtFeeBill_studentID.Text + "' order by NgayThu desc";
+            Display1(sqlCode);
 
         }
 
         private void btnFeeBill_delete_Click(object sender, EventArgs e)
         {
-
             string sqlDelete = "exec PROC_DELETE_BLTHUHP '" + txtFeeBill_id.Text + "'";
             SqlCommand cmd = new SqlCommand(sqlDelete, con);
             cmd.ExecuteNonQuery();
 
-            Display1();
+            string sqlCode = "select top(20) * from BLTHUHP where MaHocSinh = '" + txtFeeBill_studentID.Text + "' order by NgayThu desc";
+            Display1(sqlCode);
         }
 
         private void btnFeeBill_clear_Click(object sender, EventArgs e)
         {
-
-            txtFeeBill_id.Text = "";
-            txtFeeBill_studentID.Text = "";
-            txtFeeBill_classID.Text = "";
-            txtFeeBill_sumDay.Text = "";
-            txtFeeBill_feePerDay.Text = "";
-            txtFeeBill_sumFee.Text = "";
             txtFeeBill_dateTake.Text = "";
             txtFeeBill_takeForDate.Text = "";
-            ckbTaked.Text = "chưa thu";
-            Display1();
-
-        }
-
-        private void btnFeeBill_all_Click(object sender, EventArgs e)
-        {
-            Display1();
+            ckbTaked.Checked = false;
+            //Display1();
         }
 
         //func sql
@@ -202,7 +164,7 @@ namespace Thuc_Tap_CSDL
         {
             string result = "";
 
-            string sqlCode = "select top(20) * from FUNC_CALC_TONGSOBUOI('" + ClassID + "','" + StudentID + "')";
+            string sqlCode = "select * from FUNC_CALC_TONGSOBUOI('" + ClassID + "','" + StudentID + "')";
 
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -262,7 +224,10 @@ namespace Thuc_Tap_CSDL
             txtFeeBill_feePerDay.Text = getFeePerDay(txtFeeBill_classID.Text); //HocPhi/Buoi
             txtFeeBill_sumFee.Text = getSumFee(txtFeeBill_feePerDay.Text, txtFeeBill_sumDay.Text); //TongHocPhi
             txtFeeBill_dateTake.Text = DateTime.Now.ToString("MM/dd/yyyy"); //NgayThu
-            txtFeeBill_takeForDate.Text = DateTime.Now.Month.ToString(); //ThuChoThangNam
+            txtFeeBill_takeForDate.Text = (DateTime.Now.Month - 1).ToString(); //ThuChoThangNam
+
+            string sqlCode = "select top(20) * from BLTHUHP where MaHocSinh = '" + txtFeeBill_studentID.Text + "' order by NgayThu desc";
+            Display1(sqlCode);
         }
 
 
@@ -291,8 +256,9 @@ namespace Thuc_Tap_CSDL
                 txtFeeSearch.Text = dr.GetValue(0).ToString();
             }
             dr.Close();
-        }
 
-       
+            string sqlCode2 = "select * from FUNC_LIST_STUDENT_CLASS('" + txtFeeSearch.Text + "')";
+            Display(sqlCode2);
+        }
     }
 }
