@@ -319,12 +319,13 @@ namespace Thuc_Tap_CSDL
             int i;
             i = dgvSalary.CurrentRow.Index;
             autoLoadBillID();
-            txtSalaryBill_sumDay.Text = getSumDay(txtSalaryBill_classID.Text);
             txtSalaryBill_teacherID.Text = dgvSalary.Rows[i].Cells[0].Value.ToString();
             txtSalaryBill_classID.Text = getClassID(txtSalaryBill_teacherID.Text);
+            txtSalaryBill_sumDay.Text = getSumDay(txtSalaryBill_classID.Text);
+            txtSalaryBill_sumMoney.Text = (getPercentTeacher(txtSalaryBill_teacherID.Text) * getFeeClass(txtSalaryBill_classID.Text) / 100).ToString();
             txtSalaryBill_datePay.Text = DateTime.Now.ToString("MM/dd/yyyy");
             txtSalaryBill_datePayFor.Text = DateTime.Now.Month.ToString();
-            txtSalaryBill_sumMoney.Text = (getPercentTeacher(txtSalaryBill_teacherID.Text) * getFeeClass(txtSalaryBill_classID.Text) / 100).ToString();
+           
         }
     }
 }

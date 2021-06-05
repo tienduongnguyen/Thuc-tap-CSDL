@@ -128,7 +128,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label2.Location = new System.Drawing.Point(712, 204);
+            this.label2.Location = new System.Drawing.Point(712, 134);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 23);
@@ -140,7 +140,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label11.Location = new System.Drawing.Point(712, 132);
+            this.label11.Location = new System.Drawing.Point(710, 207);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 23);
@@ -164,7 +164,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label10.Location = new System.Drawing.Point(665, 95);
+            this.label10.Location = new System.Drawing.Point(666, 171);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(147, 23);
@@ -188,7 +188,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label14.Location = new System.Drawing.Point(703, 169);
+            this.label14.Location = new System.Drawing.Point(699, 97);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(114, 23);
@@ -227,7 +227,7 @@
             this.txtSalaryBill_classID.Enabled = false;
             this.txtSalaryBill_classID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryBill_classID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtSalaryBill_classID.Location = new System.Drawing.Point(832, 204);
+            this.txtSalaryBill_classID.Location = new System.Drawing.Point(833, 134);
             this.txtSalaryBill_classID.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalaryBill_classID.Name = "txtSalaryBill_classID";
             this.txtSalaryBill_classID.Size = new System.Drawing.Size(215, 23);
@@ -240,7 +240,7 @@
             this.txtSalaryBill_sumMoney.Enabled = false;
             this.txtSalaryBill_sumMoney.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryBill_sumMoney.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtSalaryBill_sumMoney.Location = new System.Drawing.Point(833, 132);
+            this.txtSalaryBill_sumMoney.Location = new System.Drawing.Point(837, 207);
             this.txtSalaryBill_sumMoney.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalaryBill_sumMoney.Name = "txtSalaryBill_sumMoney";
             this.txtSalaryBill_sumMoney.Size = new System.Drawing.Size(215, 23);
@@ -265,7 +265,7 @@
             this.txtSalaryBill_sumDay.Enabled = false;
             this.txtSalaryBill_sumDay.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryBill_sumDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtSalaryBill_sumDay.Location = new System.Drawing.Point(832, 95);
+            this.txtSalaryBill_sumDay.Location = new System.Drawing.Point(837, 171);
             this.txtSalaryBill_sumDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalaryBill_sumDay.Name = "txtSalaryBill_sumDay";
             this.txtSalaryBill_sumDay.Size = new System.Drawing.Size(215, 23);
@@ -290,7 +290,7 @@
             this.txtSalaryBill_teacherID.Enabled = false;
             this.txtSalaryBill_teacherID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryBill_teacherID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtSalaryBill_teacherID.Location = new System.Drawing.Point(833, 169);
+            this.txtSalaryBill_teacherID.Location = new System.Drawing.Point(837, 97);
             this.txtSalaryBill_teacherID.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalaryBill_teacherID.Name = "txtSalaryBill_teacherID";
             this.txtSalaryBill_teacherID.Size = new System.Drawing.Size(215, 23);
@@ -404,7 +404,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.panel8.Location = new System.Drawing.Point(623, 32);
+            this.panel8.Location = new System.Drawing.Point(638, 20);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1, 729);
@@ -413,7 +413,7 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.panel9.Location = new System.Drawing.Point(635, 32);
+            this.panel9.Location = new System.Drawing.Point(650, 20);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1, 729);
@@ -706,7 +706,7 @@
             this.colorBorderGroupBox1.Controls.Add(this.dgvSalary);
             this.colorBorderGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.colorBorderGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.colorBorderGroupBox1.Location = new System.Drawing.Point(20, 169);
+            this.colorBorderGroupBox1.Location = new System.Drawing.Point(35, 157);
             this.colorBorderGroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.colorBorderGroupBox1.Name = "colorBorderGroupBox1";
             this.colorBorderGroupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -721,7 +721,7 @@
             this.dgvSalary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalary.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvSalary.Location = new System.Drawing.Point(8, 30);
+            this.dgvSalary.Location = new System.Drawing.Point(4, 29);
             this.dgvSalary.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalary.Name = "dgvSalary";
             this.dgvSalary.RowHeadersWidth = 51;
