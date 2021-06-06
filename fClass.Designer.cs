@@ -33,16 +33,10 @@
             this.cbbMKH = new System.Windows.Forms.ComboBox();
             this.cbbMGV = new System.Windows.Forms.ComboBox();
             this.cbbMMH = new System.Windows.Forms.ComboBox();
-            this.btnDSL = new ePOSOne.btnProduct.Button_WOC();
-            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.cmbLesson = new System.Windows.Forms.ComboBox();
-            this.colorBorderGroupBox2 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
-            this.dgvLesson = new System.Windows.Forms.DataGridView();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
-            this.dgvClass = new System.Windows.Forms.DataGridView();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,20 +44,8 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.btnClass_search = new ePOSOne.btnProduct.Button_WOC();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.btnLesson_search = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLesson_all = new ePOSOne.btnProduct.Button_WOC();
-            this.btnClass_all = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLesson_clear = new ePOSOne.btnProduct.Button_WOC();
-            this.btnClass_clear = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLesson_delete = new ePOSOne.btnProduct.Button_WOC();
-            this.btnClass_delete = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLesson_edit = new ePOSOne.btnProduct.Button_WOC();
-            this.btnClass_edit = new ePOSOne.btnProduct.Button_WOC();
-            this.btnLesson_add = new ePOSOne.btnProduct.Button_WOC();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.btnClass_add = new ePOSOne.btnProduct.Button_WOC();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -104,6 +86,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnDSL = new ePOSOne.btnProduct.Button_WOC();
+            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
+            this.colorBorderGroupBox2 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
+            this.dgvLesson = new System.Windows.Forms.DataGridView();
+            this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
+            this.dgvClass = new System.Windows.Forms.DataGridView();
+            this.btnClass_search = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLesson_search = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLesson_all = new ePOSOne.btnProduct.Button_WOC();
+            this.btnClass_all = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLesson_clear = new ePOSOne.btnProduct.Button_WOC();
+            this.btnClass_clear = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLesson_delete = new ePOSOne.btnProduct.Button_WOC();
+            this.btnClass_delete = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLesson_edit = new ePOSOne.btnProduct.Button_WOC();
+            this.btnClass_edit = new ePOSOne.btnProduct.Button_WOC();
+            this.btnLesson_add = new ePOSOne.btnProduct.Button_WOC();
+            this.btnClass_add = new ePOSOne.btnProduct.Button_WOC();
             this.pnlClass.SuspendLayout();
             this.colorBorderGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLesson)).BeginInit();
@@ -278,54 +278,6 @@
             this.cbbMMH.TabIndex = 94;
             this.cbbMMH.SelectedIndexChanged += new System.EventHandler(this.cbbMMH_SelectedIndexChanged);
             // 
-            // btnDSL
-            // 
-            this.btnDSL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnDSL.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnDSL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDSL.FlatAppearance.BorderSize = 0;
-            this.btnDSL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnDSL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnDSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDSL.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnDSL.ForeColor = System.Drawing.Color.Black;
-            this.btnDSL.Location = new System.Drawing.Point(446, 301);
-            this.btnDSL.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDSL.Name = "btnDSL";
-            this.btnDSL.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnDSL.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnDSL.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnDSL.Size = new System.Drawing.Size(149, 38);
-            this.btnDSL.TabIndex = 93;
-            this.btnDSL.Text = "DANH SÁCH LỚP";
-            this.btnDSL.TextColor = System.Drawing.Color.White;
-            this.btnDSL.UseVisualStyleBackColor = true;
-            this.btnDSL.Click += new System.EventHandler(this.btnDSL_Click);
-            // 
-            // button_WOC1
-            // 
-            this.button_WOC1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.button_WOC1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.button_WOC1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_WOC1.FlatAppearance.BorderSize = 0;
-            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.button_WOC1.ForeColor = System.Drawing.Color.Black;
-            this.button_WOC1.Location = new System.Drawing.Point(1086, 298);
-            this.button_WOC1.Margin = new System.Windows.Forms.Padding(4);
-            this.button_WOC1.Name = "button_WOC1";
-            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
-            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
-            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.White;
-            this.button_WOC1.Size = new System.Drawing.Size(113, 41);
-            this.button_WOC1.TabIndex = 92;
-            this.button_WOC1.Text = "ĐIỂM DANH";
-            this.button_WOC1.TextColor = System.Drawing.Color.White;
-            this.button_WOC1.UseVisualStyleBackColor = true;
-            this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click);
-            // 
             // cmbClass
             // 
             this.cmbClass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -362,35 +314,6 @@
             this.cmbLesson.Size = new System.Drawing.Size(127, 31);
             this.cmbLesson.TabIndex = 90;
             // 
-            // colorBorderGroupBox2
-            // 
-            this.colorBorderGroupBox2.BorderColor = System.Drawing.Color.Transparent;
-            this.colorBorderGroupBox2.Controls.Add(this.dgvLesson);
-            this.colorBorderGroupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.colorBorderGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.colorBorderGroupBox2.Location = new System.Drawing.Point(639, 404);
-            this.colorBorderGroupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.colorBorderGroupBox2.Name = "colorBorderGroupBox2";
-            this.colorBorderGroupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.colorBorderGroupBox2.Size = new System.Drawing.Size(599, 353);
-            this.colorBorderGroupBox2.TabIndex = 87;
-            this.colorBorderGroupBox2.TabStop = false;
-            this.colorBorderGroupBox2.Text = "Danh sách buổi học";
-            // 
-            // dgvLesson
-            // 
-            this.dgvLesson.BackgroundColor = System.Drawing.Color.White;
-            this.dgvLesson.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvLesson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLesson.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvLesson.Location = new System.Drawing.Point(8, 30);
-            this.dgvLesson.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvLesson.Name = "dgvLesson";
-            this.dgvLesson.RowHeadersWidth = 51;
-            this.dgvLesson.Size = new System.Drawing.Size(585, 316);
-            this.dgvLesson.TabIndex = 0;
-            this.dgvLesson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLesson_CellContentClick);
-            // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -408,35 +331,6 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(607, 1);
             this.panel13.TabIndex = 84;
-            // 
-            // colorBorderGroupBox1
-            // 
-            this.colorBorderGroupBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.colorBorderGroupBox1.Controls.Add(this.dgvClass);
-            this.colorBorderGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.colorBorderGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.colorBorderGroupBox1.Location = new System.Drawing.Point(20, 404);
-            this.colorBorderGroupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.colorBorderGroupBox1.Name = "colorBorderGroupBox1";
-            this.colorBorderGroupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.colorBorderGroupBox1.Size = new System.Drawing.Size(597, 353);
-            this.colorBorderGroupBox1.TabIndex = 86;
-            this.colorBorderGroupBox1.TabStop = false;
-            this.colorBorderGroupBox1.Text = "Danh sách lớp học";
-            // 
-            // dgvClass
-            // 
-            this.dgvClass.BackgroundColor = System.Drawing.Color.White;
-            this.dgvClass.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvClass.Location = new System.Drawing.Point(8, 30);
-            this.dgvClass.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvClass.Name = "dgvClass";
-            this.dgvClass.RowHeadersWidth = 51;
-            this.dgvClass.Size = new System.Drawing.Size(585, 316);
-            this.dgvClass.TabIndex = 0;
-            this.dgvClass.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellContentClick);
             // 
             // panel16
             // 
@@ -501,6 +395,584 @@
             this.panel8.Size = new System.Drawing.Size(1, 729);
             this.panel8.TabIndex = 79;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.panel7.Location = new System.Drawing.Point(16, 32);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1, 729);
+            this.panel7.TabIndex = 78;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel19.Location = new System.Drawing.Point(319, 396);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(184, 1);
+            this.panel19.TabIndex = 62;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel15.Location = new System.Drawing.Point(941, 398);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(179, 1);
+            this.panel15.TabIndex = 63;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel22.Location = new System.Drawing.Point(203, 263);
+            this.panel22.Margin = new System.Windows.Forms.Padding(4);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(221, 1);
+            this.panel22.TabIndex = 61;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel6.Location = new System.Drawing.Point(203, 193);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(221, 1);
+            this.panel6.TabIndex = 61;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel21.Location = new System.Drawing.Point(203, 227);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(221, 1);
+            this.panel21.TabIndex = 60;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel17.Location = new System.Drawing.Point(204, 157);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(221, 1);
+            this.panel17.TabIndex = 59;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel3.Location = new System.Drawing.Point(203, 297);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(221, 1);
+            this.panel3.TabIndex = 59;
+            this.panel3.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel2.Location = new System.Drawing.Point(204, 121);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(221, 1);
+            this.panel2.TabIndex = 58;
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel24.Location = new System.Drawing.Point(821, 215);
+            this.panel24.Margin = new System.Windows.Forms.Padding(4);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(224, 1);
+            this.panel24.TabIndex = 56;
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel18.Location = new System.Drawing.Point(820, 140);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(224, 1);
+            this.panel18.TabIndex = 56;
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel23.Location = new System.Drawing.Point(821, 177);
+            this.panel23.Margin = new System.Windows.Forms.Padding(4);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(224, 1);
+            this.panel23.TabIndex = 55;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel4.Location = new System.Drawing.Point(820, 103);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(224, 1);
+            this.panel4.TabIndex = 55;
+            // 
+            // txtClassSearch
+            // 
+            this.txtClassSearch.BackColor = System.Drawing.Color.White;
+            this.txtClassSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtClassSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtClassSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtClassSearch.Location = new System.Drawing.Point(324, 369);
+            this.txtClassSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClassSearch.Name = "txtClassSearch";
+            this.txtClassSearch.Size = new System.Drawing.Size(175, 23);
+            this.txtClassSearch.TabIndex = 53;
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel20.Location = new System.Drawing.Point(204, 85);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(221, 1);
+            this.panel20.TabIndex = 57;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BackColor = System.Drawing.Color.White;
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.textBox10.Location = new System.Drawing.Point(324, 372);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(175, 23);
+            this.textBox10.TabIndex = 49;
+            // 
+            // txtLessonSearch
+            // 
+            this.txtLessonSearch.BackColor = System.Drawing.Color.White;
+            this.txtLessonSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLessonSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtLessonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtLessonSearch.Location = new System.Drawing.Point(947, 370);
+            this.txtLessonSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLessonSearch.Name = "txtLessonSearch";
+            this.txtLessonSearch.Size = new System.Drawing.Size(169, 23);
+            this.txtLessonSearch.TabIndex = 52;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.White;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.textBox8.Location = new System.Drawing.Point(947, 373);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(169, 23);
+            this.textBox8.TabIndex = 51;
+            // 
+            // txtSubjectID
+            // 
+            this.txtSubjectID.BackColor = System.Drawing.Color.White;
+            this.txtSubjectID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSubjectID.Enabled = false;
+            this.txtSubjectID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtSubjectID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtSubjectID.Location = new System.Drawing.Point(208, 238);
+            this.txtSubjectID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSubjectID.Name = "txtSubjectID";
+            this.txtSubjectID.Size = new System.Drawing.Size(212, 23);
+            this.txtSubjectID.TabIndex = 50;
+            // 
+            // txtFeeLevel
+            // 
+            this.txtFeeLevel.BackColor = System.Drawing.Color.White;
+            this.txtFeeLevel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFeeLevel.Enabled = false;
+            this.txtFeeLevel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtFeeLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtFeeLevel.Location = new System.Drawing.Point(208, 168);
+            this.txtFeeLevel.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFeeLevel.Name = "txtFeeLevel";
+            this.txtFeeLevel.Size = new System.Drawing.Size(212, 23);
+            this.txtFeeLevel.TabIndex = 50;
+            // 
+            // txtTeacherID
+            // 
+            this.txtTeacherID.BackColor = System.Drawing.Color.White;
+            this.txtTeacherID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTeacherID.Enabled = false;
+            this.txtTeacherID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtTeacherID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtTeacherID.Location = new System.Drawing.Point(208, 203);
+            this.txtTeacherID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTeacherID.Name = "txtTeacherID";
+            this.txtTeacherID.Size = new System.Drawing.Size(212, 23);
+            this.txtTeacherID.TabIndex = 54;
+            // 
+            // txtCourse
+            // 
+            this.txtCourse.BackColor = System.Drawing.Color.White;
+            this.txtCourse.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCourse.Enabled = false;
+            this.txtCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtCourse.Location = new System.Drawing.Point(209, 132);
+            this.txtCourse.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCourse.Name = "txtCourse";
+            this.txtCourse.Size = new System.Drawing.Size(212, 23);
+            this.txtCourse.TabIndex = 48;
+            // 
+            // txtSumStudent
+            // 
+            this.txtSumStudent.BackColor = System.Drawing.Color.White;
+            this.txtSumStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSumStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtSumStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtSumStudent.Location = new System.Drawing.Point(208, 273);
+            this.txtSumStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSumStudent.Name = "txtSumStudent";
+            this.txtSumStudent.Size = new System.Drawing.Size(212, 23);
+            this.txtSumStudent.TabIndex = 48;
+            this.txtSumStudent.Visible = false;
+            // 
+            // txtClassName
+            // 
+            this.txtClassName.BackColor = System.Drawing.Color.White;
+            this.txtClassName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtClassName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtClassName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtClassName.Location = new System.Drawing.Point(209, 96);
+            this.txtClassName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(212, 23);
+            this.txtClassName.TabIndex = 47;
+            // 
+            // txtLessonClassID
+            // 
+            this.txtLessonClassID.BackColor = System.Drawing.Color.White;
+            this.txtLessonClassID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLessonClassID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtLessonClassID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtLessonClassID.Location = new System.Drawing.Point(827, 191);
+            this.txtLessonClassID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLessonClassID.Name = "txtLessonClassID";
+            this.txtLessonClassID.Size = new System.Drawing.Size(215, 23);
+            this.txtLessonClassID.TabIndex = 44;
+            // 
+            // txtLessonDate
+            // 
+            this.txtLessonDate.BackColor = System.Drawing.Color.White;
+            this.txtLessonDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLessonDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtLessonDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtLessonDate.Location = new System.Drawing.Point(825, 116);
+            this.txtLessonDate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLessonDate.Name = "txtLessonDate";
+            this.txtLessonDate.Size = new System.Drawing.Size(215, 23);
+            this.txtLessonDate.TabIndex = 44;
+            // 
+            // txtLessonTime
+            // 
+            this.txtLessonTime.BackColor = System.Drawing.Color.White;
+            this.txtLessonTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLessonTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtLessonTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtLessonTime.Location = new System.Drawing.Point(827, 153);
+            this.txtLessonTime.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLessonTime.Name = "txtLessonTime";
+            this.txtLessonTime.Size = new System.Drawing.Size(215, 23);
+            this.txtLessonTime.TabIndex = 46;
+            // 
+            // txtLessonID
+            // 
+            this.txtLessonID.BackColor = System.Drawing.Color.White;
+            this.txtLessonID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLessonID.Enabled = false;
+            this.txtLessonID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtLessonID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtLessonID.Location = new System.Drawing.Point(825, 79);
+            this.txtLessonID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLessonID.Name = "txtLessonID";
+            this.txtLessonID.Size = new System.Drawing.Size(215, 23);
+            this.txtLessonID.TabIndex = 46;
+            this.txtLessonID.TextChanged += new System.EventHandler(this.txtLessonID_TextChanged);
+            // 
+            // txtClassID
+            // 
+            this.txtClassID.BackColor = System.Drawing.Color.White;
+            this.txtClassID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtClassID.Enabled = false;
+            this.txtClassID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtClassID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtClassID.Location = new System.Drawing.Point(209, 60);
+            this.txtClassID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClassID.Name = "txtClassID";
+            this.txtClassID.Size = new System.Drawing.Size(216, 23);
+            this.txtClassID.TabIndex = 45;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label13.Location = new System.Drawing.Point(79, 238);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(112, 23);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "Mã môn học:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label6.Location = new System.Drawing.Point(85, 167);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 23);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Mã mức HP:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label12.Location = new System.Drawing.Point(76, 203);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(114, 23);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Mã giáo viên:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label4.Location = new System.Drawing.Point(76, 131);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 23);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Mã khóa học:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label3.Location = new System.Drawing.Point(38, 271);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 23);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Số lượng học sinh:";
+            this.label3.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label2.Location = new System.Drawing.Point(85, 96);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 23);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Tên lớp học:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label14.Location = new System.Drawing.Point(705, 190);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(101, 23);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "Mã lớp học:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label10.Location = new System.Drawing.Point(721, 116);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 23);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Ngày học:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label11.Location = new System.Drawing.Point(721, 153);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 23);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "Thời gian:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label9.Location = new System.Drawing.Point(697, 78);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 23);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Mã buổi học:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label7.Location = new System.Drawing.Point(88, 59);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 23);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Mã lớp học:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label8.Location = new System.Drawing.Point(888, 14);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 25);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "BUỔI HỌC";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label1.Location = new System.Drawing.Point(273, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "LỚP HỌC";
+            // 
+            // btnDSL
+            // 
+            this.btnDSL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnDSL.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnDSL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDSL.FlatAppearance.BorderSize = 0;
+            this.btnDSL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDSL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDSL.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnDSL.ForeColor = System.Drawing.Color.Black;
+            this.btnDSL.Location = new System.Drawing.Point(464, 304);
+            this.btnDSL.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDSL.Name = "btnDSL";
+            this.btnDSL.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnDSL.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnDSL.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnDSL.Size = new System.Drawing.Size(149, 38);
+            this.btnDSL.TabIndex = 93;
+            this.btnDSL.Text = "DANH SÁCH LỚP";
+            this.btnDSL.TextColor = System.Drawing.Color.White;
+            this.btnDSL.UseVisualStyleBackColor = true;
+            this.btnDSL.Click += new System.EventHandler(this.btnDSL_Click);
+            // 
+            // button_WOC1
+            // 
+            this.button_WOC1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.button_WOC1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.button_WOC1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_WOC1.FlatAppearance.BorderSize = 0;
+            this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.button_WOC1.ForeColor = System.Drawing.Color.Black;
+            this.button_WOC1.Location = new System.Drawing.Point(1086, 298);
+            this.button_WOC1.Margin = new System.Windows.Forms.Padding(4);
+            this.button_WOC1.Name = "button_WOC1";
+            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
+            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
+            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.White;
+            this.button_WOC1.Size = new System.Drawing.Size(113, 41);
+            this.button_WOC1.TabIndex = 92;
+            this.button_WOC1.Text = "ĐIỂM DANH";
+            this.button_WOC1.TextColor = System.Drawing.Color.White;
+            this.button_WOC1.UseVisualStyleBackColor = true;
+            this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click);
+            // 
+            // colorBorderGroupBox2
+            // 
+            this.colorBorderGroupBox2.BorderColor = System.Drawing.Color.Transparent;
+            this.colorBorderGroupBox2.Controls.Add(this.dgvLesson);
+            this.colorBorderGroupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.colorBorderGroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.colorBorderGroupBox2.Location = new System.Drawing.Point(639, 404);
+            this.colorBorderGroupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.colorBorderGroupBox2.Name = "colorBorderGroupBox2";
+            this.colorBorderGroupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.colorBorderGroupBox2.Size = new System.Drawing.Size(599, 353);
+            this.colorBorderGroupBox2.TabIndex = 87;
+            this.colorBorderGroupBox2.TabStop = false;
+            this.colorBorderGroupBox2.Text = "Danh sách buổi học";
+            // 
+            // dgvLesson
+            // 
+            this.dgvLesson.BackgroundColor = System.Drawing.Color.White;
+            this.dgvLesson.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvLesson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLesson.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvLesson.Location = new System.Drawing.Point(8, 30);
+            this.dgvLesson.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLesson.Name = "dgvLesson";
+            this.dgvLesson.RowHeadersWidth = 51;
+            this.dgvLesson.Size = new System.Drawing.Size(585, 316);
+            this.dgvLesson.TabIndex = 0;
+            this.dgvLesson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLesson_CellContentClick);
+            // 
+            // colorBorderGroupBox1
+            // 
+            this.colorBorderGroupBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.colorBorderGroupBox1.Controls.Add(this.dgvClass);
+            this.colorBorderGroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.colorBorderGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.colorBorderGroupBox1.Location = new System.Drawing.Point(20, 404);
+            this.colorBorderGroupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.colorBorderGroupBox1.Name = "colorBorderGroupBox1";
+            this.colorBorderGroupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.colorBorderGroupBox1.Size = new System.Drawing.Size(597, 353);
+            this.colorBorderGroupBox1.TabIndex = 86;
+            this.colorBorderGroupBox1.TabStop = false;
+            this.colorBorderGroupBox1.Text = "Danh sách lớp học";
+            // 
+            // dgvClass
+            // 
+            this.dgvClass.BackgroundColor = System.Drawing.Color.White;
+            this.dgvClass.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvClass.Location = new System.Drawing.Point(8, 30);
+            this.dgvClass.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvClass.Name = "dgvClass";
+            this.dgvClass.RowHeadersWidth = 51;
+            this.dgvClass.Size = new System.Drawing.Size(585, 316);
+            this.dgvClass.TabIndex = 0;
+            this.dgvClass.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellContentClick);
+            // 
             // btnClass_search
             // 
             this.btnClass_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
@@ -524,15 +996,6 @@
             this.btnClass_search.TextColor = System.Drawing.Color.White;
             this.btnClass_search.UseVisualStyleBackColor = true;
             this.btnClass_search.Click += new System.EventHandler(this.btnClass_search_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.panel7.Location = new System.Drawing.Point(16, 32);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1, 729);
-            this.panel7.TabIndex = 78;
             // 
             // btnLesson_search
             // 
@@ -774,15 +1237,6 @@
             this.btnLesson_add.UseVisualStyleBackColor = true;
             this.btnLesson_add.Click += new System.EventHandler(this.btnLesson_add_Click);
             // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel19.Location = new System.Drawing.Point(319, 396);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(184, 1);
-            this.panel19.TabIndex = 62;
-            // 
             // btnClass_add
             // 
             this.btnClass_add.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
@@ -806,454 +1260,6 @@
             this.btnClass_add.TextColor = System.Drawing.Color.White;
             this.btnClass_add.UseVisualStyleBackColor = true;
             this.btnClass_add.Click += new System.EventHandler(this.btnClass_add_Click);
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel15.Location = new System.Drawing.Point(941, 398);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(179, 1);
-            this.panel15.TabIndex = 63;
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel22.Location = new System.Drawing.Point(203, 263);
-            this.panel22.Margin = new System.Windows.Forms.Padding(4);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(221, 1);
-            this.panel22.TabIndex = 61;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel6.Location = new System.Drawing.Point(203, 193);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(221, 1);
-            this.panel6.TabIndex = 61;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel21.Location = new System.Drawing.Point(203, 227);
-            this.panel21.Margin = new System.Windows.Forms.Padding(4);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(221, 1);
-            this.panel21.TabIndex = 60;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel17.Location = new System.Drawing.Point(204, 157);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(221, 1);
-            this.panel17.TabIndex = 59;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel3.Location = new System.Drawing.Point(203, 297);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(221, 1);
-            this.panel3.TabIndex = 59;
-            this.panel3.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel2.Location = new System.Drawing.Point(204, 121);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(221, 1);
-            this.panel2.TabIndex = 58;
-            // 
-            // panel24
-            // 
-            this.panel24.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel24.Location = new System.Drawing.Point(821, 215);
-            this.panel24.Margin = new System.Windows.Forms.Padding(4);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(224, 1);
-            this.panel24.TabIndex = 56;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel18.Location = new System.Drawing.Point(820, 140);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(224, 1);
-            this.panel18.TabIndex = 56;
-            // 
-            // panel23
-            // 
-            this.panel23.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel23.Location = new System.Drawing.Point(821, 177);
-            this.panel23.Margin = new System.Windows.Forms.Padding(4);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(224, 1);
-            this.panel23.TabIndex = 55;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel4.Location = new System.Drawing.Point(820, 103);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(224, 1);
-            this.panel4.TabIndex = 55;
-            // 
-            // txtClassSearch
-            // 
-            this.txtClassSearch.BackColor = System.Drawing.Color.White;
-            this.txtClassSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClassSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtClassSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtClassSearch.Location = new System.Drawing.Point(324, 369);
-            this.txtClassSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClassSearch.Name = "txtClassSearch";
-            this.txtClassSearch.Size = new System.Drawing.Size(175, 23);
-            this.txtClassSearch.TabIndex = 53;
-            // 
-            // panel20
-            // 
-            this.panel20.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel20.Location = new System.Drawing.Point(204, 85);
-            this.panel20.Margin = new System.Windows.Forms.Padding(4);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(221, 1);
-            this.panel20.TabIndex = 57;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.White;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.textBox10.Location = new System.Drawing.Point(324, 372);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(175, 23);
-            this.textBox10.TabIndex = 49;
-            // 
-            // txtLessonSearch
-            // 
-            this.txtLessonSearch.BackColor = System.Drawing.Color.White;
-            this.txtLessonSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLessonSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtLessonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtLessonSearch.Location = new System.Drawing.Point(947, 370);
-            this.txtLessonSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLessonSearch.Name = "txtLessonSearch";
-            this.txtLessonSearch.Size = new System.Drawing.Size(169, 23);
-            this.txtLessonSearch.TabIndex = 52;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.textBox8.Location = new System.Drawing.Point(947, 373);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(169, 23);
-            this.textBox8.TabIndex = 51;
-            // 
-            // txtSubjectID
-            // 
-            this.txtSubjectID.BackColor = System.Drawing.Color.White;
-            this.txtSubjectID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSubjectID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtSubjectID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtSubjectID.Location = new System.Drawing.Point(208, 238);
-            this.txtSubjectID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSubjectID.Name = "txtSubjectID";
-            this.txtSubjectID.Size = new System.Drawing.Size(212, 23);
-            this.txtSubjectID.TabIndex = 50;
-            // 
-            // txtFeeLevel
-            // 
-            this.txtFeeLevel.BackColor = System.Drawing.Color.White;
-            this.txtFeeLevel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeeLevel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtFeeLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtFeeLevel.Location = new System.Drawing.Point(208, 168);
-            this.txtFeeLevel.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFeeLevel.Name = "txtFeeLevel";
-            this.txtFeeLevel.Size = new System.Drawing.Size(212, 23);
-            this.txtFeeLevel.TabIndex = 50;
-            // 
-            // txtTeacherID
-            // 
-            this.txtTeacherID.BackColor = System.Drawing.Color.White;
-            this.txtTeacherID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTeacherID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtTeacherID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtTeacherID.Location = new System.Drawing.Point(208, 203);
-            this.txtTeacherID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTeacherID.Name = "txtTeacherID";
-            this.txtTeacherID.Size = new System.Drawing.Size(212, 23);
-            this.txtTeacherID.TabIndex = 54;
-            // 
-            // txtCourse
-            // 
-            this.txtCourse.BackColor = System.Drawing.Color.White;
-            this.txtCourse.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtCourse.Location = new System.Drawing.Point(209, 132);
-            this.txtCourse.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCourse.Name = "txtCourse";
-            this.txtCourse.Size = new System.Drawing.Size(212, 23);
-            this.txtCourse.TabIndex = 48;
-            // 
-            // txtSumStudent
-            // 
-            this.txtSumStudent.BackColor = System.Drawing.Color.White;
-            this.txtSumStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSumStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtSumStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtSumStudent.Location = new System.Drawing.Point(208, 273);
-            this.txtSumStudent.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSumStudent.Name = "txtSumStudent";
-            this.txtSumStudent.Size = new System.Drawing.Size(212, 23);
-            this.txtSumStudent.TabIndex = 48;
-            this.txtSumStudent.Visible = false;
-            // 
-            // txtClassName
-            // 
-            this.txtClassName.BackColor = System.Drawing.Color.White;
-            this.txtClassName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClassName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtClassName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtClassName.Location = new System.Drawing.Point(209, 96);
-            this.txtClassName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(212, 23);
-            this.txtClassName.TabIndex = 47;
-            // 
-            // txtLessonClassID
-            // 
-            this.txtLessonClassID.BackColor = System.Drawing.Color.White;
-            this.txtLessonClassID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLessonClassID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtLessonClassID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtLessonClassID.Location = new System.Drawing.Point(827, 191);
-            this.txtLessonClassID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLessonClassID.Name = "txtLessonClassID";
-            this.txtLessonClassID.Size = new System.Drawing.Size(215, 23);
-            this.txtLessonClassID.TabIndex = 44;
-            // 
-            // txtLessonDate
-            // 
-            this.txtLessonDate.BackColor = System.Drawing.Color.White;
-            this.txtLessonDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLessonDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtLessonDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtLessonDate.Location = new System.Drawing.Point(825, 116);
-            this.txtLessonDate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLessonDate.Name = "txtLessonDate";
-            this.txtLessonDate.Size = new System.Drawing.Size(215, 23);
-            this.txtLessonDate.TabIndex = 44;
-            // 
-            // txtLessonTime
-            // 
-            this.txtLessonTime.BackColor = System.Drawing.Color.White;
-            this.txtLessonTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLessonTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtLessonTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtLessonTime.Location = new System.Drawing.Point(827, 153);
-            this.txtLessonTime.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLessonTime.Name = "txtLessonTime";
-            this.txtLessonTime.Size = new System.Drawing.Size(215, 23);
-            this.txtLessonTime.TabIndex = 46;
-            // 
-            // txtLessonID
-            // 
-            this.txtLessonID.BackColor = System.Drawing.Color.White;
-            this.txtLessonID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLessonID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtLessonID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtLessonID.Location = new System.Drawing.Point(825, 79);
-            this.txtLessonID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLessonID.Name = "txtLessonID";
-            this.txtLessonID.Size = new System.Drawing.Size(215, 23);
-            this.txtLessonID.TabIndex = 46;
-            this.txtLessonID.TextChanged += new System.EventHandler(this.txtLessonID_TextChanged);
-            // 
-            // txtClassID
-            // 
-            this.txtClassID.BackColor = System.Drawing.Color.White;
-            this.txtClassID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtClassID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtClassID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtClassID.Location = new System.Drawing.Point(209, 60);
-            this.txtClassID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClassID.Name = "txtClassID";
-            this.txtClassID.Size = new System.Drawing.Size(216, 23);
-            this.txtClassID.TabIndex = 45;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label13.Location = new System.Drawing.Point(79, 238);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 23);
-            this.label13.TabIndex = 42;
-            this.label13.Text = "Mã môn học:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label6.Location = new System.Drawing.Point(85, 167);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 23);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Mã mức HP:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label12.Location = new System.Drawing.Point(76, 203);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(114, 23);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "Mã giáo viên:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label4.Location = new System.Drawing.Point(76, 131);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 23);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Mã khóa học:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label3.Location = new System.Drawing.Point(38, 271);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 23);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Số lượng học sinh:";
-            this.label3.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label2.Location = new System.Drawing.Point(85, 96);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 23);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Tên lớp học:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label14.Location = new System.Drawing.Point(705, 190);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(101, 23);
-            this.label14.TabIndex = 37;
-            this.label14.Text = "Mã lớp học:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label10.Location = new System.Drawing.Point(721, 116);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 23);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Ngày học:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label11.Location = new System.Drawing.Point(721, 153);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 23);
-            this.label11.TabIndex = 36;
-            this.label11.Text = "Thời gian:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label9.Location = new System.Drawing.Point(697, 78);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 23);
-            this.label9.TabIndex = 36;
-            this.label9.Text = "Mã buổi học:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label7.Location = new System.Drawing.Point(88, 59);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 23);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Mã lớp học:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label8.Location = new System.Drawing.Point(888, 14);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 25);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "BUỔI HỌC";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label1.Location = new System.Drawing.Point(273, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "LỚP HỌC";
             // 
             // fClass
             // 

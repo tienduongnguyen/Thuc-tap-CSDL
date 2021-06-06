@@ -59,6 +59,18 @@
     <Compile Include="fAttend.Designer.cs">
       <DependentUpon>fAttend.cs</DependentUpon>
     </Compile>
+    <Compile Include="fBillStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBillStudent.Designer.cs">
+      <DependentUpon>fBillStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBillTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBillTeacher.Designer.cs">
+      <DependentUpon>fBillTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="fClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fAttend.resx">
       <DependentUpon>fAttend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBillStudent.resx">
+      <DependentUpon>fBillStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBillTeacher.resx">
+      <DependentUpon>fBillTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fClass.resx">
       <DependentUpon>fClass.cs</DependentUpon>

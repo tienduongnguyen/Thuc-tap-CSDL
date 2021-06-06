@@ -249,5 +249,18 @@ namespace Thuc_Tap_CSDL
             if (ckbPayed.Checked) ckbPayed.Text = "đã trả";
             else ckbPayed.Text = "chưa trả";
         }
+
+        private void btnSalaryBill_Export_Click(object sender, EventArgs e)
+        {
+            fBillTeacher form = new fBillTeacher(txtSalaryBill_id.Text,
+                                                 txtSalaryBill_teacherID.Text,
+                                                 txtSalaryBill_classID.Text,
+                                                 txtSalaryBill_sumDay.Text,
+                                                 txtSalaryBill_sumMoney.Text,
+                                                 txtSalaryBill_datePay.Text,
+                                                 txtSalaryBill_datePayFor.Text);
+
+            form.ShowDialog();
+        }
     }
 }

@@ -170,14 +170,8 @@ namespace Thuc_Tap_CSDL
 
         private void btnClass_clear_Click(object sender, EventArgs e)
         {
-            txtClassID.Text = "";
             txtClassName.Text = "";
-            txtSumStudent.Text = "";
-            txtCourse.Text = "";
-            txtFeeLevel.Text = "";
-            txtTeacherID.Text = "";
-            txtSubjectID.Text = "";
-       
+            autoLoadClassID();
         }
 
         private void btnClass_search_Click(object sender, EventArgs e)
@@ -292,6 +286,7 @@ namespace Thuc_Tap_CSDL
         {
             Display();
 
+            dgvClass.Enabled = true;
         }
 
         private void dgvClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -316,6 +311,7 @@ namespace Thuc_Tap_CSDL
             lesson_dataTable.Load(lesson_dataReader);
             dgvLesson.DataSource = lesson_dataTable;
 
+            autoLoadLessonID();
         }
 
         private void dgvLesson_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -361,11 +357,10 @@ namespace Thuc_Tap_CSDL
 
         private void btnLesson_clear_Click(object sender, EventArgs e)
         {
-            txtLessonID.Text = "";
+            autoLoadLessonID();
             txtLessonDate.Text = "";
             txtLessonTime.Text = "";
-            txtLessonClassID.Text = "";
-            
+            txtLessonClassID.Text = "";           
         }
 
         private void btnLesson_search_Click(object sender, EventArgs e)
@@ -444,6 +439,8 @@ namespace Thuc_Tap_CSDL
             DataTable class_dataTable = new DataTable();
             class_dataTable.Load(class_dataReader);
             dgvClass.DataSource = class_dataTable;
+
+            dgvClass.Enabled = false;
         }
 
         private void txtLessonID_TextChanged(object sender, EventArgs e)

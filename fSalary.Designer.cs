@@ -656,6 +656,7 @@
             this.btnSalaryBill_Export.Text = "XUẤT BIÊN LAI";
             this.btnSalaryBill_Export.TextColor = System.Drawing.Color.White;
             this.btnSalaryBill_Export.UseVisualStyleBackColor = true;
+            this.btnSalaryBill_Export.Click += new System.EventHandler(this.btnSalaryBill_Export_Click);
             // 
             // colorBorderGroupBox2
             // 

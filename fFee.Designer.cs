@@ -190,6 +190,7 @@
             this.btnFeeBill_Export.Text = "XUẤT BIÊN LAI";
             this.btnFeeBill_Export.TextColor = System.Drawing.Color.White;
             this.btnFeeBill_Export.UseVisualStyleBackColor = true;
+            this.btnFeeBill_Export.Click += new System.EventHandler(this.btnFeeBill_Export_Click);
             // 
             // btnFeeBill_add
             // 

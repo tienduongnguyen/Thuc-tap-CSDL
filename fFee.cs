@@ -258,5 +258,18 @@ namespace Thuc_Tap_CSDL
             string sqlCode2 = "select * from FUNC_LIST_STUDENT_CLASS('" + txtFeeSearch.Text + "')";
             Display(sqlCode2);
         }
+
+        private void btnFeeBill_Export_Click(object sender, EventArgs e)
+        {
+            fBillStudent form = new fBillStudent(txtFeeBill_id.Text,
+                                                 txtFeeBill_studentID.Text,
+                                                 txtFeeBill_classID.Text,
+                                                 txtFeeBill_sumDay.Text,
+                                                 txtFeeBill_feePerDay.Text,
+                                                 txtFeeBill_sumFee.Text,
+                                                 txtFeeBill_dateTake.Text,
+                                                 txtFeeBill_takeForDate.Text);
+            form.ShowDialog();
+        }
     }
 }
