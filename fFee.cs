@@ -123,6 +123,8 @@ namespace Thuc_Tap_CSDL
             string sqlCode = "select top(20) * from BLTHUHP where MaHocSinh = '" + txtFeeBill_studentID.Text + "' order by NgayThu desc";
             Display1(sqlCode);
 
+            btnFeeBill_add.Enabled = false;
+
         }
 
         private void btnFeeBill_edit_Click(object sender, EventArgs e)
@@ -151,13 +153,7 @@ namespace Thuc_Tap_CSDL
             Display1(sqlCode);
         }
 
-        private void btnFeeBill_clear_Click(object sender, EventArgs e)
-        {
-            txtFeeBill_dateTake.Text = "";
-            txtFeeBill_takeForDate.Text = "";
-            ckbTaked.Checked = false;
-            //Display1();
-        }
+       
 
         //func sql
         public string getSumDay(string ClassID, string StudentID)
@@ -228,6 +224,8 @@ namespace Thuc_Tap_CSDL
 
             string sqlCode = "select top(20) * from BLTHUHP where MaHocSinh = '" + txtFeeBill_studentID.Text + "' order by NgayThu desc";
             Display1(sqlCode);
+
+            btnFeeBill_add.Enabled = true;
         }
 
 

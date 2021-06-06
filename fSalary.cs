@@ -33,7 +33,7 @@ namespace Thuc_Tap_CSDL
             btnSalaryBill_add.Enabled = true;
             btnSalaryBill_edit.Enabled = true;
             btnSalaryBill_delete.Enabled = true;
-            btnSalaryBill_clear.Enabled = true;
+            btnSalaryBill_Export.Enabled = true;
         }
 
 
@@ -88,33 +88,33 @@ namespace Thuc_Tap_CSDL
 
         private void btnSalaryBill_add_Click_1(object sender, EventArgs e)
         {
-            string text;
-            if (ckbPayed.Checked == false)
 
-                text = "0";
-            else
+            string isCheck = "";
+            if (ckbPayed.Checked) isCheck = "1";
+            else isCheck = "0";
 
-                text = "1";
-
-            int tongSoBuoiDay;
-            tongSoBuoiDay = Int32.Parse(txtSalaryBill_sumDay.Text);
-
-
-            string sqlInsert = "exec PROC_INSERT_BLTRALUONG '" + txtSalaryBill_id.Text + "','" + txtSalaryBill_teacherID.Text + "','" + txtSalaryBill_classID.Text + "'," + tongSoBuoiDay + ",'" + txtSalaryBill_sumMoney.Text + "', '" + txtSalaryBill_datePay.Text + "','" + txtSalaryBill_datePayFor.Text + "','" + text + "' ";
+            string sqlInsert = "exec PROC_INSERT_BLTRALUONG '" + txtSalaryBill_id.Text + "','" + txtSalaryBill_teacherID.Text + "','" + txtSalaryBill_classID.Text + "'," + txtSalaryBill_sumDay.Text + ",'" + txtSalaryBill_sumMoney.Text + "', '" + txtSalaryBill_datePay.Text + "','" + txtSalaryBill_datePayFor.Text + "','" + isCheck + "' ";
             SqlCommand cmd = new SqlCommand(sqlInsert, con);
             cmd.ExecuteNonQuery();
-            //Display1();
+
+            string sqlCode = "select top(20) * from BLTraLuong where MaGiaoVien = '" + txtSalaryBill_teacherID.Text + "' order by NgayTra desc";
+            Display1(sqlCode);
+
+            btnSalaryBill_add.Enabled = false;
         }
 
         private void btnSalaryBill_edit_Click_1(object sender, EventArgs e)
         {
-            string sqlEdit = "exec PROC_UPDATE_BLTRALUONG '" + txtSalaryBill_id.Text + "','" + txtSalaryBill_sumDay.Text + "','" + txtSalaryBill_sumMoney.Text + "','" + txtSalaryBill_teacherID.Text + "','" + txtSalaryBill_classID.Text + "', '" + txtSalaryBill_datePay.Text + "','" + txtSalaryBill_datePayFor.Text + "','" + ckbPayed.Checked + "' ";
+            string isCheck = "";
+            if (ckbPayed.Checked) isCheck = "1";
+            else isCheck = "0";
 
-
-            SqlCommand cmd = new SqlCommand(sqlEdit, con);
-
+            string sqlInsert = "exec PROC_UPDATE_BLTRALUONG '" + txtSalaryBill_id.Text + "','" + txtSalaryBill_teacherID.Text + "','" + txtSalaryBill_classID.Text + "'," + txtSalaryBill_sumDay.Text + ",'" + txtSalaryBill_sumMoney.Text + "', '" + txtSalaryBill_datePay.Text + "','" + txtSalaryBill_datePayFor.Text + "','" + isCheck + "' ";
+            SqlCommand cmd = new SqlCommand(sqlInsert, con);
             cmd.ExecuteNonQuery();
-            //Display1();
+
+            string sqlCode = "select top(20) * from BLTraLuong where MaGiaoVien = '" + txtSalaryBill_teacherID.Text + "' order by NgayTra desc";
+            Display1(sqlCode);
         }
 
         private void btnSalaryBill_delete_Click_1(object sender, EventArgs e)
@@ -123,16 +123,11 @@ namespace Thuc_Tap_CSDL
             SqlCommand cmd = new SqlCommand(sqlDelete, con);
             cmd.ExecuteNonQuery();
 
-            //Display1();
+            string sqlCode = "select top(20) * from BLTraLuong where MaGiaoVien = '" + txtSalaryBill_teacherID.Text + "' order by NgayTra desc";
+            Display1(sqlCode);
         }
 
-        private void btnSalaryBill_clear_Click_1(object sender, EventArgs e)
-        {
-            txtSalaryBill_datePay.Text = "";
-            txtSalaryBill_datePayFor.Text = "";
-            ckbPayed.Checked = false;
-            //Display1();
-        }
+       
 
         public void loadCombobox()
         {
@@ -245,6 +240,8 @@ namespace Thuc_Tap_CSDL
 
             string sqlCode = "select * from BLTRALUONG where MaGiaoVien = '" + txtSalaryBill_teacherID.Text + "' order by NgayTra desc";
             Display1(sqlCode);
+
+            btnSalaryBill_add.Enabled = true;
         }
 
         private void ckbPayed_CheckedChanged(object sender, EventArgs e)

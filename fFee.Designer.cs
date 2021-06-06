@@ -31,7 +31,7 @@
             this.pnlSalary = new System.Windows.Forms.Panel();
             this.cbbMLH = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnFeeBill_clear = new ePOSOne.btnProduct.Button_WOC();
+            this.btnFeeBill_Export = new ePOSOne.btnProduct.Button_WOC();
             this.btnFeeBill_add = new ePOSOne.btnProduct.Button_WOC();
             this.btnFeeBill_edit = new ePOSOne.btnProduct.Button_WOC();
             this.btnFeeBill_delete = new ePOSOne.btnProduct.Button_WOC();
@@ -91,7 +91,7 @@
             this.pnlSalary.BackColor = System.Drawing.Color.White;
             this.pnlSalary.Controls.Add(this.cbbMLH);
             this.pnlSalary.Controls.Add(this.label7);
-            this.pnlSalary.Controls.Add(this.btnFeeBill_clear);
+            this.pnlSalary.Controls.Add(this.btnFeeBill_Export);
             this.pnlSalary.Controls.Add(this.btnFeeBill_add);
             this.pnlSalary.Controls.Add(this.btnFeeBill_edit);
             this.pnlSalary.Controls.Add(this.btnFeeBill_delete);
@@ -168,29 +168,28 @@
             this.label7.TabIndex = 100;
             this.label7.Text = "Mã Lớp học:";
             // 
-            // btnFeeBill_clear
+            // btnFeeBill_Export
             // 
-            this.btnFeeBill_clear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_clear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnFeeBill_clear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFeeBill_clear.FlatAppearance.BorderSize = 0;
-            this.btnFeeBill_clear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_clear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnFeeBill_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFeeBill_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnFeeBill_clear.ForeColor = System.Drawing.Color.Black;
-            this.btnFeeBill_clear.Location = new System.Drawing.Point(1128, 261);
-            this.btnFeeBill_clear.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFeeBill_clear.Name = "btnFeeBill_clear";
-            this.btnFeeBill_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnFeeBill_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnFeeBill_clear.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnFeeBill_clear.Size = new System.Drawing.Size(81, 38);
-            this.btnFeeBill_clear.TabIndex = 99;
-            this.btnFeeBill_clear.Text = "RESET";
-            this.btnFeeBill_clear.TextColor = System.Drawing.Color.White;
-            this.btnFeeBill_clear.UseVisualStyleBackColor = true;
-            this.btnFeeBill_clear.Click += new System.EventHandler(this.btnFeeBill_clear_Click);
+            this.btnFeeBill_Export.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_Export.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnFeeBill_Export.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFeeBill_Export.FlatAppearance.BorderSize = 0;
+            this.btnFeeBill_Export.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_Export.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnFeeBill_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeeBill_Export.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnFeeBill_Export.ForeColor = System.Drawing.Color.Black;
+            this.btnFeeBill_Export.Location = new System.Drawing.Point(1104, 263);
+            this.btnFeeBill_Export.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFeeBill_Export.Name = "btnFeeBill_Export";
+            this.btnFeeBill_Export.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_Export.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnFeeBill_Export.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnFeeBill_Export.Size = new System.Drawing.Size(128, 40);
+            this.btnFeeBill_Export.TabIndex = 99;
+            this.btnFeeBill_Export.Text = "XUẤT BIÊN LAI";
+            this.btnFeeBill_Export.TextColor = System.Drawing.Color.White;
+            this.btnFeeBill_Export.UseVisualStyleBackColor = true;
             // 
             // btnFeeBill_add
             // 
@@ -826,7 +825,7 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.TextBox txtFeeBill_takeForDate;
         private System.Windows.Forms.Label label6;
-        private ePOSOne.btnProduct.Button_WOC btnFeeBill_clear;
+        private ePOSOne.btnProduct.Button_WOC btnFeeBill_Export;
         private ePOSOne.btnProduct.Button_WOC btnFeeBill_add;
         private ePOSOne.btnProduct.Button_WOC btnFeeBill_edit;
         private ePOSOne.btnProduct.Button_WOC btnFeeBill_delete;
