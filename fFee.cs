@@ -153,14 +153,14 @@ namespace Thuc_Tap_CSDL
             Display1(sqlCode);
         }
 
-       
+
 
         //func sql
-        public string getSumDay(string ClassID, string StudentID)
+        public string getSumDay(string ClassID, string StudentID, string months)
         {
             string result = "";
 
-            string sqlCode = "select * from FUNC_CALC_TONGSOBUOI('" + ClassID + "','" + StudentID + "')";
+            string sqlCode = "select * from FUNC_TINH_TONGSOBUOI('" + ClassID + "','" + StudentID + "','" + months + "')";
 
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -204,7 +204,7 @@ namespace Thuc_Tap_CSDL
         //func sql
         public string convertDate(string date)
         {
-            string[] info = date.Split('/');            
+            string[] info = date.Split('/');
 
             return info[1] + "/" + info[0] + "/" + info[2];
         }
@@ -213,22 +213,21 @@ namespace Thuc_Tap_CSDL
         {
             int i;
             i = dgvFee.CurrentRow.Index;
+
             autoLoadBillID(); //MaBienLai
             txtFeeBill_studentID.Text = dgvFee.Rows[i].Cells[0].Value.ToString(); //MaHocSinh
             txtFeeBill_classID.Text = txtFeeSearch.Text; //MaLopHoc
-            txtFeeBill_sumDay.Text = getSumDay(txtFeeBill_classID.Text, txtFeeBill_studentID.Text); //TongSoBuoi
             txtFeeBill_feePerDay.Text = getFeePerDay(txtFeeBill_classID.Text); //HocPhi/Buoi
-            txtFeeBill_sumFee.Text = getSumFee(txtFeeBill_feePerDay.Text, txtFeeBill_sumDay.Text); //TongHocPhi
             txtFeeBill_dateTake.Text = DateTime.Now.ToString("MM/dd/yyyy"); //NgayThu
             txtFeeBill_takeForDate.Text = (DateTime.Now.Month - 1).ToString(); //ThuChoThangNam
+            txtFeeBill_sumDay.Text = getSumDay(txtFeeBill_classID.Text, txtFeeBill_studentID.Text, txtFeeBill_takeForDate.Text); //TongSoBuoi
+            txtFeeBill_sumFee.Text = getSumFee(txtFeeBill_feePerDay.Text, txtFeeBill_sumDay.Text); //TongHocPhi
 
             string sqlCode = "select top(20) * from BLTHUHP where MaHocSinh = '" + txtFeeBill_studentID.Text + "' order by NgayThu desc";
             Display1(sqlCode);
 
             btnFeeBill_add.Enabled = true;
         }
-
-
 
         public void loadCombobox()
         {
@@ -270,6 +269,14 @@ namespace Thuc_Tap_CSDL
                                                  txtFeeBill_dateTake.Text,
                                                  txtFeeBill_takeForDate.Text);
             form.ShowDialog();
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            if (txtFeeBill_takeForDate.Text == "") txtFeeBill_takeForDate.Text = "0";
+
+            txtFeeBill_sumDay.Text = getSumDay(txtFeeBill_classID.Text, txtFeeBill_studentID.Text, txtFeeBill_takeForDate.Text); //TongSoBuoi
+            txtFeeBill_sumFee.Text = getSumFee(txtFeeBill_feePerDay.Text, txtFeeBill_sumDay.Text); //TongHocPhi
         }
     }
 }

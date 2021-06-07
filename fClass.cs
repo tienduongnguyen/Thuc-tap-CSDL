@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace Thuc_Tap_CSDL
 {
-  
+
     public partial class fClass : Form
     {
         public fClass()
@@ -24,35 +24,24 @@ namespace Thuc_Tap_CSDL
         SqlConnection con;
 
 
-        private void fClass_Load(object sender, EventArgs e)
+        public void DisplayL(string code)
         {
-            string conString = ConfigurationManager.ConnectionStrings["QLTrungTamHocThem"].ConnectionString.ToString();
-            con = new SqlConnection(conString);
-            con.Open();
-
-            Display();
-            Display1();
-            autoLoadClassID();
-            autoLoadLessonID();
-            loadDataCombobox1();
-            loadDataCombobox2();
-            loadDataCombobox3();
-            loadDataCombobox4();
-        }
-
-        private void fClass_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            con.Close();
-        }
-
-        public void Display()
-        {
-            string class_sqlCode = "select top(20) * FROM LOPHOC";
-            SqlCommand class_cmd = new SqlCommand(class_sqlCode, con);
+            SqlCommand class_cmd = new SqlCommand(code, con);
             SqlDataReader class_dataReader = class_cmd.ExecuteReader();
             DataTable class_dataTable = new DataTable();
+
             class_dataTable.Load(class_dataReader);
             dgvClass.DataSource = class_dataTable;
+        }
+
+        public void DisplayR(string code)
+        {
+            SqlCommand lesson_cmd = new SqlCommand(code, con);
+            SqlDataReader lesson_dataReader = lesson_cmd.ExecuteReader();
+            DataTable lesson_dataTable = new DataTable();
+
+            lesson_dataTable.Load(lesson_dataReader);
+            dgvLesson.DataSource = lesson_dataTable;
         }
 
         public void autoLoadClassID()
@@ -71,21 +60,9 @@ namespace Thuc_Tap_CSDL
             dr.Close();
         }
 
-
-        public void Display1()
-        { 
-            string lesson_sqlCode = "select top(20) * FROM BUOIHOC";
-            SqlCommand lesson_cmd = new SqlCommand(lesson_sqlCode, con);
-            SqlDataReader lesson_dataReader = lesson_cmd.ExecuteReader();
-            DataTable lesson_dataTable = new DataTable();
-            lesson_dataTable.Load(lesson_dataReader);
-            dgvLesson.DataSource = lesson_dataTable;
-        }
-
         public void autoLoadLessonID()
         {
             string sqlCode = "SELECT TOP(1) MaBuoiHoc FROM BUOIHOC ORDER BY MaBuoiHoc DESC";
-
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -98,6 +75,71 @@ namespace Thuc_Tap_CSDL
             dr.Close();
         }
 
+        public void loadDataCombobox1()
+        {
+            var sqlCode = "Select TenMonHoc from MONHOC";
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            ///cmd.ExecuteNonQuery();
+            var dr = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(dr);
+            dr.Dispose();
+            cbbMMH.ValueMember = "TenMonHoc";
+            cbbMMH.DataSource = dt;
+        }
+
+        public void loadDataCombobox2()
+        {
+            var sqlCode = "Select TenGiaoVien from GIAOVIEN";
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            ///cmd.ExecuteNonQuery();
+            var dr = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(dr);
+            dr.Dispose();
+            cbbMGV.ValueMember = "TenGiaoVien";
+            cbbMGV.DataSource = dt;
+        }
+
+        public void loadDataCombobox3()
+        {
+            var sqlCode = "Select SoHocPhi from MUCHOCPHI";
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            ///cmd.ExecuteNonQuery();
+            var dr = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(dr);
+            dr.Dispose();
+            cbbMMHP.ValueMember = "SoHocPhi";
+            cbbMMHP.DataSource = dt;
+        }
+
+        public void loadDataCombobox4()
+        {
+            var sqlCode = "Select TenKhoaHoc from KHOAHOC";
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            ///cmd.ExecuteNonQuery();
+            var dr = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(dr);
+            dr.Dispose();
+            cbbMKH.ValueMember = "TenKhoaHoc";
+            cbbMKH.DataSource = dt;
+        }
+
+        public void Execute(string code)
+        {
+            SqlCommand cmd = new SqlCommand(code, con);
+            cmd.ExecuteNonQuery();
+        }
+
+        //func sql
+        public string convertDate(string date)
+        {
+            string[] info = date.Split('/');
+
+            return info[1] + "/" + info[0] + "/" + info[2];
+        }
 
         private Form activeForm;
 
@@ -117,55 +159,71 @@ namespace Thuc_Tap_CSDL
             childForm.Show();
         }
 
-       
+        private void fClass_Load(object sender, EventArgs e)
+        {
+            string conString = ConfigurationManager.ConnectionStrings["QLTrungTamHocThem"].ConnectionString.ToString();
+            con = new SqlConnection(conString);
+            con.Open();
+
+            string sqlCode1 = "select top(20) * FROM LOPHOC";
+            string sqlCode2 = "select top(20) * FROM BUOIHOC";
+
+            DisplayL(sqlCode1);
+            DisplayR(sqlCode2);
+
+            autoLoadClassID();
+            autoLoadLessonID();
+
+            loadDataCombobox1();
+            loadDataCombobox2();
+            loadDataCombobox3();
+            loadDataCombobox4();
+        }
+
+        private void fClass_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            con.Close();
+        }
 
         private void btnClass_add_Click(object sender, EventArgs e)
         {
-         
 
             string sqlInsert = "exec PROC_INSERT_LOPHOC '" + txtClassID.Text + "','" + txtClassName.Text + "','" + txtSumStudent.Text + "','" + txtCourse.Text + "','" + txtFeeLevel.Text + "', '" + txtTeacherID.Text + "','" + txtSubjectID.Text + "'";
+            Execute(sqlInsert);
 
+            string sqlCode = "select top(20) * FROM LOPHOC order by MaLopHoc desc";
+            DisplayL(sqlCode);
 
-            SqlCommand cmd = new SqlCommand(sqlInsert, con);
-
-            cmd.ExecuteNonQuery();
-            Display();
-           
         }
 
         private void btnClass_edit_Click(object sender, EventArgs e)
         {
             string sqlEdit = "exec PROC_UPDATE_LOPHOC '" + txtClassID.Text + "','" + txtClassName.Text + "','" + txtSumStudent.Text + "','" + txtCourse.Text + "','" + txtFeeLevel.Text + "', '" + txtTeacherID.Text + "','" + txtSubjectID.Text + "'";
+            Execute(sqlEdit);
 
-
-            SqlCommand cmd = new SqlCommand(sqlEdit, con);
-
-            cmd.ExecuteNonQuery();
-            Display();
+            string sqlCode = "select top(20) * FROM LOPHOC";
+            DisplayL(sqlCode);
         }
 
         private void btnClass_delete_Click(object sender, EventArgs e)
         {
             string sqlupdateDelete1 = "update BUOIHOC set MaLopHoc = null where MaLopHoc = '" + txtClassID.Text + "' ";
-            SqlCommand cmd1 = new SqlCommand(sqlupdateDelete1, con);
-            cmd1.ExecuteNonQuery();
+            Execute(sqlupdateDelete1);
 
 
             string sqlupdateDelete2 = "update BLTRALUONG set MaLopHoc = null where MaLopHoc = '" + txtClassID.Text + "' ";
-            SqlCommand cmd2 = new SqlCommand(sqlupdateDelete2, con);
-            cmd2.ExecuteNonQuery();
+            Execute(sqlupdateDelete2);
 
 
             string sqlDelete3 = "update BLTHUHP set MaLopHoc = null where MaLopHoc = '" + txtClassID.Text + "'";
-            SqlCommand cmd3 = new SqlCommand(sqlDelete3, con);
-            cmd3.ExecuteNonQuery();
+            Execute(sqlDelete3);
 
 
             string sqlDelete = "exec PROC_DELETE_LOPHOC '" + txtClassID.Text + "'";
-            SqlCommand cmd = new SqlCommand(sqlDelete, con);
-            cmd.ExecuteNonQuery();
+            Execute(sqlDelete);
 
-            Display();
+            string sqlCode = "select top(20) * FROM LOPHOC";
+            DisplayL(sqlCode);
         }
 
         private void btnClass_clear_Click(object sender, EventArgs e)
@@ -179,112 +237,73 @@ namespace Thuc_Tap_CSDL
             if (cmbClass.SelectedItem == "Mã lớp học")
             {
 
-                string sqlCode2 = "select top(20) * from DBO.FUNC_SEARCH_LH_MALH('" + txtClassSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MALH('" + txtClassSearch.Text + "')";
+                DisplayL(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvClass.DataSource = dataTable;
             }
 
             if (cmbClass.SelectedItem == "Mã lớp học")
             {
 
-                string sqlCode2 = "select top(20) * from DBO.FUNC_SEARCH_BH_MALH('" + txtClassSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_MALH('" + txtClassSearch.Text + "')";
+                DisplayL(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvLesson.DataSource = dataTable;
             }
 
             if (cmbClass.SelectedItem == "Tên lớp học")
             {
 
-                string sqlCode2 = "select top(20) * from DBO.FUNC_SEARCH_LH_TENLH('" + txtClassSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_TENLH('" + txtClassSearch.Text + "')";
+                DisplayL(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvClass.DataSource = dataTable;
             }
 
             if (cmbClass.SelectedItem == "Số lượng học sinh")
             {
 
-                string sqlCode2 = "select top(20) * from DBO.FUNC_SEARCH_LH_SLHS('" + txtClassSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_SLHS('" + txtClassSearch.Text + "')";
+                DisplayL(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvClass.DataSource = dataTable;
             }
 
             if (cmbClass.SelectedItem == "Mã khóa học")
             {
 
-                string sqlCode2 = "select top(20) * from DBO.FUNC_SEARCH_LH_MAKH('" + txtClassSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MAKH('" + txtClassSearch.Text + "')";
+                DisplayL(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvClass.DataSource = dataTable;
             }
 
             if (cmbClass.SelectedItem == "Mã mức HP")
             {
 
-                string sqlCode2 = "select top(20) * from DBO.FUNC_SEARCH_LH_MAMHP('" + txtClassSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MAMHP('" + txtClassSearch.Text + "')";
+                DisplayL(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvClass.DataSource = dataTable;
             }
 
             if (cmbClass.SelectedItem == "Mã giáo viên")
             {
 
-                string sqlCode2 = "select top(20) * from DBO.FUNC_SEARCH_LH_MAGV('" + txtClassSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MAGV('" + txtClassSearch.Text + "')";
+                DisplayL(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvClass.DataSource = dataTable;
             }
 
             if (cmbClass.SelectedItem == "Mã môn học")
             {
 
-                string sqlCode2 = "select top(20) * from DBO.FUNC_SEARCH_LH_MAMH('" + txtClassSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MAMH('" + txtClassSearch.Text + "')";
+                DisplayL(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode2, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvClass.DataSource = dataTable;
             }
 
         }
 
         private void btnClass_all_Click(object sender, EventArgs e)
         {
-            Display();
+            string sqlCode = "select top(20) * FROM LOPHOC";
+            DisplayL(sqlCode);
 
             dgvClass.Enabled = true;
         }
@@ -293,7 +312,7 @@ namespace Thuc_Tap_CSDL
         {
             int i;
             i = dgvClass.CurrentRow.Index;
-            txtClassID.Text = txtLessonClassID.Text  = dgvClass.Rows[i].Cells[0].Value.ToString();
+            txtClassID.Text = txtLessonClassID.Text = dgvClass.Rows[i].Cells[0].Value.ToString();
             txtClassName.Text = dgvClass.Rows[i].Cells[1].Value.ToString();
             txtSumStudent.Text = dgvClass.Rows[i].Cells[2].Value.ToString();
             txtCourse.Text = dgvClass.Rows[i].Cells[3].Value.ToString();
@@ -301,15 +320,9 @@ namespace Thuc_Tap_CSDL
             txtTeacherID.Text = dgvClass.Rows[i].Cells[5].Value.ToString();
             txtSubjectID.Text = dgvClass.Rows[i].Cells[6].Value.ToString();
 
-            
-
             //print buoi hoc cua lop duoc chon sang dgvLesson
-            string lesson_sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text +"'";
-            SqlCommand lesson_cmd = new SqlCommand(lesson_sqlCode, con);
-            SqlDataReader lesson_dataReader = lesson_cmd.ExecuteReader();
-            DataTable lesson_dataTable = new DataTable();
-            lesson_dataTable.Load(lesson_dataReader);
-            dgvLesson.DataSource = lesson_dataTable;
+            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text + "' order by MaLopHoc desc";
+            DisplayR(sqlCode);
 
             autoLoadLessonID();
         }
@@ -319,7 +332,7 @@ namespace Thuc_Tap_CSDL
             int i;
             i = dgvLesson.CurrentRow.Index;
             txtLessonID.Text = dgvLesson.Rows[i].Cells[0].Value.ToString();
-            txtLessonDate.Text = dgvLesson.Rows[i].Cells[1].Value.ToString();
+            txtLessonDate.Text = convertDate(dgvLesson.Rows[i].Cells[1].Value.ToString());
             txtLessonTime.Text = dgvLesson.Rows[i].Cells[2].Value.ToString();
             txtLessonClassID.Text = dgvLesson.Rows[i].Cells[3].Value.ToString();
         }
@@ -327,32 +340,31 @@ namespace Thuc_Tap_CSDL
         private void btnLesson_add_Click(object sender, EventArgs e)
         {
             string sqlInsert = "exec PROC_INSERT_BUOIHOC '" + txtLessonID.Text + "','" + txtLessonDate.Text + "','" + txtLessonTime.Text + "','" + txtLessonClassID.Text + "' ";
-            SqlCommand cmd = new SqlCommand(sqlInsert, con);
-            cmd.ExecuteNonQuery();
-            Display1();
+            Execute(sqlInsert);
+
+            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
+            DisplayR(sqlCode);
         }
 
         private void btnLesson_edit_Click(object sender, EventArgs e)
         {
             string sqlInsert = "exec PROC_UPDATE_BUOIHOC '" + txtLessonID.Text + "','" + txtLessonDate.Text + "','" + txtLessonTime.Text + "','" + txtLessonClassID.Text + "' ";
-            SqlCommand cmd = new SqlCommand(sqlInsert, con);
-            cmd.ExecuteNonQuery();
-            Display1();
+            Execute(sqlInsert);
+
+            string sqlCode = "select top(20) * FROM BUOIHOC order by MaBuoiHoc desc";
+            DisplayR(sqlCode);
         }
 
         private void btnLesson_delete_Click(object sender, EventArgs e)
         {
             string sqlupdateDelete1 = "update DIEMDANH set MaBuoiHoc = null where MaBuoiHoc = '" + txtLessonID.Text + "' ";
-            SqlCommand cmd1 = new SqlCommand(sqlupdateDelete1, con);
-            cmd1.ExecuteNonQuery();
-
+            Execute(sqlupdateDelete1);
 
             string sqlDelete = "exec PROC_DELETE_BUOIHOC '" + txtLessonID.Text + "'";
-            SqlCommand cmd = new SqlCommand(sqlDelete, con);
-            cmd.ExecuteNonQuery();
+            Execute(sqlDelete);
 
-            Display1();
-
+            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "'";
+            DisplayR(sqlCode);
         }
 
         private void btnLesson_clear_Click(object sender, EventArgs e)
@@ -360,7 +372,7 @@ namespace Thuc_Tap_CSDL
             autoLoadLessonID();
             txtLessonDate.Text = "";
             txtLessonTime.Text = "";
-            txtLessonClassID.Text = "";           
+            txtLessonClassID.Text = "";
         }
 
         private void btnLesson_search_Click(object sender, EventArgs e)
@@ -368,77 +380,53 @@ namespace Thuc_Tap_CSDL
             if (cmbLesson.SelectedItem == "Mã buổi học")
             {
 
-                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_BH_MABH('" + txtLessonSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_MABH('" + txtLessonSearch.Text + "')";
+                DisplayR(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode1, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvLesson.DataSource = dataTable;
             }
 
             if (cmbLesson.SelectedItem == "Ngày học")
             {
 
-                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_BH_NGAYHOC('" + txtLessonSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_NGAYHOC('" + txtLessonSearch.Text + "')";
+                DisplayR(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode1, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvLesson.DataSource = dataTable;
             }
 
             if (cmbLesson.SelectedItem == "Thời gian")
             {
 
-                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_BH_THOIGIAN('" + txtLessonSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_THOIGIAN('" + txtLessonSearch.Text + "')";
+                DisplayR(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode1, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvLesson.DataSource = dataTable;
             }
 
             if (cmbLesson.SelectedItem == "Mã lớp học")
             {
 
-                string sqlCode1 = "select top(20) * from DBO.FUNC_SEARCH_BH_MALH('" + txtLessonSearch.Text + "')";
+                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_MALH('" + txtLessonSearch.Text + "')";
+                DisplayR(sqlCode);
 
-                SqlCommand cmd = new SqlCommand(sqlCode1, con);
-                cmd.ExecuteNonQuery();
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                dgvLesson.DataSource = dataTable;
             }
 
         }
 
         private void btnLesson_all_Click(object sender, EventArgs e)
         {
-            Display1();
-           
+            string sqlCode = "select top(20) * FROM BUOIHOC";
+            DisplayR(sqlCode);
         }
 
         private void button_WOC1_Click(object sender, EventArgs e)
         {
             if (txtLessonID.Text != "")
-                openChildForm(new fAttend(txtLessonClassID.Text,txtLessonID.Text), sender);      
+                openChildForm(new fAttend(txtLessonClassID.Text, txtLessonID.Text), sender);
         }
 
         private void btnDSL_Click(object sender, EventArgs e)
         {
-            string class_sqlCode = "SELECT MaLopHoc,dsl.MaHocSinh,TenHocSinh FROM DANHSACHLOP dsl, HOCSINH hs WHERE dsl.MaHocSinh = hs.MaHocSinh and MaLopHoc = '" + txtClassID.Text + "'";
-            SqlCommand class_cmd = new SqlCommand(class_sqlCode, con);
-            SqlDataReader class_dataReader = class_cmd.ExecuteReader();
-            DataTable class_dataTable = new DataTable();
-            class_dataTable.Load(class_dataReader);
-            dgvClass.DataSource = class_dataTable;
+            string sqlCode = "SELECT MaLopHoc,dsl.MaHocSinh,TenHocSinh FROM DANHSACHLOP dsl, HOCSINH hs WHERE dsl.MaHocSinh = hs.MaHocSinh and MaLopHoc = '" + txtClassID.Text + "'";
+            DisplayL(sqlCode);
 
             dgvClass.Enabled = false;
         }
@@ -446,18 +434,6 @@ namespace Thuc_Tap_CSDL
         private void txtLessonID_TextChanged(object sender, EventArgs e)
         {
 
-        }
-        public void loadDataCombobox1()
-        {
-            var sqlCode1 = "Select TenMonHoc from MONHOC";
-            SqlCommand cmd = new SqlCommand(sqlCode1, con);
-            ///cmd.ExecuteNonQuery();
-            var dr = cmd.ExecuteReader();
-            var dt = new DataTable();
-            dt.Load(dr);
-            dr.Dispose();
-            cbbMMH.ValueMember = "TenMonHoc";
-            cbbMMH.DataSource = dt;
         }
 
         private void cbbMMH_SelectedIndexChanged(object sender, EventArgs e)
@@ -473,19 +449,6 @@ namespace Thuc_Tap_CSDL
             dr.Close();
         }
 
-        public void loadDataCombobox2()
-        {
-            var sqlCode2 = "Select TenGiaoVien from GIAOVIEN";
-            SqlCommand cmd2 = new SqlCommand(sqlCode2, con);
-            ///cmd.ExecuteNonQuery();
-            var dr = cmd2.ExecuteReader();
-            var dt = new DataTable();
-            dt.Load(dr);
-            dr.Dispose();
-            cbbMGV.ValueMember = "TenGiaoVien";
-            cbbMGV.DataSource = dt;
-        }
-
         private void cbbMGV_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sqlCode = "SELECT MaGiaoVien FROM GIAOVIEN WHERE TenGiaoVien = '" + cbbMGV.SelectedValue.ToString() + "'";
@@ -499,18 +462,6 @@ namespace Thuc_Tap_CSDL
             dr.Close();
         }
 
-        public void loadDataCombobox4()
-        {
-            var sqlCode2 = "Select TenKhoaHoc from KHOAHOC";
-            SqlCommand cmd2 = new SqlCommand(sqlCode2, con);
-            ///cmd.ExecuteNonQuery();
-            var dr = cmd2.ExecuteReader();
-            var dt = new DataTable();
-            dt.Load(dr);
-            dr.Dispose();
-            cbbMKH.ValueMember = "TenKhoaHoc";
-            cbbMKH.DataSource = dt;
-        }
         private void cbbMKH_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sqlCode = "SELECT MaKhoaHoc FROM KHOAHOC WHERE TenKhoaHoc = '" + cbbMKH.SelectedValue.ToString() + "'";
@@ -522,19 +473,6 @@ namespace Thuc_Tap_CSDL
                 txtCourse.Text = dr.GetValue(0).ToString();
             }
             dr.Close();
-        }
-
-        public void loadDataCombobox3()
-        {
-            var sqlCode3 = "Select SoHocPhi from MUCHOCPHI";
-            SqlCommand cmd3 = new SqlCommand(sqlCode3, con);
-            ///cmd.ExecuteNonQuery();
-            var dr = cmd3.ExecuteReader();
-            var dt = new DataTable();
-            dt.Load(dr);
-            dr.Dispose();
-            cbbMMHP.ValueMember = "SoHocPhi";
-            cbbMMHP.DataSource = dt;
         }
 
         private void cbbMMHP_SelectedIndexChanged(object sender, EventArgs e)

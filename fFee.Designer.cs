@@ -79,6 +79,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnApply = new ePOSOne.btnProduct.Button_WOC();
             this.pnlSalary.SuspendLayout();
             this.colorBorderGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFee_bill)).BeginInit();
@@ -90,10 +91,11 @@
             // 
             this.pnlSalary.BackColor = System.Drawing.Color.White;
             this.pnlSalary.Controls.Add(this.cbbMLH);
-            this.pnlSalary.Controls.Add(this.label7);
             this.pnlSalary.Controls.Add(this.btnFeeBill_Export);
+            this.pnlSalary.Controls.Add(this.label7);
             this.pnlSalary.Controls.Add(this.btnFeeBill_add);
             this.pnlSalary.Controls.Add(this.btnFeeBill_edit);
+            this.pnlSalary.Controls.Add(this.btnApply);
             this.pnlSalary.Controls.Add(this.btnFeeBill_delete);
             this.pnlSalary.Controls.Add(this.ckbTaked);
             this.pnlSalary.Controls.Add(this.label5);
@@ -179,7 +181,7 @@
             this.btnFeeBill_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeeBill_Export.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnFeeBill_Export.ForeColor = System.Drawing.Color.Black;
-            this.btnFeeBill_Export.Location = new System.Drawing.Point(1104, 263);
+            this.btnFeeBill_Export.Location = new System.Drawing.Point(1104, 324);
             this.btnFeeBill_Export.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeeBill_Export.Name = "btnFeeBill_Export";
             this.btnFeeBill_Export.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -758,6 +760,30 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "HỌC PHÍ";
             // 
+            // btnApply
+            // 
+            this.btnApply.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnApply.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnApply.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApply.FlatAppearance.BorderSize = 0;
+            this.btnApply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnApply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApply.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnApply.ForeColor = System.Drawing.Color.Black;
+            this.btnApply.Location = new System.Drawing.Point(1122, 261);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(4);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnApply.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnApply.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnApply.Size = new System.Drawing.Size(95, 38);
+            this.btnApply.TabIndex = 96;
+            this.btnApply.Text = "ÁP DỤNG";
+            this.btnApply.TextColor = System.Drawing.Color.White;
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
             // fFee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -832,5 +858,6 @@
         private ePOSOne.btnProduct.Button_WOC btnFeeBill_delete;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbbMLH;
+        private ePOSOne.btnProduct.Button_WOC btnApply;
     }
 }
