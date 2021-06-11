@@ -76,6 +76,7 @@
             this.dgvSalary_bill = new System.Windows.Forms.DataGridView();
             this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
             this.dgvSalary = new System.Windows.Forms.DataGridView();
+            this.btnApply = new ePOSOne.btnProduct.Button_WOC();
             this.pnlSalary.SuspendLayout();
             this.colorBorderGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalary_bill)).BeginInit();
@@ -499,6 +500,7 @@
             // pnlSalary
             // 
             this.pnlSalary.BackColor = System.Drawing.Color.White;
+            this.pnlSalary.Controls.Add(this.btnApply);
             this.pnlSalary.Controls.Add(this.cbbMMH);
             this.pnlSalary.Controls.Add(this.label7);
             this.pnlSalary.Controls.Add(this.btnSalaryBill_add);
@@ -597,7 +599,7 @@
             this.btnSalaryBill_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalaryBill_edit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnSalaryBill_edit.ForeColor = System.Drawing.Color.Black;
-            this.btnSalaryBill_edit.Location = new System.Drawing.Point(1128, 138);
+            this.btnSalaryBill_edit.Location = new System.Drawing.Point(1128, 136);
             this.btnSalaryBill_edit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalaryBill_edit.Name = "btnSalaryBill_edit";
             this.btnSalaryBill_edit.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -621,7 +623,7 @@
             this.btnSalaryBill_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalaryBill_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnSalaryBill_delete.ForeColor = System.Drawing.Color.Black;
-            this.btnSalaryBill_delete.Location = new System.Drawing.Point(1128, 203);
+            this.btnSalaryBill_delete.Location = new System.Drawing.Point(1128, 201);
             this.btnSalaryBill_delete.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalaryBill_delete.Name = "btnSalaryBill_delete";
             this.btnSalaryBill_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -645,7 +647,7 @@
             this.btnSalaryBill_Export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalaryBill_Export.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnSalaryBill_Export.ForeColor = System.Drawing.Color.Black;
-            this.btnSalaryBill_Export.Location = new System.Drawing.Point(1095, 266);
+            this.btnSalaryBill_Export.Location = new System.Drawing.Point(1097, 326);
             this.btnSalaryBill_Export.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalaryBill_Export.Name = "btnSalaryBill_Export";
             this.btnSalaryBill_Export.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
@@ -715,6 +717,30 @@
             this.dgvSalary.Size = new System.Drawing.Size(585, 583);
             this.dgvSalary.TabIndex = 0;
             this.dgvSalary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalary_CellContentClick);
+            // 
+            // btnApply
+            // 
+            this.btnApply.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnApply.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnApply.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApply.FlatAppearance.BorderSize = 0;
+            this.btnApply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnApply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApply.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnApply.ForeColor = System.Drawing.Color.Black;
+            this.btnApply.Location = new System.Drawing.Point(1121, 264);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(4);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnApply.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnApply.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnApply.Size = new System.Drawing.Size(95, 38);
+            this.btnApply.TabIndex = 104;
+            this.btnApply.Text = "ÁP DỤNG";
+            this.btnApply.TextColor = System.Drawing.Color.White;
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // fSalary
             // 
@@ -787,5 +813,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlSalary;
         private System.Windows.Forms.ComboBox cbbMMH;
+        private ePOSOne.btnProduct.Button_WOC btnApply;
     }
 }

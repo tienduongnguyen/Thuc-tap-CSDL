@@ -22,6 +22,7 @@ namespace Thuc_Tap_CSDL
 
 
         SqlConnection con;
+        bool list_class = false;
 
 
         public void DisplayL(string code)
@@ -178,6 +179,8 @@ namespace Thuc_Tap_CSDL
             loadDataCombobox2();
             loadDataCombobox3();
             loadDataCombobox4();
+
+            list_class = false;
         }
 
         private void fClass_FormClosing(object sender, FormClosingEventArgs e)
@@ -207,23 +210,34 @@ namespace Thuc_Tap_CSDL
 
         private void btnClass_delete_Click(object sender, EventArgs e)
         {
-            string sqlupdateDelete1 = "update BUOIHOC set MaLopHoc = null where MaLopHoc = '" + txtClassID.Text + "' ";
-            Execute(sqlupdateDelete1);
+            if (!list_class)
+            {
+                string sqlupdateDelete1 = "update BUOIHOC set MaLopHoc = null where MaLopHoc = '" + txtClassID.Text + "' ";
+                Execute(sqlupdateDelete1);
 
 
-            string sqlupdateDelete2 = "update BLTRALUONG set MaLopHoc = null where MaLopHoc = '" + txtClassID.Text + "' ";
-            Execute(sqlupdateDelete2);
+                string sqlupdateDelete2 = "update BLTRALUONG set MaLopHoc = null where MaLopHoc = '" + txtClassID.Text + "' ";
+                Execute(sqlupdateDelete2);
 
 
-            string sqlDelete3 = "update BLTHUHP set MaLopHoc = null where MaLopHoc = '" + txtClassID.Text + "'";
-            Execute(sqlDelete3);
+                string sqlDelete3 = "update BLTHUHP set MaLopHoc = null where MaLopHoc = '" + txtClassID.Text + "'";
+                Execute(sqlDelete3);
 
 
-            string sqlDelete = "exec PROC_DELETE_LOPHOC '" + txtClassID.Text + "'";
-            Execute(sqlDelete);
+                string sqlDelete = "exec PROC_DELETE_LOPHOC '" + txtClassID.Text + "'";
+                Execute(sqlDelete);
 
-            string sqlCode = "select top(20) * FROM LOPHOC";
-            DisplayL(sqlCode);
+                string sqlCode = "select top(20) * FROM LOPHOC";
+                DisplayL(sqlCode);
+            }
+            else
+            {
+                string sqlDelete4 = "exec PROC_DELETE_DANHSACHLOP '" + txtClassID.Text + "','"+ txtStudentID.Text +"'";
+                Execute(sqlDelete4);
+
+                string sqlCode = "SELECT MaLopHoc,dsl.MaHocSinh,TenHocSinh FROM DANHSACHLOP dsl, HOCSINH hs WHERE dsl.MaHocSinh = hs.MaHocSinh and MaLopHoc = '" + txtClassID.Text + "'";
+                DisplayL(sqlCode);
+            }
         }
 
         private void btnClass_clear_Click(object sender, EventArgs e)
@@ -305,26 +319,38 @@ namespace Thuc_Tap_CSDL
             string sqlCode = "select top(20) * FROM LOPHOC";
             DisplayL(sqlCode);
 
-            dgvClass.Enabled = true;
+            list_class = false;
         }
 
         private void dgvClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i;
-            i = dgvClass.CurrentRow.Index;
-            txtClassID.Text = txtLessonClassID.Text = dgvClass.Rows[i].Cells[0].Value.ToString();
-            txtClassName.Text = dgvClass.Rows[i].Cells[1].Value.ToString();
-            txtSumStudent.Text = dgvClass.Rows[i].Cells[2].Value.ToString();
-            txtCourse.Text = dgvClass.Rows[i].Cells[3].Value.ToString();
-            txtFeeLevel.Text = dgvClass.Rows[i].Cells[4].Value.ToString();
-            txtTeacherID.Text = dgvClass.Rows[i].Cells[5].Value.ToString();
-            txtSubjectID.Text = dgvClass.Rows[i].Cells[6].Value.ToString();
+            if (!list_class)
+            {
+                int i;
+                i = dgvClass.CurrentRow.Index;
 
-            //print buoi hoc cua lop duoc chon sang dgvLesson
-            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text + "' order by MaLopHoc desc";
-            DisplayR(sqlCode);
+                txtClassID.Text = txtLessonClassID.Text = dgvClass.Rows[i].Cells[0].Value.ToString();
+                txtClassName.Text = dgvClass.Rows[i].Cells[1].Value.ToString();
+                txtSumStudent.Text = dgvClass.Rows[i].Cells[2].Value.ToString();
+                txtCourse.Text = dgvClass.Rows[i].Cells[3].Value.ToString();
+                txtFeeLevel.Text = dgvClass.Rows[i].Cells[4].Value.ToString();
+                txtTeacherID.Text = dgvClass.Rows[i].Cells[5].Value.ToString();
+                txtSubjectID.Text = dgvClass.Rows[i].Cells[6].Value.ToString();
 
-            autoLoadLessonID();
+                //print buoi hoc cua lop duoc chon sang dgvLesson
+                string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text + "' order by MaLopHoc desc";
+                DisplayR(sqlCode);
+
+                autoLoadLessonID();
+            }
+            else
+            {
+                int i;
+                i = dgvClass.CurrentRow.Index;
+
+                txtClassID.Text = dgvClass.Rows[i].Cells[0].Value.ToString();
+                txtStudentID.Text = dgvClass.Rows[i].Cells[1].Value.ToString();
+            }
         }
 
         private void dgvLesson_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -428,7 +454,7 @@ namespace Thuc_Tap_CSDL
             string sqlCode = "SELECT MaLopHoc,dsl.MaHocSinh,TenHocSinh FROM DANHSACHLOP dsl, HOCSINH hs WHERE dsl.MaHocSinh = hs.MaHocSinh and MaLopHoc = '" + txtClassID.Text + "'";
             DisplayL(sqlCode);
 
-            dgvClass.Enabled = false;
+            list_class = true;
         }
 
         private void txtLessonID_TextChanged(object sender, EventArgs e)
