@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTeacher = new System.Windows.Forms.Panel();
+            this.cbbMMTT = new System.Windows.Forms.ComboBox();
             this.cbbSubID = new System.Windows.Forms.ComboBox();
             this.cmbTeacher = new System.Windows.Forms.ComboBox();
             this.radGender_female = new System.Windows.Forms.RadioButton();
@@ -73,7 +75,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbbMMTT = new System.Windows.Forms.ComboBox();
             this.pnlTeacher.SuspendLayout();
             this.colorBorderGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeacher)).BeginInit();
@@ -132,6 +133,17 @@
             this.pnlTeacher.Name = "pnlTeacher";
             this.pnlTeacher.Size = new System.Drawing.Size(1257, 773);
             this.pnlTeacher.TabIndex = 1;
+            // 
+            // cbbMMTT
+            // 
+            this.cbbMMTT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cbbMMTT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.cbbMMTT.FormattingEnabled = true;
+            this.cbbMMTT.Location = new System.Drawing.Point(837, 199);
+            this.cbbMMTT.Name = "cbbMMTT";
+            this.cbbMMTT.Size = new System.Drawing.Size(121, 31);
+            this.cbbMMTT.TabIndex = 99;
+            this.cbbMMTT.SelectedIndexChanged += new System.EventHandler(this.cbbMMTT_SelectedIndexChanged);
             // 
             // cbbSubID
             // 
@@ -228,10 +240,19 @@
             // 
             // dgvTeacher
             // 
+            this.dgvTeacher.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTeacher.BackgroundColor = System.Drawing.Color.White;
             this.dgvTeacher.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTeacher.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTeacher.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTeacher.Location = new System.Drawing.Point(8, 30);
             this.dgvTeacher.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTeacher.Name = "dgvTeacher";
@@ -519,6 +540,7 @@
             // 
             this.txtSalaryID.BackColor = System.Drawing.Color.White;
             this.txtSalaryID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalaryID.Enabled = false;
             this.txtSalaryID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSalaryID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSalaryID.Location = new System.Drawing.Point(696, 206);
@@ -543,6 +565,7 @@
             // 
             this.txtSubjectID.BackColor = System.Drawing.Color.White;
             this.txtSubjectID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSubjectID.Enabled = false;
             this.txtSubjectID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSubjectID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtSubjectID.Location = new System.Drawing.Point(696, 166);
@@ -594,6 +617,7 @@
             // 
             this.txtTeacherID.BackColor = System.Drawing.Color.White;
             this.txtTeacherID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTeacherID.Enabled = false;
             this.txtTeacherID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtTeacherID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
             this.txtTeacherID.Location = new System.Drawing.Point(248, 96);
@@ -710,17 +734,6 @@
             this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.TabIndex = 33;
             this.label1.Text = "GIÁO VIÊN";
-            // 
-            // cbbMMTT
-            // 
-            this.cbbMMTT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.cbbMMTT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.cbbMMTT.FormattingEnabled = true;
-            this.cbbMMTT.Location = new System.Drawing.Point(837, 199);
-            this.cbbMMTT.Name = "cbbMMTT";
-            this.cbbMMTT.Size = new System.Drawing.Size(121, 31);
-            this.cbbMMTT.TabIndex = 99;
-            this.cbbMMTT.SelectedIndexChanged += new System.EventHandler(this.cbbMMTT_SelectedIndexChanged);
             // 
             // fTeacher
             // 

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlClass = new System.Windows.Forms.Panel();
             this.cbbMMHP = new System.Windows.Forms.ComboBox();
             this.cbbMKH = new System.Windows.Forms.ComboBox();
@@ -84,6 +86,7 @@
             this.txtFeeLevel = new System.Windows.Forms.TextBox();
             this.txtTeacherID = new System.Windows.Forms.TextBox();
             this.txtCourse = new System.Windows.Forms.TextBox();
+            this.txtStudentID = new System.Windows.Forms.TextBox();
             this.txtSumStudent = new System.Windows.Forms.TextBox();
             this.txtClassName = new System.Windows.Forms.TextBox();
             this.txtLessonClassID = new System.Windows.Forms.TextBox();
@@ -104,7 +107,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
             this.pnlClass.SuspendLayout();
             this.colorBorderGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLesson)).BeginInit();
@@ -210,10 +212,10 @@
             "Mã mức HP",
             "Mã giáo viên",
             "Mã môn học"});
-            this.cbbMMHP.Location = new System.Drawing.Point(324, 163);
+            this.cbbMMHP.Location = new System.Drawing.Point(294, 163);
             this.cbbMMHP.Margin = new System.Windows.Forms.Padding(4);
             this.cbbMMHP.Name = "cbbMMHP";
-            this.cbbMMHP.Size = new System.Drawing.Size(147, 31);
+            this.cbbMMHP.Size = new System.Drawing.Size(202, 31);
             this.cbbMMHP.TabIndex = 97;
             this.cbbMMHP.SelectedIndexChanged += new System.EventHandler(this.cbbMMHP_SelectedIndexChanged);
             // 
@@ -231,10 +233,10 @@
             "Mã mức HP",
             "Mã giáo viên",
             "Mã môn học"});
-            this.cbbMKH.Location = new System.Drawing.Point(324, 127);
+            this.cbbMKH.Location = new System.Drawing.Point(294, 127);
             this.cbbMKH.Margin = new System.Windows.Forms.Padding(4);
             this.cbbMKH.Name = "cbbMKH";
-            this.cbbMKH.Size = new System.Drawing.Size(147, 31);
+            this.cbbMKH.Size = new System.Drawing.Size(202, 31);
             this.cbbMKH.TabIndex = 96;
             this.cbbMKH.SelectedIndexChanged += new System.EventHandler(this.cbbMKH_SelectedIndexChanged);
             // 
@@ -252,10 +254,10 @@
             "Mã mức HP",
             "Mã giáo viên",
             "Mã môn học"});
-            this.cbbMGV.Location = new System.Drawing.Point(324, 197);
+            this.cbbMGV.Location = new System.Drawing.Point(294, 197);
             this.cbbMGV.Margin = new System.Windows.Forms.Padding(4);
             this.cbbMGV.Name = "cbbMGV";
-            this.cbbMGV.Size = new System.Drawing.Size(147, 31);
+            this.cbbMGV.Size = new System.Drawing.Size(202, 31);
             this.cbbMGV.TabIndex = 95;
             this.cbbMGV.SelectedIndexChanged += new System.EventHandler(this.cbbMGV_SelectedIndexChanged);
             // 
@@ -273,10 +275,10 @@
             "Mã mức HP",
             "Mã giáo viên",
             "Mã môn học"});
-            this.cbbMMH.Location = new System.Drawing.Point(324, 233);
+            this.cbbMMH.Location = new System.Drawing.Point(294, 233);
             this.cbbMMH.Margin = new System.Windows.Forms.Padding(4);
             this.cbbMMH.Name = "cbbMMH";
-            this.cbbMMH.Size = new System.Drawing.Size(147, 31);
+            this.cbbMMH.Size = new System.Drawing.Size(202, 31);
             this.cbbMMH.TabIndex = 94;
             this.cbbMMH.SelectedIndexChanged += new System.EventHandler(this.cbbMMH_SelectedIndexChanged);
             // 
@@ -381,10 +383,19 @@
             // 
             // dgvLesson
             // 
+            this.dgvLesson.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLesson.BackgroundColor = System.Drawing.Color.White;
             this.dgvLesson.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLesson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLesson.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLesson.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLesson.Location = new System.Drawing.Point(8, 30);
             this.dgvLesson.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLesson.Name = "dgvLesson";
@@ -428,10 +439,19 @@
             // 
             // dgvClass
             // 
+            this.dgvClass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvClass.BackgroundColor = System.Drawing.Color.White;
             this.dgvClass.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClass.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClass.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClass.Location = new System.Drawing.Point(8, 30);
             this.dgvClass.Margin = new System.Windows.Forms.Padding(4);
             this.dgvClass.Name = "dgvClass";
@@ -643,7 +663,7 @@
             this.btnClass_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClass_clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnClass_clear.ForeColor = System.Drawing.Color.Black;
-            this.btnClass_clear.Location = new System.Drawing.Point(504, 223);
+            this.btnClass_clear.Location = new System.Drawing.Point(515, 223);
             this.btnClass_clear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClass_clear.Name = "btnClass_clear";
             this.btnClass_clear.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(77)))), ((int)(((byte)(36)))));
@@ -691,7 +711,7 @@
             this.btnClass_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClass_delete.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnClass_delete.ForeColor = System.Drawing.Color.Black;
-            this.btnClass_delete.Location = new System.Drawing.Point(507, 175);
+            this.btnClass_delete.Location = new System.Drawing.Point(515, 175);
             this.btnClass_delete.Margin = new System.Windows.Forms.Padding(4);
             this.btnClass_delete.Name = "btnClass_delete";
             this.btnClass_delete.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
@@ -739,7 +759,7 @@
             this.btnClass_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClass_edit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnClass_edit.ForeColor = System.Drawing.Color.Black;
-            this.btnClass_edit.Location = new System.Drawing.Point(504, 127);
+            this.btnClass_edit.Location = new System.Drawing.Point(514, 127);
             this.btnClass_edit.Margin = new System.Windows.Forms.Padding(4);
             this.btnClass_edit.Name = "btnClass_edit";
             this.btnClass_edit.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
@@ -796,7 +816,7 @@
             this.btnClass_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClass_add.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnClass_add.ForeColor = System.Drawing.Color.Black;
-            this.btnClass_add.Location = new System.Drawing.Point(504, 78);
+            this.btnClass_add.Location = new System.Drawing.Point(515, 78);
             this.btnClass_add.Margin = new System.Windows.Forms.Padding(4);
             this.btnClass_add.Name = "btnClass_add";
             this.btnClass_add.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(181)))), ((int)(((byte)(116)))));
@@ -1016,6 +1036,20 @@
             this.txtCourse.Size = new System.Drawing.Size(212, 23);
             this.txtCourse.TabIndex = 48;
             // 
+            // txtStudentID
+            // 
+            this.txtStudentID.BackColor = System.Drawing.Color.White;
+            this.txtStudentID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStudentID.Enabled = false;
+            this.txtStudentID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtStudentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtStudentID.Location = new System.Drawing.Point(208, 312);
+            this.txtStudentID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.Size = new System.Drawing.Size(212, 23);
+            this.txtStudentID.TabIndex = 48;
+            this.txtStudentID.Visible = false;
+            // 
             // txtSumStudent
             // 
             this.txtSumStudent.BackColor = System.Drawing.Color.White;
@@ -1059,12 +1093,15 @@
             this.txtLessonDate.BackColor = System.Drawing.Color.White;
             this.txtLessonDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLessonDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtLessonDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtLessonDate.ForeColor = System.Drawing.Color.Silver;
             this.txtLessonDate.Location = new System.Drawing.Point(825, 116);
             this.txtLessonDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtLessonDate.Name = "txtLessonDate";
             this.txtLessonDate.Size = new System.Drawing.Size(215, 23);
             this.txtLessonDate.TabIndex = 44;
+            this.txtLessonDate.Text = "MM/DD/YYYY";
+            this.txtLessonDate.Enter += new System.EventHandler(this.txtLessonDate_Enter);
+            this.txtLessonDate.Leave += new System.EventHandler(this.txtLessonDate_Leave);
             // 
             // txtLessonTime
             // 
@@ -1263,20 +1300,6 @@
             this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 33;
             this.label1.Text = "LỚP HỌC";
-            // 
-            // txtStudentID
-            // 
-            this.txtStudentID.BackColor = System.Drawing.Color.White;
-            this.txtStudentID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStudentID.Enabled = false;
-            this.txtStudentID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtStudentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtStudentID.Location = new System.Drawing.Point(208, 312);
-            this.txtStudentID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(212, 23);
-            this.txtStudentID.TabIndex = 48;
-            this.txtStudentID.Visible = false;
             // 
             // fClass
             // 

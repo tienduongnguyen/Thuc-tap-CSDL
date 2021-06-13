@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -67,6 +69,7 @@
             this.ckbPayed = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlSalary = new System.Windows.Forms.Panel();
+            this.btnApply = new ePOSOne.btnProduct.Button_WOC();
             this.cbbMMH = new System.Windows.Forms.ComboBox();
             this.btnSalaryBill_add = new ePOSOne.btnProduct.Button_WOC();
             this.btnSalaryBill_edit = new ePOSOne.btnProduct.Button_WOC();
@@ -76,7 +79,6 @@
             this.dgvSalary_bill = new System.Windows.Forms.DataGridView();
             this.colorBorderGroupBox1 = new Thuc_Tap_CSDL.ColorBorderGroupBox();
             this.dgvSalary = new System.Windows.Forms.DataGridView();
-            this.btnApply = new ePOSOne.btnProduct.Button_WOC();
             this.pnlSalary.SuspendLayout();
             this.colorBorderGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalary_bill)).BeginInit();
@@ -553,6 +555,30 @@
             this.pnlSalary.Size = new System.Drawing.Size(1257, 773);
             this.pnlSalary.TabIndex = 2;
             // 
+            // btnApply
+            // 
+            this.btnApply.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnApply.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
+            this.btnApply.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApply.FlatAppearance.BorderSize = 0;
+            this.btnApply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnApply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApply.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btnApply.ForeColor = System.Drawing.Color.Black;
+            this.btnApply.Location = new System.Drawing.Point(1121, 264);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(4);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnApply.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.btnApply.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnApply.Size = new System.Drawing.Size(95, 38);
+            this.btnApply.TabIndex = 104;
+            this.btnApply.Text = "ÁP DỤNG";
+            this.btnApply.TextColor = System.Drawing.Color.White;
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
             // cbbMMH
             // 
             this.cbbMMH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -677,10 +703,19 @@
             // 
             // dgvSalary_bill
             // 
+            this.dgvSalary_bill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSalary_bill.BackgroundColor = System.Drawing.Color.White;
             this.dgvSalary_bill.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSalary_bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalary_bill.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalary_bill.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSalary_bill.Location = new System.Drawing.Point(8, 30);
             this.dgvSalary_bill.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalary_bill.Name = "dgvSalary_bill";
@@ -706,10 +741,19 @@
             // 
             // dgvSalary
             // 
+            this.dgvSalary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSalary.BackgroundColor = System.Drawing.Color.White;
             this.dgvSalary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalary.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalary.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSalary.Location = new System.Drawing.Point(4, 29);
             this.dgvSalary.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalary.Name = "dgvSalary";
@@ -717,30 +761,6 @@
             this.dgvSalary.Size = new System.Drawing.Size(585, 583);
             this.dgvSalary.TabIndex = 0;
             this.dgvSalary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalary_CellContentClick);
-            // 
-            // btnApply
-            // 
-            this.btnApply.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnApply.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
-            this.btnApply.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApply.FlatAppearance.BorderSize = 0;
-            this.btnApply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnApply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApply.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnApply.ForeColor = System.Drawing.Color.Black;
-            this.btnApply.Location = new System.Drawing.Point(1121, 264);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(4);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnApply.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.btnApply.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnApply.Size = new System.Drawing.Size(95, 38);
-            this.btnApply.TabIndex = 104;
-            this.btnApply.Text = "ÁP DỤNG";
-            this.btnApply.TextColor = System.Drawing.Color.White;
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // fSalary
             // 

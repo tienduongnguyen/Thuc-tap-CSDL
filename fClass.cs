@@ -117,7 +117,7 @@ namespace Thuc_Tap_CSDL
 
         public void loadDataCombobox4()
         {
-            var sqlCode = "Select TenKhoaHoc from KHOAHOC";
+            var sqlCode = "Select TenKhoaHoc from KHOAHOC order by MaKhoaHoc asc";
             SqlCommand cmd = new SqlCommand(sqlCode, con);
             ///cmd.ExecuteNonQuery();
             var dr = cmd.ExecuteReader();
@@ -197,6 +197,8 @@ namespace Thuc_Tap_CSDL
             string sqlCode = "select top(20) * FROM LOPHOC order by MaLopHoc desc";
             DisplayL(sqlCode);
 
+            autoLoadClassID();
+
         }
 
         private void btnClass_edit_Click(object sender, EventArgs e)
@@ -244,6 +246,7 @@ namespace Thuc_Tap_CSDL
         {
             txtClassName.Text = "";
             autoLoadClassID();
+            btnClass_add.Enabled = true;
         }
 
         private void btnClass_search_Click(object sender, EventArgs e)
@@ -324,6 +327,8 @@ namespace Thuc_Tap_CSDL
 
         private void dgvClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnClass_add.Enabled = false;
+
             if (!list_class)
             {
                 int i;
@@ -338,7 +343,7 @@ namespace Thuc_Tap_CSDL
                 txtSubjectID.Text = dgvClass.Rows[i].Cells[6].Value.ToString();
 
                 //print buoi hoc cua lop duoc chon sang dgvLesson
-                string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text + "' order by MaLopHoc desc";
+                string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text + "' order by MaBuoiHoc desc";
                 DisplayR(sqlCode);
 
                 autoLoadLessonID();
@@ -355,6 +360,8 @@ namespace Thuc_Tap_CSDL
 
         private void dgvLesson_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnLesson_add.Enabled = false;
+
             int i;
             i = dgvLesson.CurrentRow.Index;
             txtLessonID.Text = dgvLesson.Rows[i].Cells[0].Value.ToString();
@@ -370,6 +377,8 @@ namespace Thuc_Tap_CSDL
 
             string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
             DisplayR(sqlCode);
+
+            autoLoadLessonID();
         }
 
         private void btnLesson_edit_Click(object sender, EventArgs e)
@@ -377,7 +386,7 @@ namespace Thuc_Tap_CSDL
             string sqlInsert = "exec PROC_UPDATE_BUOIHOC '" + txtLessonID.Text + "','" + txtLessonDate.Text + "','" + txtLessonTime.Text + "','" + txtLessonClassID.Text + "' ";
             Execute(sqlInsert);
 
-            string sqlCode = "select top(20) * FROM BUOIHOC order by MaBuoiHoc desc";
+            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
             DisplayR(sqlCode);
         }
 
@@ -389,13 +398,14 @@ namespace Thuc_Tap_CSDL
             string sqlDelete = "exec PROC_DELETE_BUOIHOC '" + txtLessonID.Text + "'";
             Execute(sqlDelete);
 
-            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "'";
+            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
             DisplayR(sqlCode);
         }
 
         private void btnLesson_clear_Click(object sender, EventArgs e)
         {
             autoLoadLessonID();
+            btnLesson_add.Enabled = true;
             txtLessonDate.Text = "";
             txtLessonTime.Text = "";
             txtLessonClassID.Text = "";
@@ -451,7 +461,7 @@ namespace Thuc_Tap_CSDL
 
         private void btnDSL_Click(object sender, EventArgs e)
         {
-            string sqlCode = "SELECT MaLopHoc,dsl.MaHocSinh,TenHocSinh FROM DANHSACHLOP dsl, HOCSINH hs WHERE dsl.MaHocSinh = hs.MaHocSinh and MaLopHoc = '" + txtClassID.Text + "'";
+            string sqlCode = "SELECT * FROM FUNC_LIST_STUDENT_CLASS('" + txtClassID.Text + "')";
             DisplayL(sqlCode);
 
             list_class = true;
@@ -512,6 +522,24 @@ namespace Thuc_Tap_CSDL
                 txtFeeLevel.Text = dr.GetValue(0).ToString();
             }
             dr.Close();
+        }
+
+        private void txtLessonDate_Enter(object sender, EventArgs e)
+        {
+            if (txtLessonDate.Text == "MM/DD/YYYY")
+            {
+                txtLessonDate.Text = "";
+                txtLessonDate.ForeColor = Color.FromArgb(0, 72, 39);
+            }
+        }
+
+        private void txtLessonDate_Leave(object sender, EventArgs e)
+        {
+            if (txtLessonDate.Text == "")
+            {
+                txtLessonDate.Text = "MM/DD/YYYY";
+                txtLessonDate.ForeColor = Color.Silver;
+            }
         }
     }
 }

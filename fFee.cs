@@ -254,7 +254,7 @@ namespace Thuc_Tap_CSDL
             }
             dr.Close();
 
-            string sqlCode2 = "select * from FUNC_LIST_STUDENT_CLASS('" + txtFeeSearch.Text + "')";
+            string sqlCode2 = "select MaHocSinh, TenHocSinh from FUNC_LIST_STUDENT_CLASS('" + txtFeeSearch.Text + "')";
             Display(sqlCode2);
         }
 

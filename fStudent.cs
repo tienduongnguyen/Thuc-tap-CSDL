@@ -104,37 +104,54 @@ namespace Thuc_Tap_CSDL
             }
 
 
-            //string sqlInsert = "exec PROC_INSERT_HOCSINH '" + txtStudentID.Text + "','" + txtStudentName.Text + "','" + txtStudentBirth.Text + "','" + gender + "','" + txtStudentAddress.Text + "','" + txtStudentPhone.Text + "'";
-            string st = "select top(20) * from HOCSINH where MaHocSinh = '" + txtStudentID.Text + "' ";
-            SqlCommand cmd3 = new SqlCommand(st, con);
-            SqlDataReader dataReader2 = cmd3.ExecuteReader();
-            //cmd3.ExecuteNonQuery();
+            string readerCode = "select * from HOCSINH where MaHocSinh = '" + txtStudentID.Text + "' ";
+            SqlCommand cmd = new SqlCommand(readerCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
 
 
-            if (dataReader2.Read() == true)
+            if (dr.Read() == true)
             {
+                dr.Close();
 
-                dataReader2.Close();
-                string sql = "exec PROC_INSERT_DANHSACHLOP '" + textmalop.Text + "','" + txtStudentID.Text + "' ";
-                SqlCommand cmd1 = new SqlCommand(sql, con);
-                cmd1.ExecuteNonQuery();
+                string readerCode1 = "select * from DANHSACHLOP where MaHocSinh = '" + txtStudentID.Text + "' and MaLopHoc = '" + textmalop.Text + "'";
+                SqlCommand cmd1 = new SqlCommand(readerCode1, con);
+                SqlDataReader dr1 = cmd1.ExecuteReader();
+
+                if (dr1.Read() == true)
+                {
+                    dr1.Close();
+
+                    MessageBox.Show("Học sinh đã có sẵn trong lớp", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dr1.Close();
+
+                    string sqlCode = "exec PROC_INSERT_DANHSACHLOP '" + textmalop.Text + "','" + txtStudentID.Text + "' ";
+                    SqlCommand cmd2 = new SqlCommand(sqlCode, con);
+                    cmd2.ExecuteNonQuery();
+
+                    string C_name = comboBox1.Text;
+                    string S_name = txtStudentName.Text;
+                    string noti = "Thêm thành công\n" + S_name + " vào lớp " + C_name;
+                    MessageBox.Show(noti, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
             }
 
             else
             {
-                dataReader2.Close();
+                dr.Close();
 
-                string sqlInsert = "exec PROC_INSERT_HOCSINH '" + txtStudentID.Text + "','" + txtStudentName.Text + "','" + txtStudentBirth.Text + "','" + gender + "','" + txtStudentAddress.Text + "','" + txtStudentPhone.Text + "'";
-                SqlCommand cmd2 = new SqlCommand(sqlInsert, con);
+                string sqlCode = "exec PROC_INSERT_HOCSINH '" + txtStudentID.Text + "','" + txtStudentName.Text + "','" + txtStudentBirth.Text + "','" + gender + "','" + txtStudentAddress.Text + "','" + txtStudentPhone.Text + "'";
+                SqlCommand cmd2 = new SqlCommand(sqlCode, con);
                 cmd2.ExecuteNonQuery();
 
-                string sql = "exec PROC_INSERT_DANHSACHLOP '" + textmalop.Text + "','" + txtStudentID.Text + "' ";
-                SqlCommand cmd1 = new SqlCommand(sql, con);
-                cmd1.ExecuteNonQuery();
+                string sqlCode1 = "exec PROC_INSERT_DANHSACHLOP '" + textmalop.Text + "','" + txtStudentID.Text + "' ";
+                SqlCommand cmd3 = new SqlCommand(sqlCode1, con);
+                cmd3.ExecuteNonQuery();
             }
             Display();
-
-            //string sql = "select MaHocSinh, MaLopHoc from"
         }
 
         private void btnStudent_edit_Click(object sender, EventArgs e)
@@ -325,7 +342,7 @@ namespace Thuc_Tap_CSDL
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                textmalop.Text = dr.GetValue(0).ToString();              
+                textmalop.Text = dr.GetValue(0).ToString();
             }
             dr.Close();
         }

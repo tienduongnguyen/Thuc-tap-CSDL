@@ -23,8 +23,8 @@ namespace Thuc_Tap_CSDL
         public fAttend(string id1, string id2)
         {
             InitializeComponent();
-            lbl2.Text = id1;
-            lbl.Text = id2;
+            lblClassID.Text = id1;
+            lblLessonID.Text = id2;
         }
 
 
@@ -58,15 +58,14 @@ namespace Thuc_Tap_CSDL
             int row = dgvAttend.Rows.Count;
             for (int i = 0; i < row; i++)
             {
-                string sqlCode = "UPDATE DIEMDANH SET TichVang='" + dgvAttend.Rows[i].Cells[4].Value + "' WHERE MaHocSinh='" + dgvAttend.Rows[i].Cells[2].Value + "'";
+                string sqlCode = "UPDATE DIEMDANH SET TichVang = '" + dgvAttend.Rows[i].Cells[2].Value + "' " +
+                                 "WHERE MaHocSinh = '" + dgvAttend.Rows[i].Cells[0].Value + "' " +
+                                 "and MaBuoiHoc = '" + lblLessonID.Text + "' ";
                 SqlCommand cmd = new SqlCommand(sqlCode, con);
-
-                //cmd.Parameters.AddWithValue("@p1", dgvAttend.Rows[i].Cells[4].Value);
-                //cmd.Parameters.AddWithValue("@p2", dgvAttend.Rows[i].Cells[2].Value);
-
                 cmd.ExecuteNonQuery();
             }
-            MessageBox.Show("Điểm danh thành công\n" + "Sĩ số: " + countAttend(lbl.Text) + "/" + (row - 1).ToString());
+
+            MessageBox.Show("Điểm danh thành công\n" + "Sĩ số: " + countAttend(lblLessonID.Text) + "/" + (row - 1).ToString());
             btnAttend_cancel.Text = "THOÁT";
         }
 
@@ -93,12 +92,13 @@ namespace Thuc_Tap_CSDL
             con = new SqlConnection(conString);
             con.Open();
 
+            loadClassName();
             Displayattend();
         }
 
         public virtual void Displayattend()
         {
-            string sqlCode = "select MaLopHoc, MaBuoiHoc, dd.MaHocSinh, TenHocSinh, TichVang from DIEMDANH dd, DANHSACHLOP dsl, HOCSINH hs where dsl.MaHocSinh = hs.MaHocSinh and hs.MaHocSinh = dd.MaHocSinh and MaLopHoc='" + lbl2.Text + "' and MaBuoiHoc='" + lbl.Text + "'";
+            string sqlCode = "select * from FUNC_LIST_TO_ATTEND('" + lblLessonID.Text + "')";
 
 
             SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -108,17 +108,22 @@ namespace Thuc_Tap_CSDL
             dgvAttend.DataSource = dataTable;
         }
 
+        public void loadClassName()
+        {
+            string sqlCode = "SELECT TenLopHoc FROM LOPHOC WHERE MaLopHoc = '" + lblClassID.Text + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                lblClassName.Text = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+        }
+
         private void dgvAttend_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblPresent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
