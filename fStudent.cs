@@ -316,7 +316,8 @@ namespace Thuc_Tap_CSDL
             i = dgvStudent.CurrentRow.Index;
             txtStudentID.Text = dgvStudent.Rows[i].Cells[0].Value.ToString();
             txtStudentName.Text = dgvStudent.Rows[i].Cells[1].Value.ToString();
-            txtStudentBirth.Text = convertDate(dgvStudent.Rows[i].Cells[2].Value.ToString());
+            //txtStudentBirth.Text = convertDate(dgvStudent.Rows[i].Cells[2].Value.ToString());
+            txtStudentBirth.Text = dgvStudent.Rows[i].Cells[2].Value.ToString();
             //radGender_male.Checked = dgvStudent.Rows[i].Cells[3].Value.ToString();
             txtStudentAddress.Text = dgvStudent.Rows[i].Cells[4].Value.ToString();
             txtStudentPhone.Text = dgvStudent.Rows[i].Cells[5].Value.ToString();

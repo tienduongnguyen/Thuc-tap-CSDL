@@ -81,7 +81,8 @@ namespace Thuc_Tap_CSDL
             txtSalaryBill_sumMoney.Text = dgvSalary_bill.Rows[i].Cells[2].Value.ToString();
             txtSalaryBill_teacherID.Text = dgvSalary_bill.Rows[i].Cells[3].Value.ToString();
             txtSalaryBill_classID.Text = dgvSalary_bill.Rows[i].Cells[4].Value.ToString();
-            txtSalaryBill_datePay.Text = convertDate(dgvSalary_bill.Rows[i].Cells[5].Value.ToString());
+           //txtSalaryBill_datePay.Text = convertDate(dgvSalary_bill.Rows[i].Cells[5].Value.ToString());
+            txtSalaryBill_datePay.Text = dgvSalary_bill.Rows[i].Cells[5].Value.ToString();
             txtSalaryBill_datePayFor.Text = dgvSalary_bill.Rows[i].Cells[6].Value.ToString();
             if (dgvSalary_bill.Rows[i].Cells[7].Value.ToString() == "1") ckbPayed.Checked = true;
             else ckbPayed.Checked = false;

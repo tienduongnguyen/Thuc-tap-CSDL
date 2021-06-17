@@ -92,7 +92,8 @@ namespace Thuc_Tap_CSDL
             txtFeeBill_sumDay.Text = dgvFee_bill.Rows[i].Cells[3].Value.ToString();
             txtFeeBill_feePerDay.Text = dgvFee_bill.Rows[i].Cells[4].Value.ToString();
             txtFeeBill_sumFee.Text = dgvFee_bill.Rows[i].Cells[5].Value.ToString();
-            txtFeeBill_dateTake.Text = convertDate(dgvFee_bill.Rows[i].Cells[6].Value.ToString());
+            //txtFeeBill_dateTake.Text = convertDate(dgvFee_bill.Rows[i].Cells[6].Value.ToString())
+            txtFeeBill_dateTake.Text = dgvFee_bill.Rows[i].Cells[6].Value.ToString();
             txtFeeBill_takeForDate.Text = dgvFee_bill.Rows[i].Cells[7].Value.ToString();
             if (dgvFee_bill.Rows[i].Cells[8].Value.ToString() == "1") ckbTaked.Checked = true;
             else ckbTaked.Checked = false;

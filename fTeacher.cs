@@ -102,14 +102,27 @@ namespace Thuc_Tap_CSDL
                 gender = radGender_male.Text;
             }
 
+            string readerCode = "select * from GIAOVIEN where MaGiaoVien = '" + txtTeacherID.Text + "' ";
+            SqlCommand cmd = new SqlCommand(readerCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
 
-            string sqlInsert = "exec PROC_INSERT_GIAOVIEN '" + txtTeacherID.Text + "','" + txtTeacherName.Text + "','" + txtTeacherBirth.Text + "','" + gender + "','" + txtTeacherAddress.Text + "','" + txtTeacherPhone.Text + "', '"+ txtSubjectID.Text + "', '" + txtSalaryID.Text + "' ";
+            if (dr.Read() == true)
+            {
+                dr.Close();
+                MessageBox.Show("Giáo viên đã có sẵn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                dr.Close();
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                string sqlInsert = "exec PROC_INSERT_GIAOVIEN '" + txtTeacherID.Text + "','" + txtTeacherName.Text + "','" + txtTeacherBirth.Text + "','" + gender + "','" + txtTeacherAddress.Text + "','" + txtTeacherPhone.Text + "', '" + txtSubjectID.Text + "', '" + txtSalaryID.Text + "' ";
+                SqlCommand cmd1 = new SqlCommand(sqlInsert, con);
+                cmd1.ExecuteNonQuery();
+                Display();
+            }
 
 
-            SqlCommand cmd = new SqlCommand(sqlInsert, con);
-
-            cmd.ExecuteNonQuery();
-            Display();
         }
 
         private void btnTeacher_edit_Click(object sender, EventArgs e)
@@ -149,7 +162,7 @@ namespace Thuc_Tap_CSDL
             string sqlDelete = "exec PROC_DELETE_GIAOVIEN '" + txtTeacherID.Text + "'";
 
             SqlCommand cmd = new SqlCommand(sqlDelete, con);
-         
+
             cmd.ExecuteNonQuery();
             Display();
         }
@@ -282,18 +295,62 @@ namespace Thuc_Tap_CSDL
             return info[1] + "/" + info[0] + "/" + info[2];
         }
 
+
+        public string getMH(string MaMH)
+        {
+            string result = "";
+
+            string sqlCode = "select TenMonHoc from MONHOC where MaMonHoc='" + MaMH + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                result = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+
+            return result;
+        }
+
+        public string getMMTT(string MaMMTT)
+        {
+            string result = "";
+
+            string sqlCode = "select TyLePhanTram from MUCTHANHTOAN where MaMTT='" + MaMMTT + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                result = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+
+            return result;
+        }
+
+
         private void dgvTeacher_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
             i = dgvTeacher.CurrentRow.Index;
             txtTeacherID.Text = dgvTeacher.Rows[i].Cells[0].Value.ToString();
             txtTeacherName.Text = dgvTeacher.Rows[i].Cells[1].Value.ToString();
-            txtTeacherBirth.Text = convertDate(dgvTeacher.Rows[i].Cells[2].Value.ToString());
+            //txtTeacherBirth.Text = convertDate(dgvTeacher.Rows[i].Cells[2].Value.ToString());
+            txtTeacherBirth.Text = dgvTeacher.Rows[i].Cells[2].Value.ToString();
             //radGender_male.Checked = dgvStudent.Rows[i].Cells[3].Value.ToString();
             txtTeacherAddress.Text = dgvTeacher.Rows[i].Cells[4].Value.ToString();
             txtTeacherPhone.Text = dgvTeacher.Rows[i].Cells[5].Value.ToString();
             txtSubjectID.Text = dgvTeacher.Rows[i].Cells[6].Value.ToString();
             txtSalaryID.Text = dgvTeacher.Rows[i].Cells[7].Value.ToString();
+
+            cbbSubID.Text = getMH(txtSubjectID.Text);
+            cbbMMTT.Text = getMMTT(txtSalaryID.Text);
         }
 
         private void cmbTeacher_SelectedIndexChanged(object sender, EventArgs e)
@@ -314,7 +371,7 @@ namespace Thuc_Tap_CSDL
             cbbSubID.DataSource = dt;
         }
 
-        
+
 
         private void cbbSubID_SelectedIndexChanged(object sender, EventArgs e)
         {

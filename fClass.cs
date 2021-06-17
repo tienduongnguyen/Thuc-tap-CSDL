@@ -191,7 +191,7 @@ namespace Thuc_Tap_CSDL
         private void btnClass_add_Click(object sender, EventArgs e)
         {
 
-            string sqlInsert = "exec PROC_INSERT_LOPHOC '" + txtClassID.Text + "','" + txtClassName.Text + "','" + txtSumStudent.Text + "','" + txtCourse.Text + "','" + txtFeeLevel.Text + "', '" + txtTeacherID.Text + "','" + txtSubjectID.Text + "'";
+            string sqlInsert = "exec PROC_INSERT_LOPHOC '" + txtClassID.Text + "','" + txtClassName.Text + "','" + "0" + "','" + txtCourse.Text + "','" + txtFeeLevel.Text + "', '" + txtTeacherID.Text + "','" + txtSubjectID.Text + "'";
             Execute(sqlInsert);
 
             string sqlCode = "select top(20) * FROM LOPHOC order by MaLopHoc desc";
@@ -234,7 +234,7 @@ namespace Thuc_Tap_CSDL
             }
             else
             {
-                string sqlDelete4 = "exec PROC_DELETE_DANHSACHLOP '" + txtClassID.Text + "','"+ txtStudentID.Text +"'";
+                string sqlDelete4 = "exec PROC_DELETE_DANHSACHLOP '" + txtClassID.Text + "','" + txtStudentID.Text + "'";
                 Execute(sqlDelete4);
 
                 string sqlCode = "SELECT MaLopHoc,dsl.MaHocSinh,TenHocSinh FROM DANHSACHLOP dsl, HOCSINH hs WHERE dsl.MaHocSinh = hs.MaHocSinh and MaLopHoc = '" + txtClassID.Text + "'";
@@ -251,18 +251,11 @@ namespace Thuc_Tap_CSDL
 
         private void btnClass_search_Click(object sender, EventArgs e)
         {
+
             if (cmbClass.SelectedItem == "Mã lớp học")
             {
 
                 string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MALH('" + txtClassSearch.Text + "')";
-                DisplayL(sqlCode);
-
-            }
-
-            if (cmbClass.SelectedItem == "Mã lớp học")
-            {
-
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_MALH('" + txtClassSearch.Text + "')";
                 DisplayL(sqlCode);
 
             }
@@ -325,6 +318,83 @@ namespace Thuc_Tap_CSDL
             list_class = false;
         }
 
+        public string getMKH(string MaKH)
+        {
+            string result = "";
+
+            string sqlCode = "select TenKhoaHoc from KHOAHOC where MaKhoaHoc='" + MaKH + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                result = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+
+            return result;
+        }
+
+        public string getMHP(string MaMHP)
+        {
+            string result = "";
+
+            string sqlCode = "select SoHocPhi from MUCHOCPHI where MaMHP='" + MaMHP + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                result = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+
+            return result;
+        }
+
+        public string getGV(string MaGV)
+        {
+            string result = "";
+
+            string sqlCode = "select TenGiaoVien from GIAOVIEN where MaGiaoVien='" + MaGV + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                result = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+
+            return result;
+        }
+
+        public string getMH(string MaMH)
+        {
+            string result = "";
+
+            string sqlCode = "select TenMonHoc from MONHOC where MaMonHoc='" + MaMH + "'";
+
+
+            SqlCommand cmd = new SqlCommand(sqlCode, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                result = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+
+            return result;
+        }
+
+
         private void dgvClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             btnClass_add.Enabled = false;
@@ -341,6 +411,12 @@ namespace Thuc_Tap_CSDL
                 txtFeeLevel.Text = dgvClass.Rows[i].Cells[4].Value.ToString();
                 txtTeacherID.Text = dgvClass.Rows[i].Cells[5].Value.ToString();
                 txtSubjectID.Text = dgvClass.Rows[i].Cells[6].Value.ToString();
+
+                cbbMKH.Text = getMKH(txtCourse.Text);
+                cbbMMHP.Text = getMHP(txtFeeLevel.Text);
+                cbbMGV.Text = getGV(txtTeacherID.Text);
+                cbbMMH.Text = getMH(txtSubjectID.Text);
+
 
                 //print buoi hoc cua lop duoc chon sang dgvLesson
                 string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text + "' order by MaBuoiHoc desc";
@@ -365,6 +441,7 @@ namespace Thuc_Tap_CSDL
             int i;
             i = dgvLesson.CurrentRow.Index;
             txtLessonID.Text = dgvLesson.Rows[i].Cells[0].Value.ToString();
+            //txtLessonDate.Text = convertDate(dgvLesson.Rows[i].Cells[1].Value.ToString());
             txtLessonDate.Text = convertDate(dgvLesson.Rows[i].Cells[1].Value.ToString());
             txtLessonTime.Text = dgvLesson.Rows[i].Cells[2].Value.ToString();
             txtLessonClassID.Text = dgvLesson.Rows[i].Cells[3].Value.ToString();

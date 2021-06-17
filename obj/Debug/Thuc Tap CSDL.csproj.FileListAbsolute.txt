@@ -232,3 +232,5 @@ D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL update mới nhất\Thuc-tap-CSDL\obj\D
 D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL update mới nhất\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.pdb
 D:\Repo\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillStudent.resources
 D:\Repo\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillTeacher.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL update mới nhất\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillStudent.resources
+D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL update mới nhất\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillTeacher.resources
