@@ -172,7 +172,7 @@ namespace Thuc_Tap_CSDL
                 int id = Convert.ToInt32(dr.GetValue(0).ToString().Substring(4)) + 1;
                 string ID = "";
 
-                if (id > 10 && id < 100) ID = "0" + id.ToString();
+                if (id >= 10) ID = "0" + id.ToString();
                 else if (id < 10) ID = "00" + id.ToString();
                 else ID = id.ToString();
 
