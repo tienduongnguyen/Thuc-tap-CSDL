@@ -12,6 +12,8 @@ namespace Thuc_Tap_CSDL
 {
     public partial class fMain : Form
     {
+        string status = "";
+
         public fMain()
         {
             InitializeComponent();
@@ -19,14 +21,15 @@ namespace Thuc_Tap_CSDL
 
         public fMain(string name)
         {
+            InitializeComponent();
+
             if (name == "staff")
             {
-                InitializeComponent();
                 btnFee.Visible = false;
                 btnSalary.Visible = false;
-                //btnStatistic.Visible = false;               
+                btnTeacher.Visible = false;
             }
-            else InitializeComponent();
+            status = name;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -84,7 +87,7 @@ namespace Thuc_Tap_CSDL
 
         public void btnClass_Click(object sender, EventArgs e)
         {
-            openMenuForm(new fClass(), sender);
+            openMenuForm(new fClass(status), sender);
         }
 
         private void btnFee_Click(object sender, EventArgs e)

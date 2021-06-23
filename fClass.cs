@@ -15,9 +15,30 @@ namespace Thuc_Tap_CSDL
 
     public partial class fClass : Form
     {
+        string status = "";
+
         public fClass()
         {
             InitializeComponent();
+        }
+
+        public fClass(string name)
+        {
+            InitializeComponent();
+
+            if (name == "staff")
+            {
+                // L
+                btnClass_add.Visible = false;
+                btnClass_edit.Visible = false;
+                btnClass_delete.Visible = false;
+                btnClass_clear.Visible = false;
+
+                // R
+                btnLesson_edit.Visible = false;
+                btnLesson_delete.Visible = false;
+            }
+            status = name;
         }
 
 
@@ -308,6 +329,11 @@ namespace Thuc_Tap_CSDL
 
             }
 
+            list_class = false;
+            if (status == "staff")
+            {
+                btnClass_delete.Visible = false;
+            }
         }
 
         private void btnClass_all_Click(object sender, EventArgs e)
@@ -316,6 +342,10 @@ namespace Thuc_Tap_CSDL
             DisplayL(sqlCode);
 
             list_class = false;
+            if (status == "staff")
+            {
+                btnClass_delete.Visible = false;
+            }
         }
 
         public string getMKH(string MaKH)
@@ -417,7 +447,6 @@ namespace Thuc_Tap_CSDL
                 cbbMGV.Text = getGV(txtTeacherID.Text);
                 cbbMMH.Text = getMH(txtSubjectID.Text);
 
-
                 //print buoi hoc cua lop duoc chon sang dgvLesson
                 string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text + "' order by MaBuoiHoc desc";
                 DisplayR(sqlCode);
@@ -441,8 +470,8 @@ namespace Thuc_Tap_CSDL
             int i;
             i = dgvLesson.CurrentRow.Index;
             txtLessonID.Text = dgvLesson.Rows[i].Cells[0].Value.ToString();
-            //txtLessonDate.Text = convertDate(dgvLesson.Rows[i].Cells[1].Value.ToString());
             txtLessonDate.Text = convertDate(dgvLesson.Rows[i].Cells[1].Value.ToString());
+            //txtLessonDate.Text = dgvLesson.Rows[i].Cells[1].Value.ToString();
             txtLessonTime.Text = dgvLesson.Rows[i].Cells[2].Value.ToString();
             txtLessonClassID.Text = dgvLesson.Rows[i].Cells[3].Value.ToString();
         }
@@ -542,6 +571,10 @@ namespace Thuc_Tap_CSDL
             DisplayL(sqlCode);
 
             list_class = true;
+            if (status == "staff")
+            {
+                btnClass_delete.Visible = true;
+            }
         }
 
         private void txtLessonID_TextChanged(object sender, EventArgs e)
