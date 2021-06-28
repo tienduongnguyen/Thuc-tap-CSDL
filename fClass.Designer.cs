@@ -31,10 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlClass = new System.Windows.Forms.Panel();
+            this.cbbMMH = new System.Windows.Forms.ComboBox();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.txtSubjectID = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.cbbMMHP = new System.Windows.Forms.ComboBox();
             this.cbbMKH = new System.Windows.Forms.ComboBox();
             this.cbbMGV = new System.Windows.Forms.ComboBox();
-            this.cbbMMH = new System.Windows.Forms.ComboBox();
             this.btnDSL = new ePOSOne.btnProduct.Button_WOC();
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.cmbClass = new System.Windows.Forms.ComboBox();
@@ -67,7 +70,6 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.btnClass_add = new ePOSOne.btnProduct.Button_WOC();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.panel22 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -82,7 +84,6 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.txtLessonSearch = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.txtSubjectID = new System.Windows.Forms.TextBox();
             this.txtFeeLevel = new System.Windows.Forms.TextBox();
             this.txtTeacherID = new System.Windows.Forms.TextBox();
             this.txtCourse = new System.Windows.Forms.TextBox();
@@ -94,7 +95,6 @@
             this.txtLessonTime = new System.Windows.Forms.TextBox();
             this.txtLessonID = new System.Windows.Forms.TextBox();
             this.txtClassID = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -117,10 +117,13 @@
             // pnlClass
             // 
             this.pnlClass.BackColor = System.Drawing.Color.White;
+            this.pnlClass.Controls.Add(this.cbbMMH);
+            this.pnlClass.Controls.Add(this.panel22);
+            this.pnlClass.Controls.Add(this.txtSubjectID);
+            this.pnlClass.Controls.Add(this.label13);
             this.pnlClass.Controls.Add(this.cbbMMHP);
             this.pnlClass.Controls.Add(this.cbbMKH);
             this.pnlClass.Controls.Add(this.cbbMGV);
-            this.pnlClass.Controls.Add(this.cbbMMH);
             this.pnlClass.Controls.Add(this.btnDSL);
             this.pnlClass.Controls.Add(this.button_WOC1);
             this.pnlClass.Controls.Add(this.cmbClass);
@@ -151,7 +154,6 @@
             this.pnlClass.Controls.Add(this.panel19);
             this.pnlClass.Controls.Add(this.btnClass_add);
             this.pnlClass.Controls.Add(this.panel15);
-            this.pnlClass.Controls.Add(this.panel22);
             this.pnlClass.Controls.Add(this.panel6);
             this.pnlClass.Controls.Add(this.panel21);
             this.pnlClass.Controls.Add(this.panel17);
@@ -166,7 +168,6 @@
             this.pnlClass.Controls.Add(this.textBox10);
             this.pnlClass.Controls.Add(this.txtLessonSearch);
             this.pnlClass.Controls.Add(this.textBox8);
-            this.pnlClass.Controls.Add(this.txtSubjectID);
             this.pnlClass.Controls.Add(this.txtFeeLevel);
             this.pnlClass.Controls.Add(this.txtTeacherID);
             this.pnlClass.Controls.Add(this.txtCourse);
@@ -178,7 +179,6 @@
             this.pnlClass.Controls.Add(this.txtLessonTime);
             this.pnlClass.Controls.Add(this.txtLessonID);
             this.pnlClass.Controls.Add(this.txtClassID);
-            this.pnlClass.Controls.Add(this.label13);
             this.pnlClass.Controls.Add(this.label6);
             this.pnlClass.Controls.Add(this.label12);
             this.pnlClass.Controls.Add(this.label4);
@@ -197,6 +197,61 @@
             this.pnlClass.Name = "pnlClass";
             this.pnlClass.Size = new System.Drawing.Size(1257, 773);
             this.pnlClass.TabIndex = 1;
+            // 
+            // cbbMMH
+            // 
+            this.cbbMMH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.cbbMMH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.cbbMMH.FormattingEnabled = true;
+            this.cbbMMH.Items.AddRange(new object[] {
+            "Mã lớp học",
+            "Tên lớp học",
+            "Số lượng học sinh",
+            "Mã khóa học",
+            "Học phí/buổi",
+            "Mã mức HP",
+            "Mã giáo viên",
+            "Mã môn học"});
+            this.cbbMMH.Location = new System.Drawing.Point(294, 198);
+            this.cbbMMH.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbMMH.Name = "cbbMMH";
+            this.cbbMMH.Size = new System.Drawing.Size(202, 31);
+            this.cbbMMH.TabIndex = 101;
+            this.cbbMMH.SelectedIndexChanged += new System.EventHandler(this.cbbMMH_SelectedIndexChanged);
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel22.Location = new System.Drawing.Point(203, 228);
+            this.panel22.Margin = new System.Windows.Forms.Padding(4);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(221, 1);
+            this.panel22.TabIndex = 100;
+            // 
+            // txtSubjectID
+            // 
+            this.txtSubjectID.BackColor = System.Drawing.Color.White;
+            this.txtSubjectID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSubjectID.Enabled = false;
+            this.txtSubjectID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.txtSubjectID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtSubjectID.Location = new System.Drawing.Point(208, 203);
+            this.txtSubjectID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSubjectID.Name = "txtSubjectID";
+            this.txtSubjectID.Size = new System.Drawing.Size(212, 23);
+            this.txtSubjectID.TabIndex = 99;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.label13.Location = new System.Drawing.Point(79, 203);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(112, 23);
+            this.label13.TabIndex = 98;
+            this.label13.Text = "Mã môn học:";
             // 
             // cbbMMHP
             // 
@@ -254,33 +309,12 @@
             "Mã mức HP",
             "Mã giáo viên",
             "Mã môn học"});
-            this.cbbMGV.Location = new System.Drawing.Point(294, 197);
+            this.cbbMGV.Location = new System.Drawing.Point(294, 234);
             this.cbbMGV.Margin = new System.Windows.Forms.Padding(4);
             this.cbbMGV.Name = "cbbMGV";
             this.cbbMGV.Size = new System.Drawing.Size(202, 31);
             this.cbbMGV.TabIndex = 95;
             this.cbbMGV.SelectedIndexChanged += new System.EventHandler(this.cbbMGV_SelectedIndexChanged);
-            // 
-            // cbbMMH
-            // 
-            this.cbbMMH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.cbbMMH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.cbbMMH.FormattingEnabled = true;
-            this.cbbMMH.Items.AddRange(new object[] {
-            "Mã lớp học",
-            "Tên lớp học",
-            "Số lượng học sinh",
-            "Mã khóa học",
-            "Học phí/buổi",
-            "Mã mức HP",
-            "Mã giáo viên",
-            "Mã môn học"});
-            this.cbbMMH.Location = new System.Drawing.Point(294, 233);
-            this.cbbMMH.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbMMH.Name = "cbbMMH";
-            this.cbbMMH.Size = new System.Drawing.Size(202, 31);
-            this.cbbMMH.TabIndex = 94;
-            this.cbbMMH.SelectedIndexChanged += new System.EventHandler(this.cbbMMH_SelectedIndexChanged);
             // 
             // btnDSL
             // 
@@ -311,6 +345,7 @@
             this.button_WOC1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
             this.button_WOC1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(75)))));
             this.button_WOC1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_WOC1.Enabled = false;
             this.button_WOC1.FlatAppearance.BorderSize = 0;
             this.button_WOC1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button_WOC1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -340,7 +375,6 @@
             "Tên lớp học",
             "Số lượng học sinh",
             "Mã khóa học",
-            "Học phí/buổi",
             "Mã mức HP",
             "Mã giáo viên",
             "Mã môn học"});
@@ -360,10 +394,10 @@
             "Ngày học",
             "Thời gian",
             "Mã lớp học"});
-            this.cmbLesson.Location = new System.Drawing.Point(805, 367);
+            this.cmbLesson.Location = new System.Drawing.Point(856, 367);
             this.cmbLesson.Margin = new System.Windows.Forms.Padding(4);
             this.cmbLesson.Name = "cmbLesson";
-            this.cmbLesson.Size = new System.Drawing.Size(127, 31);
+            this.cmbLesson.Size = new System.Drawing.Size(112, 31);
             this.cmbLesson.TabIndex = 90;
             // 
             // colorBorderGroupBox2
@@ -567,7 +601,7 @@
             this.btnLesson_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLesson_search.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnLesson_search.ForeColor = System.Drawing.Color.Black;
-            this.btnLesson_search.Location = new System.Drawing.Point(1128, 366);
+            this.btnLesson_search.Location = new System.Drawing.Point(1118, 365);
             this.btnLesson_search.Margin = new System.Windows.Forms.Padding(4);
             this.btnLesson_search.Name = "btnLesson_search";
             this.btnLesson_search.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(114)))), ((int)(((byte)(187)))));
@@ -832,20 +866,11 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel15.Location = new System.Drawing.Point(941, 398);
+            this.panel15.Location = new System.Drawing.Point(977, 398);
             this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(179, 1);
+            this.panel15.Size = new System.Drawing.Size(133, 1);
             this.panel15.TabIndex = 63;
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel22.Location = new System.Drawing.Point(203, 263);
-            this.panel22.Margin = new System.Windows.Forms.Padding(4);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(221, 1);
-            this.panel22.TabIndex = 61;
             // 
             // panel6
             // 
@@ -859,7 +884,7 @@
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel21.Location = new System.Drawing.Point(203, 227);
+            this.panel21.Location = new System.Drawing.Point(203, 264);
             this.panel21.Margin = new System.Windows.Forms.Padding(4);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(221, 1);
@@ -877,7 +902,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel3.Location = new System.Drawing.Point(203, 297);
+            this.panel3.Location = new System.Drawing.Point(203, 299);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(221, 1);
@@ -967,10 +992,10 @@
             this.txtLessonSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLessonSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtLessonSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtLessonSearch.Location = new System.Drawing.Point(947, 370);
+            this.txtLessonSearch.Location = new System.Drawing.Point(983, 370);
             this.txtLessonSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtLessonSearch.Name = "txtLessonSearch";
-            this.txtLessonSearch.Size = new System.Drawing.Size(169, 23);
+            this.txtLessonSearch.Size = new System.Drawing.Size(123, 23);
             this.txtLessonSearch.TabIndex = 52;
             // 
             // textBox8
@@ -978,24 +1003,11 @@
             this.textBox8.BackColor = System.Drawing.Color.White;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.textBox8.Location = new System.Drawing.Point(947, 373);
+            this.textBox8.Location = new System.Drawing.Point(983, 373);
             this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(169, 23);
+            this.textBox8.Size = new System.Drawing.Size(123, 23);
             this.textBox8.TabIndex = 51;
-            // 
-            // txtSubjectID
-            // 
-            this.txtSubjectID.BackColor = System.Drawing.Color.White;
-            this.txtSubjectID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSubjectID.Enabled = false;
-            this.txtSubjectID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtSubjectID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtSubjectID.Location = new System.Drawing.Point(208, 238);
-            this.txtSubjectID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSubjectID.Name = "txtSubjectID";
-            this.txtSubjectID.Size = new System.Drawing.Size(212, 23);
-            this.txtSubjectID.TabIndex = 50;
             // 
             // txtFeeLevel
             // 
@@ -1017,7 +1029,7 @@
             this.txtTeacherID.Enabled = false;
             this.txtTeacherID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtTeacherID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtTeacherID.Location = new System.Drawing.Point(208, 203);
+            this.txtTeacherID.Location = new System.Drawing.Point(208, 240);
             this.txtTeacherID.Margin = new System.Windows.Forms.Padding(4);
             this.txtTeacherID.Name = "txtTeacherID";
             this.txtTeacherID.Size = new System.Drawing.Size(212, 23);
@@ -1043,7 +1055,7 @@
             this.txtStudentID.Enabled = false;
             this.txtStudentID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtStudentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtStudentID.Location = new System.Drawing.Point(208, 312);
+            this.txtStudentID.Location = new System.Drawing.Point(208, 314);
             this.txtStudentID.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudentID.Name = "txtStudentID";
             this.txtStudentID.Size = new System.Drawing.Size(212, 23);
@@ -1057,7 +1069,7 @@
             this.txtSumStudent.Enabled = false;
             this.txtSumStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.txtSumStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.txtSumStudent.Location = new System.Drawing.Point(208, 273);
+            this.txtSumStudent.Location = new System.Drawing.Point(208, 275);
             this.txtSumStudent.Margin = new System.Windows.Forms.Padding(4);
             this.txtSumStudent.Name = "txtSumStudent";
             this.txtSumStudent.Size = new System.Drawing.Size(212, 23);
@@ -1108,12 +1120,15 @@
             this.txtLessonTime.BackColor = System.Drawing.Color.White;
             this.txtLessonTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLessonTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtLessonTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
+            this.txtLessonTime.ForeColor = System.Drawing.Color.Silver;
             this.txtLessonTime.Location = new System.Drawing.Point(827, 153);
             this.txtLessonTime.Margin = new System.Windows.Forms.Padding(4);
             this.txtLessonTime.Name = "txtLessonTime";
             this.txtLessonTime.Size = new System.Drawing.Size(215, 23);
             this.txtLessonTime.TabIndex = 46;
+            this.txtLessonTime.Text = "hh:mm:ss";
+            this.txtLessonTime.Enter += new System.EventHandler(this.txtLessonTime_Enter);
+            this.txtLessonTime.Leave += new System.EventHandler(this.txtLessonTime_Leave);
             // 
             // txtLessonID
             // 
@@ -1142,18 +1157,6 @@
             this.txtClassID.Size = new System.Drawing.Size(216, 23);
             this.txtClassID.TabIndex = 45;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label13.Location = new System.Drawing.Point(79, 238);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 23);
-            this.label13.TabIndex = 42;
-            this.label13.Text = "Mã môn học:";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -1171,7 +1174,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label12.Location = new System.Drawing.Point(76, 203);
+            this.label12.Location = new System.Drawing.Point(76, 240);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(114, 23);
@@ -1195,7 +1198,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(39)))));
-            this.label3.Location = new System.Drawing.Point(38, 271);
+            this.label3.Location = new System.Drawing.Point(38, 273);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 23);
@@ -1379,17 +1382,14 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.TextBox txtSubjectID;
         private System.Windows.Forms.TextBox txtTeacherID;
         private System.Windows.Forms.TextBox txtCourse;
         private System.Windows.Forms.TextBox txtLessonClassID;
         private System.Windows.Forms.TextBox txtLessonTime;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
@@ -1397,10 +1397,13 @@
         private System.Windows.Forms.Panel panel14;
         private ePOSOne.btnProduct.Button_WOC button_WOC1;
         private ePOSOne.btnProduct.Button_WOC btnDSL;
-        private System.Windows.Forms.ComboBox cbbMMH;
         private System.Windows.Forms.ComboBox cbbMGV;
         private System.Windows.Forms.ComboBox cbbMMHP;
         private System.Windows.Forms.ComboBox cbbMKH;
         private System.Windows.Forms.TextBox txtStudentID;
+        private System.Windows.Forms.ComboBox cbbMMH;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.TextBox txtSubjectID;
+        private System.Windows.Forms.Label label13;
     }
 }

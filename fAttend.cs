@@ -18,13 +18,14 @@ namespace Thuc_Tap_CSDL
         //int sum = 49;
         //int present;
 
+        string user = "";
 
-
-        public fAttend(string id1, string id2)
+        public fAttend(string id1, string id2, string user)
         {
             InitializeComponent();
             lblClassID.Text = id1;
             lblLessonID.Text = id2;
+            this.user = user;
         }
 
 
@@ -50,7 +51,7 @@ namespace Thuc_Tap_CSDL
 
         private void btnAttend_cancel_Click(object sender, EventArgs e)
         {
-            openChildForm(new fClass(), sender);
+            openChildForm(new fClass(user), sender);
         }
 
         private void btnAttend_confirm_Click(object sender, EventArgs e)

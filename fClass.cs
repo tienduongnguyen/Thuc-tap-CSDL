@@ -46,6 +46,24 @@ namespace Thuc_Tap_CSDL
         bool list_class = false;
 
 
+        private Form activeForm;
+        private void openChildForm(Form childForm, object btnsender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.pnlClass.Controls.Add(childForm);
+            this.pnlClass.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+
         public void DisplayL(string code)
         {
             SqlCommand class_cmd = new SqlCommand(code, con);
@@ -97,7 +115,7 @@ namespace Thuc_Tap_CSDL
             dr.Close();
         }
 
-        public void loadDataCombobox1()
+        public void loadDataCombobox_subjects()
         {
             var sqlCode = "Select TenMonHoc from MONHOC";
             SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -110,9 +128,9 @@ namespace Thuc_Tap_CSDL
             cbbMMH.DataSource = dt;
         }
 
-        public void loadDataCombobox2()
+        public void loadDataCombobox_teachers(string maMH)
         {
-            var sqlCode = "Select TenGiaoVien from GIAOVIEN";
+            var sqlCode = "Select TenGiaoVien from GIAOVIEN where MaMonHoc = '" + maMH + "'";
             SqlCommand cmd = new SqlCommand(sqlCode, con);
             ///cmd.ExecuteNonQuery();
             var dr = cmd.ExecuteReader();
@@ -123,7 +141,7 @@ namespace Thuc_Tap_CSDL
             cbbMGV.DataSource = dt;
         }
 
-        public void loadDataCombobox3()
+        public void loadDataCombobox_fee()
         {
             var sqlCode = "Select SoHocPhi from MUCHOCPHI";
             SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -136,7 +154,7 @@ namespace Thuc_Tap_CSDL
             cbbMMHP.DataSource = dt;
         }
 
-        public void loadDataCombobox4()
+        public void loadDataCombobox_courses()
         {
             var sqlCode = "Select TenKhoaHoc from KHOAHOC order by MaKhoaHoc asc";
             SqlCommand cmd = new SqlCommand(sqlCode, con);
@@ -163,23 +181,6 @@ namespace Thuc_Tap_CSDL
             return info[1] + "/" + info[0] + "/" + info[2];
         }
 
-        private Form activeForm;
-
-        private void openChildForm(Form childForm, object btnsender)
-        {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            this.pnlClass.Controls.Add(childForm);
-            this.pnlClass.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
 
         private void fClass_Load(object sender, EventArgs e)
         {
@@ -187,19 +188,17 @@ namespace Thuc_Tap_CSDL
             con = new SqlConnection(conString);
             con.Open();
 
-            string sqlCode1 = "select top(20) * FROM LOPHOC";
-            string sqlCode2 = "select top(20) * FROM BUOIHOC";
+            string sqlCode = "select * FROM LOPHOC";
 
-            DisplayL(sqlCode1);
-            DisplayR(sqlCode2);
+            DisplayL(sqlCode);
 
             autoLoadClassID();
             autoLoadLessonID();
 
-            loadDataCombobox1();
-            loadDataCombobox2();
-            loadDataCombobox3();
-            loadDataCombobox4();
+            loadDataCombobox_subjects();
+            loadDataCombobox_courses();
+            loadDataCombobox_fee();
+            //loadDataCombobox_teachers(txtSubjectID.Text);
 
             list_class = false;
         }
@@ -211,15 +210,20 @@ namespace Thuc_Tap_CSDL
 
         private void btnClass_add_Click(object sender, EventArgs e)
         {
+            if (txtClassName.Text != "")
+            {
+                string sqlInsert = "exec PROC_INSERT_LOPHOC '" + txtClassID.Text + "','" + txtClassName.Text + "','" + "0" + "','" + txtCourse.Text + "','" + txtFeeLevel.Text + "', '" + txtTeacherID.Text + "','" + txtSubjectID.Text + "'";
+                Execute(sqlInsert);
 
-            string sqlInsert = "exec PROC_INSERT_LOPHOC '" + txtClassID.Text + "','" + txtClassName.Text + "','" + "0" + "','" + txtCourse.Text + "','" + txtFeeLevel.Text + "', '" + txtTeacherID.Text + "','" + txtSubjectID.Text + "'";
-            Execute(sqlInsert);
+                string sqlCode = "select * FROM LOPHOC order by MaLopHoc desc";
+                DisplayL(sqlCode);
 
-            string sqlCode = "select top(20) * FROM LOPHOC order by MaLopHoc desc";
-            DisplayL(sqlCode);
-
-            autoLoadClassID();
-
+                autoLoadClassID();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnClass_edit_Click(object sender, EventArgs e)
@@ -227,7 +231,7 @@ namespace Thuc_Tap_CSDL
             string sqlEdit = "exec PROC_UPDATE_LOPHOC '" + txtClassID.Text + "','" + txtClassName.Text + "','" + txtSumStudent.Text + "','" + txtCourse.Text + "','" + txtFeeLevel.Text + "', '" + txtTeacherID.Text + "','" + txtSubjectID.Text + "'";
             Execute(sqlEdit);
 
-            string sqlCode = "select top(20) * FROM LOPHOC";
+            string sqlCode = "select top(30) * FROM LOPHOC";
             DisplayL(sqlCode);
         }
 
@@ -250,7 +254,7 @@ namespace Thuc_Tap_CSDL
                 string sqlDelete = "exec PROC_DELETE_LOPHOC '" + txtClassID.Text + "'";
                 Execute(sqlDelete);
 
-                string sqlCode = "select top(20) * FROM LOPHOC";
+                string sqlCode = "select top(30) * FROM LOPHOC";
                 DisplayL(sqlCode);
             }
             else
@@ -276,7 +280,7 @@ namespace Thuc_Tap_CSDL
             if (cmbClass.SelectedItem == "Mã lớp học")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MALH('" + txtClassSearch.Text + "')";
+                string sqlCode = "select * from DBO.FUNC_SEARCH_LH_MALH('" + txtClassSearch.Text + "')";
                 DisplayL(sqlCode);
 
             }
@@ -284,7 +288,7 @@ namespace Thuc_Tap_CSDL
             if (cmbClass.SelectedItem == "Tên lớp học")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_TENLH('" + txtClassSearch.Text + "')";
+                string sqlCode = "select * from DBO.FUNC_SEARCH_LH_TENLH('" + txtClassSearch.Text + "')";
                 DisplayL(sqlCode);
 
             }
@@ -292,7 +296,7 @@ namespace Thuc_Tap_CSDL
             if (cmbClass.SelectedItem == "Số lượng học sinh")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_SLHS('" + txtClassSearch.Text + "')";
+                string sqlCode = "select * from DBO.FUNC_SEARCH_LH_SLHS('" + txtClassSearch.Text + "')";
                 DisplayL(sqlCode);
 
             }
@@ -300,7 +304,7 @@ namespace Thuc_Tap_CSDL
             if (cmbClass.SelectedItem == "Mã khóa học")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MAKH('" + txtClassSearch.Text + "')";
+                string sqlCode = "select * from DBO.FUNC_SEARCH_LH_MAKH('" + txtClassSearch.Text + "')";
                 DisplayL(sqlCode);
 
             }
@@ -308,7 +312,7 @@ namespace Thuc_Tap_CSDL
             if (cmbClass.SelectedItem == "Mã mức HP")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MAMHP('" + txtClassSearch.Text + "')";
+                string sqlCode = "select * from DBO.FUNC_SEARCH_LH_MAMHP('" + txtClassSearch.Text + "')";
                 DisplayL(sqlCode);
 
             }
@@ -316,7 +320,7 @@ namespace Thuc_Tap_CSDL
             if (cmbClass.SelectedItem == "Mã giáo viên")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MAGV('" + txtClassSearch.Text + "')";
+                string sqlCode = "select * from DBO.FUNC_SEARCH_LH_MAGV('" + txtClassSearch.Text + "')";
                 DisplayL(sqlCode);
 
             }
@@ -324,7 +328,7 @@ namespace Thuc_Tap_CSDL
             if (cmbClass.SelectedItem == "Mã môn học")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_LH_MAMH('" + txtClassSearch.Text + "')";
+                string sqlCode = "select * from DBO.FUNC_SEARCH_LH_MAMH('" + txtClassSearch.Text + "')";
                 DisplayL(sqlCode);
 
             }
@@ -338,7 +342,7 @@ namespace Thuc_Tap_CSDL
 
         private void btnClass_all_Click(object sender, EventArgs e)
         {
-            string sqlCode = "select top(20) * FROM LOPHOC";
+            string sqlCode = "select top(30) * FROM LOPHOC";
             DisplayL(sqlCode);
 
             list_class = false;
@@ -448,7 +452,7 @@ namespace Thuc_Tap_CSDL
                 cbbMMH.Text = getMH(txtSubjectID.Text);
 
                 //print buoi hoc cua lop duoc chon sang dgvLesson
-                string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text + "' order by MaBuoiHoc desc";
+                string sqlCode = "select top(30) * FROM BUOIHOC where MaLopHoc = '" + txtClassID.Text + "' order by MaBuoiHoc desc";
                 DisplayR(sqlCode);
 
                 autoLoadLessonID();
@@ -474,17 +478,26 @@ namespace Thuc_Tap_CSDL
             //txtLessonDate.Text = dgvLesson.Rows[i].Cells[1].Value.ToString();
             txtLessonTime.Text = dgvLesson.Rows[i].Cells[2].Value.ToString();
             txtLessonClassID.Text = dgvLesson.Rows[i].Cells[3].Value.ToString();
+
+            button_WOC1.Enabled = true;
         }
 
         private void btnLesson_add_Click(object sender, EventArgs e)
         {
-            string sqlInsert = "exec PROC_INSERT_BUOIHOC '" + txtLessonID.Text + "','" + txtLessonDate.Text + "','" + txtLessonTime.Text + "','" + txtLessonClassID.Text + "' ";
-            Execute(sqlInsert);
+            if (txtLessonClassID.Text != "" || txtLessonDate.Text != "MM/DD/YYYY" || txtLessonTime.Text != "")
+            {
+                string sqlInsert = "exec PROC_INSERT_BUOIHOC '" + txtLessonID.Text + "','" + txtLessonDate.Text + "','" + txtLessonTime.Text + "','" + txtLessonClassID.Text + "' ";
+                Execute(sqlInsert);
 
-            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
-            DisplayR(sqlCode);
+                string sqlCode = "select top(30) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
+                DisplayR(sqlCode);
 
-            autoLoadLessonID();
+                autoLoadLessonID();
+            } 
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLesson_edit_Click(object sender, EventArgs e)
@@ -492,7 +505,7 @@ namespace Thuc_Tap_CSDL
             string sqlInsert = "exec PROC_UPDATE_BUOIHOC '" + txtLessonID.Text + "','" + txtLessonDate.Text + "','" + txtLessonTime.Text + "','" + txtLessonClassID.Text + "' ";
             Execute(sqlInsert);
 
-            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
+            string sqlCode = "select top(30) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
             DisplayR(sqlCode);
         }
 
@@ -504,7 +517,7 @@ namespace Thuc_Tap_CSDL
             string sqlDelete = "exec PROC_DELETE_BUOIHOC '" + txtLessonID.Text + "'";
             Execute(sqlDelete);
 
-            string sqlCode = "select top(20) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
+            string sqlCode = "select top(30) * FROM BUOIHOC where MaLopHoc = '" + txtLessonClassID.Text + "' order by MaBuoiHoc desc";
             DisplayR(sqlCode);
         }
 
@@ -512,8 +525,8 @@ namespace Thuc_Tap_CSDL
         {
             autoLoadLessonID();
             btnLesson_add.Enabled = true;
-            txtLessonDate.Text = "";
-            txtLessonTime.Text = "";
+            txtLessonDate.Text = "MM/DD/YYYY";
+            txtLessonTime.Text = "hh:mm:ss";
             txtLessonClassID.Text = "";
         }
 
@@ -522,7 +535,7 @@ namespace Thuc_Tap_CSDL
             if (cmbLesson.SelectedItem == "Mã buổi học")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_MABH('" + txtLessonSearch.Text + "')";
+                string sqlCode = "select top(30) * from DBO.FUNC_SEARCH_BH_MABH('" + txtLessonSearch.Text + "')";
                 DisplayR(sqlCode);
 
             }
@@ -530,7 +543,7 @@ namespace Thuc_Tap_CSDL
             if (cmbLesson.SelectedItem == "Ngày học")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_NGAYHOC('" + txtLessonSearch.Text + "')";
+                string sqlCode = "select top(30) * from DBO.FUNC_SEARCH_BH_NGAYHOC('" + txtLessonSearch.Text + "')";
                 DisplayR(sqlCode);
 
             }
@@ -538,7 +551,7 @@ namespace Thuc_Tap_CSDL
             if (cmbLesson.SelectedItem == "Thời gian")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_THOIGIAN('" + txtLessonSearch.Text + "')";
+                string sqlCode = "select top(30) * from DBO.FUNC_SEARCH_BH_THOIGIAN('" + txtLessonSearch.Text + "')";
                 DisplayR(sqlCode);
 
             }
@@ -546,7 +559,7 @@ namespace Thuc_Tap_CSDL
             if (cmbLesson.SelectedItem == "Mã lớp học")
             {
 
-                string sqlCode = "select top(20) * from DBO.FUNC_SEARCH_BH_MALH('" + txtLessonSearch.Text + "')";
+                string sqlCode = "select top(30) * from DBO.FUNC_SEARCH_BH_MALH('" + txtLessonSearch.Text + "')";
                 DisplayR(sqlCode);
 
             }
@@ -555,14 +568,13 @@ namespace Thuc_Tap_CSDL
 
         private void btnLesson_all_Click(object sender, EventArgs e)
         {
-            string sqlCode = "select top(20) * FROM BUOIHOC";
+            string sqlCode = "select top(30) * FROM BUOIHOC";
             DisplayR(sqlCode);
         }
 
         private void button_WOC1_Click(object sender, EventArgs e)
         {
-            if (txtLessonID.Text != "")
-                openChildForm(new fAttend(txtLessonClassID.Text, txtLessonID.Text), sender);
+            openChildForm(new fAttend(txtLessonClassID.Text, txtLessonID.Text, status), sender);
         }
 
         private void btnDSL_Click(object sender, EventArgs e)
@@ -593,6 +605,8 @@ namespace Thuc_Tap_CSDL
                 txtSubjectID.Text = dr.GetValue(0).ToString();
             }
             dr.Close();
+
+            loadDataCombobox_teachers(txtSubjectID.Text);
         }
 
         private void cbbMGV_SelectedIndexChanged(object sender, EventArgs e)
@@ -649,6 +663,24 @@ namespace Thuc_Tap_CSDL
             {
                 txtLessonDate.Text = "MM/DD/YYYY";
                 txtLessonDate.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtLessonTime_Enter(object sender, EventArgs e)
+        {
+            if (txtLessonTime.Text == "hh:mm:ss")
+            {
+                txtLessonTime.Text = "";
+                txtLessonTime.ForeColor = Color.FromArgb(0, 72, 39);
+            }
+        }
+
+        private void txtLessonTime_Leave(object sender, EventArgs e)
+        {
+            if (txtLessonTime.Text == "")
+            {
+                txtLessonTime.Text = "hh:mm:ss";
+                txtLessonTime.ForeColor = Color.Silver;
             }
         }
     }
