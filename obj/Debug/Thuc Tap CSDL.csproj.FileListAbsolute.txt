@@ -234,3 +234,23 @@ D:\Repo\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillStudent.resources
 D:\Repo\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillTeacher.resources
 D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL update mới nhất\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillStudent.resources
 D:\QUAN TRỌNG\Thực tập CSDL\TTCSDL update mới nhất\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillTeacher.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\bin\Debug\Thuc Tap CSDL.exe.config
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\bin\Debug\Thuc Tap CSDL.exe
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\bin\Debug\Thuc Tap CSDL.pdb
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fAttend.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillStudent.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fBillTeacher.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fClass.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fFee.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fMain.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fLogin.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fSalary.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fStatistic.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fStudent.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.fTeacher.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc_Tap_CSDL.Properties.Resources.resources
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.exe
+C:\Users\Admin\Desktop\Thuc-tap-CSDL\obj\Debug\Thuc Tap CSDL.pdb
